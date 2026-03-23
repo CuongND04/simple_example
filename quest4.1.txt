@@ -1,0 +1,303 @@
+PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.
+
+Câu 1. Theo IEEE Standard Glossary, kiểm thử phần mềm là:
+A. Hoạt động hệ thống được thực thi dưới điều kiện xác định để quan sát kết quả     B. Chỉ là quá trình gỡ lỗi
+C. Hoạt động xác thực sản phẩm đã hoàn thành                                         D. Quy trình tìm kiếm mã nguồn sạch
+
+Câu 2. Mục tiêu kiểm thử ở Level 0 là:
+A. Chứng minh tính đúng đắn                                                          B. Không có khác biệt giữa testing và debugging
+C. Giảm rủi ro khi sử dụng phần mềm                                                  D. Mục tiêu nghề luật
+
+Câu 3. Mục tiêu kiểm thử ở Level 3 là:
+A. Chứng minh phần mềm hoạt động đúng                                                B. Chỉ ra phần mềm không hoạt động đúng
+C. Giảm rủi ro khi sử dụng phần mềm                                                  D. Gỡ lỗi code
+
+Câu 4. Nguyên lý "Testing shows presence of defects, not absence" có nghĩa:
+A. Kiểm thử chứng minh không còn lỗi                                                 B. Kiểm thử chỉ cho thấy sự hiện diện lỗi
+C. Kiểm thử không tìm được bất kỳ lỗi nào                                             D. Kiểm thử loại bỏ tất cả lỗi
+
+Câu 5. "Exhaustive testing is impossible" nghĩa là:
+A. Kiểm thử có thể bao phủ mọi kịch bản                                              B. Kiểm thử vét cạn là bất khả thi
+C. Kiểm thử chỉ cần test một phần                                                    D. Kiểm thử không cần lập kế hoạch
+
+Câu 6. Nguyên lý "Defects cluster together" cho biết:
+A. Lỗi phân tán khắp toàn bộ phần mềm                                                B. Lỗi có xu hướng tập trung theo cụm
+C. Lỗi chỉ nằm ở một module duy nhất                                                 D. Lỗi không thể dự đoán vị trí
+
+Câu 7. "Pesticide paradox" trong kiểm thử có ý nghĩa:
+A. Kiểm thử càng lâu càng tốt                                                        B. Lặp đi lặp lại cùng test không tìm lỗi mới
+C. Cần thay đổi test strategy thường xuyên                                           D. Kiểm thử cần dùng công cụ tự động
+
+Câu 8. Quy trình kiểm thử gồm bao nhiêu nhóm hoạt động chính?
+A. 5 nhóm                                                                             B. 6 nhóm
+C. 7 nhóm                                                                             D. 8 nhóm
+
+Câu 9. Hoạt động nào xác định "cái gì" cần kiểm thử?
+A. Test design                                                                       B. Test implementation
+C. Test analysis                                                                     D. Test execution
+
+Câu 10. Test monitoring và test control được hỗ trợ bởi:
+A. Test plan                                                                         B. Exit criteria
+C. Test data                                                                         D. Test procedures
+
+Câu 11. Unit testing được thực hiện bởi:
+A. Tester độc lập                                                                    B. Developer
+C. Khách hàng                                                                        D. Project manager
+
+Câu 12. Integration testing có mục tiêu chính là:
+A. Kiểm thử từng function riêng lẻ                                                   B. Phát hiện lỗi giao tiếp giữa component
+C. Kiểm thử giao diện người dùng                                                     D. Kiểm thử hiệu năng hệ thống
+
+Câu 13. Chiến lược Big-Bang Integration Testing có nhược điểm chính là:
+A. Quá phức tạp trong tổ chức                                                        B. Khó cô lập nguyên nhân lỗi
+C. Cần quá nhiều stub                                                                D. Test quá lâu
+
+Câu 14. System testing được thực hiện khi nào:
+A. Mỗi function được viết xong                                                       B. Sau khi module và tích hợp đã test
+C. Tại pha thiết kế                                                                  D. Trước khi lập kế hoạch
+
+Câu 15. Acceptance testing thường do ai thực hiện?
+A. Developer                                                                         B. Tester kỹ thuật
+C. Khách hàng hoặc bên thứ ba đại diện                                               D. Project manager
+
+---
+
+PHẦN II. Câu trắc nghiệm điền từ.
+
+Câu 1. Theo The Art of Software Testing, kiểm thử là quá trình thực thi chương trình với mục đích ...
+A. chứng minh tính đúng đắn                                                          B. tìm lỗi
+C. gỡ lỗi code                                                                       D. tối ưu hiệu năng
+
+Câu 2. Shift-left testing có ý nghĩa là kiểm thử ... trong chu kỳ phát triển.
+A. muộn hơn                                                                          B. sớm hơn
+C. ở cuối                                                                            D. không cần thiết
+
+Câu 3. Để trả lời câu hỏi "test bao nhiêu là đủ?", cần xác định ... dự kiến.
+A. chi phí                                                                           B. mức độ coverage
+C. thời gian                                                                         D. nguồn lực
+
+Câu 4. Test basis là ... của quy trình kiểm thử.
+A. mục tiêu                                                                          B. cơ sở
+C. kết quả                                                                           D. báo cáo
+
+Câu 5. Trong test analysis, các defect có thể được phát hiện trong ...
+A. code                                                                              B. tài liệu/sản phẩm nền tảng
+C. dữ liệu đầu vào                                                                   D. máy chủ
+
+Câu 6. Test suite được tạo ra từ các ...
+A. test case                                                                         B. test procedures
+C. test procedures và script tự động                                                 D. test execution
+
+Câu 7. Test harness là ...
+A. bộ test data                                                                      B. khung hỗ trợ kiểm thử
+C. công cụ báo cáo                                                                   D. hệ thống lưu trữ
+
+Câu 8. Test stub được sử dụng trong chiến lược ...
+A. Big-Bang                                                                          B. Bottom-Up
+C. Top-Down                                                                          D. Sandwich
+
+Câu 9. Test driver được sử dụng trong chiến lược ...
+A. Big-Bang                                                                          B. Top-Down
+C. Bottom-Up                                                                         D. Sandwich
+
+Câu 10. Trong chiến lược integration testing, ... là lớp được đặt trọng tâm test.
+A. lớp trên cùng                                                                     B. lớp dưới cùng
+C. lớp giữa                                                                          D. tất cả lớp bình đẳng
+
+Câu 11. Khi log lỗi, cần ghi rõ ... để developer đọc nhanh.
+A. tên tester                                                                        B. lỗi là gì, thuộc chức năng nào
+C. ngày phát hiện                                                                    D. thời gian kiểm thử
+
+Câu 12. Subject trong mẫu ghi lỗi nên bao gồm [function name] - ...
+A. [tester name]                                                                     B. [short explanation of error]
+C. [date found]                                                                      D. [priority level]
+
+Câu 13. Để mô tả lỗi rõ ràng, cần ghi bộ ba: step, ... và actual result.
+A. expected result                                                                   B. designer name
+C. test case id                                                                      D. priority
+
+Câu 14. Trong bug life cycle, sau khi bug được sửa, trạng thái tiếp theo có thể là ...
+A. closed                                                                            B. verified hoặc retested
+C. rejected                                                                          D. deferred
+
+Câu 15. Alpha testing được thực hiện ở ...
+A. môi trường của nhà phát triển                                                     B. môi trường khách hàng
+C. măi chủ sản xuất                                                                  D. phòng lab độc lập
+
+Câu 16. Beta testing được thực hiện ở ...
+A. môi trường của nhà phát triển                                                     B. môi trường thực tế của người dùng
+C. phòng lab tester                                                                  D. trên máy chủ test
+
+Câu 17. Confirmaton testing là quá trình ...
+A. test lại hệ thống toàn bộ                                                        B. test lại tính sửa được bug
+C. test tính năng mới                                                                D. test hiệu năng
+
+Câu 18. Regression testing được thực hiện để ...
+A. phát hiện lỗi mới                                                                 B. kiểm chứng lỗi cũ không tái phát
+C. tối ưu code                                                                       D. cập nhật tài liệu
+
+Câu 19. Testware là ...
+A. công cụ nhà phát triển                                                            B. tài sản kiểm thử (test case, test data, script)
+C. máy chủ test                                                                      D. phần mềm chạy test
+
+Câu 20. Traceability (truy vết hai chiều) kết nối ...
+A. test case và design                                                               B. test basis, test conditions, test cases
+C. code và documentation                                                             D. developers và testers
+
+Câu 21. Test completion là giai đoạn ...
+A. lập kế hoạch test                                                                 B. thiết kế test case
+C. thu thập dữ liệu từ hoạt động test để tổng hợp kinh nghiệm                       D. thực thi test
+
+Câu 22. Trong test completion, cần hoàn thiện và lưu trữ ...
+A. chỉ test case                                                                     B. test case, test data, test infrastructure
+C. chỉ bug report                                                                    D. chỉ test plan
+
+Câu 23. Organizational Test Policy là tài liệu ...
+A. của từng dự án riêng                                                              B. của tổ chức (không phải dự án)
+C. của từng team test                                                                D. của team phát triển
+
+Câu 24. Defect phát hiện muộn trong quy trình sẽ có chi phí sửa ...
+A. thấp nhất                                                                         B. vừa phải
+C. cao nhất                                                                          D. bằng nhau
+
+Câu 25. Kỹ thuật kiểm thử phụ thuộc vào ...
+A. số lượng testers                                                                  B. ngữ cảnh của dự án
+C. thời gian dự kiến                                                                 D. ngân sách cố định
+
+---
+
+ĐÁP ÁN
+
+PHẦN I
+
+1. A
+2. B
+3. C
+4. B
+5. B
+6. B
+7. B
+8. C
+9. C
+10. B
+11. B
+12. B
+13. B
+14. B
+15. C
+
+PHẦN II
+
+1. B
+2. B
+3. B
+4. B
+5. B
+6. C
+7. B
+8. C
+9. C
+10. C
+11. B
+12. B
+13. A
+14. B
+15. A
+16. B
+17. B
+18. B
+19. B
+20. B
+21. C
+22. B
+23. B
+24. C
+25. B
+
+---
+
+LỜI GIẢI
+
+PHẦN I
+
+Câu 1: A đúng vì theo IEEE, kiểm thử là hoạt động thực thi hệ thống hoặc thành phần dưới các điều kiện xác định trước để quan sát kết quả.
+
+Câu 2: B đúng vì ở Level 0, không có khác biệt giữa testing và debugging, đó là mức trưởng thành thấp nhất.
+
+Câu 3: C đúng vì Level 3 của mục tiêu kiểm thử là giảm rủi ro khi sử dụng phần mềm thông qua kiểm thử dựa trên rủi ro.
+
+Câu 4: B đúng vì nguyên lý này phát biểu rằng kiểm thử chỉ cho thấy sự hiện diện của lỗi, không chứng minh được không còn lỗi.
+
+Câu 5: B đúng vì kiểm thử vét cạn toàn bộ đầu vào-đầu ra của ứng dụng thực tế là bất khả thi với số lượng test case vô hạn.
+
+Câu 6: B đúng vì lỗi có xu hướng tập trung theo cụm, một số ít module thường chứa phần lớn defect.
+
+Câu 7: B đúng vì lặp đi lặp lại cùng một bộ test sẽ dần không tìm được lỗi mới, cần cập nhật test hoặc thay đổi test data.
+
+Câu 8: C đúng vì quy trình kiểm thử gồm 7 hoạt động chính: planning, monitoring, analysis, design, implementation, execution, completion.
+
+Câu 9: C đúng vì test analysis xác định "test cái gì" bằng cách xác định test conditions từ test basis.
+
+Câu 10: B đúng vì exit criteria được sử dụng để quyết định dừng test, hỗ trợ test monitoring và control.
+
+Câu 11: B đúng vì unit testing yêu cầu hiểu thiết kế và code, do developer thực hiện chứ không phải tester độc lập.
+
+Câu 12: B đúng vì integration testing phát hiện lỗi giao tiếp giữa các component và lỗi bên trong component.
+
+Câu 13: B đúng vì Big-Bang Integration Testing khó cô lập nguyên nhân lỗi khi nhiều component lỗi cùng lúc.
+
+Câu 14: B đúng vì system testing thực hiện khi các mô-đun và tích hợp mô-đun đã được kiểm thử xong.
+
+Câu 15: C đúng vì acceptance testing được khách hàng hoặc bên thứ ba đại diện để đánh giá khả năng chấp nhận.
+
+PHẦN II
+
+Câu 1: B đúng vì từ cần điền là "tìm lỗi" - kiểm thử là quá trình thực thi chương trình với mục đích phát hiện lỗi.
+
+Câu 2: B đúng vì từ cần điền là "sớm hơn" - shift-left testing là dịch chuyển kiểm thử sang sớm hơn trong chu kỳ.
+
+Câu 3: B đúng vì từ cần điền là "mức độ coverage" - xác định mức degree coverage là cách trả lời "test bao nhiêu".
+
+Câu 4: B đúng vì từ cần điền là "cơ sở" - test basis là cơ sở để xác định test conditions và test cases.
+
+Câu 5: B đúng vì từ cần điền là "tài liệu/sản phẩm nền tảng" - test analysis phát hiện ambiguities, omissions trong documents.
+
+Câu 6: C đúng vì từ cần điền là "test procedures và script tự động" - test suite được tạo từ thành phần này.
+
+Câu 7: B đúng vì từ cần điền là "khung hỗ trợ kiểm thử" - test harness là công cụ hỗ trợ môi trường kiểm thử.
+
+Câu 8: C đúng vì từ cần điền là "Top-Down" - test stub được sử dụng khi muốn test từ trên xuống.
+
+Câu 9: C đúng vì từ cần điền là "Bottom-Up" - test driver được sử dụng khi muốn test từ dưới lên.
+
+Câu 10: C đúng vì từ cần điền là "lớp giữa" - Sandwich Testing kết hợp Top-Down và Bottom-Up với trọng tâm ở lớp giữa.
+
+Câu 11: B đúng vì từ cần điền là "lỗi là gì, thuộc chức năng nào" - cần ghi rõ để developer hiểu nhanh.
+
+Câu 12: B đúng vì từ cần điền là "[short explanation of error]" - subject format là [function name] - [short explanation].
+
+Câu 13: A đúng vì từ cần điền là "expected result" - ba phần chính là step, expected result, actual result.
+
+Câu 14: B đúng vì từ cần điền là "verified hoặc retested" - sau khi fixed, cần verified/retested rồi mới closed.
+
+Câu 15: A đúng vì từ cần điền là "môi trường của nhà phát triển" - alpha testing là người dùng test tại dev environment.
+
+Câu 16: B đúng vì từ cần điền là "môi trường thực tế của người dùng" - beta testing là phần mềm gửi cho người dùng test.
+
+Câu 17: B đúng vì từ cần điền là "test lại tính sửa được bug" - confirmation testing xác minh bug đã được sửa.
+
+Câu 18: B đúng vì từ cần điền là "kiểm chứng lỗi cũ không tái phát" - regression testing đảm bảo sửa không gây lỗi mới.
+
+Câu 19: B đúng vì từ cần điền là "tài sản kiểm thử (test case, test data, script)" - testware là all tài sản test.
+
+Câu 20: B đúng vì từ cần điền là "test basis, test conditions, test cases" - truy vết hai chiều kết nối các thành phần này.
+
+Câu 21: C đúng vì từ cần điền là "thu thập dữ liệu từ hoạt động test" - test completion tổng hợp kinh nghiệm.
+
+Câu 22: B đúng vì từ cần điền là "test case, test data, test infrastructure" - cần lưu trữ toàn bộ để tái sử dụng.
+
+Câu 23: B đúng vì từ cần điền là "của tổ chức" - Organizational Test Policy được tạo và duy trì ở mức tổ chức.
+
+Câu 24: C đúng vì từ cần điền là "cao nhất" - chi phí sửa lỗi ở giai đoạn muộn (operation) là cao nhất.
+
+Câu 25: B đúng vì từ cần điền là "ngữ cảnh của dự án" - kiểm thử phụ thuộc ngữ cảnh như SDLC model, risk level.

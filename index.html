@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Examer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+    <main class="app">
+      <header class="app-header">
+        <h1>Simple Examer</h1>
+        <p>Luyen de trac nghiem tu file TXT, lam bai 40 phut/de.</p>
+      </header>
+      <section id="home-view" class="card">
+        <h2>Chon de thi</h2>
+        <p class="muted">
+          De 1-4.2: du 40 cau, random thu tu. Final: 50 cau (moi de 10 cau).
+        </p>
+        <div id="exam-buttons" class="exam-grid"></div>
+        <p id="loading-status" class="muted">Dang tai ngan hang cau hoi...</p>
+      </section>
+      <section id="exam-view" class="card hidden">
+        <div class="exam-top">
+          <div>
+            <h2 id="exam-title">De thi</h2>
+            <p id="exam-subtitle" class="muted"></p>
+          </div>
+          <div class="timer-box">
+            <span>Thoi gian con lai</span><strong id="timer">40:00</strong>
+          </div>
+        </div>
+        <form id="exam-form" class="question-list"></form>
+        <div class="actions">
+          <button id="submit-btn" type="button" class="btn btn-primary">
+            Nop bai</button
+          ><button id="back-btn" type="button" class="btn btn-ghost">
+            Ve trang chon de
+          </button>
+        </div>
+      </section>
+      <section id="result-view" class="card hidden">
+        <h2>Ket qua</h2>
+        <p id="result-summary"></p>
+        <div id="result-details" class="result-list"></div>
+        <div class="actions">
+          <button id="retry-btn" type="button" class="btn btn-primary">
+            Lam lai de nay</button
+          ><button id="home-btn" type="button" class="btn btn-ghost">
+            Chon de khac
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

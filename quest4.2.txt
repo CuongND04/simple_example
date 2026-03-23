@@ -1,0 +1,339 @@
+PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.
+
+Câu 1. Black-box testing là kỹ thuật kiểm thử mà người kiểm thử không cần làm việc như thế nào với cấu trúc bên trong phần mềm?
+A. Tham gia viết code                                  B. Biết chi tiết code
+C. Hiểu vấn đề logic                                   D. Phân tích yêu cầu
+
+Câu 2. Theo nội dung, test technique phụ thuộc vào bao nhiêu yếu tố khi lựa chọn?
+A. 8 yếu tố                                            B. 9 yếu tố
+C. 10 yếu tố                                           D. 11 yếu tố
+
+Câu 3. Equivalence partitioning chia dữ liệu thành các partition dựa trên nguyên tắc nào?
+A. Tất cả phần tử trong cùng partition được xử lý khác nhau
+B. Tất cả phần tử trong cùng partition được xử lý giống nhau
+C. Các partition không liên quan đến nhau
+D. Các partition chứa cùng số lượng phần tử
+
+Câu 4. Trong Boundary Value Analysis (BVA), giá trị nhỏ nhất/lớn nhất trong partition được gọi là gì?
+A. Critical values                                     B. Boundary values
+C. Essential values                                    D. Partition values
+
+Câu 5. BVA có thể áp dụng khi partition có đặc điểm nào?
+A. Có thứ tự (dữ liệu số hoặc tuần tự)                B. Không có thứ tự
+C. Chứa giá trị boolean                                D. Chứa giá trị rời rạc
+
+Câu 6. Decision table trong testing dùng để làm gì?
+A. Ghi lại các business rules phức tạp               B. Hiển thị cấu trúc dữ liệu
+C. Mô tả flow điều khiển                              D. Định nghĩa con trỏ dữ liệu
+
+Câu 7. Trong decision table, ký hiệu "X" dùng để biểu diễn cho actions có ý nghĩa gì?
+A. Action vừa mới được kích hoạt                      B. Action phải xảy ra
+C. Action bị loại trừ                                 D. Action có thể không xảy ra
+
+Câu 8. State transition testing áp dụng tốt nhất cho các ứng dụng có đặc điểm nào?
+A. Ứng dụng không có trạng thái                       B. Ứng dụng chỉ xử lý số
+C. Ứng dụng có các trạng thái cụ thể và chuyển đổi    D. Ứng dụng phi tuyến tính
+
+Câu 9. Coverage level 3 trong state transition testing yêu cầu bao phủ điều gì?
+A. Tất cả trạng thái xuất hiện ít nhất một lần        B. Tất cả event xảy ra ít nhất một lần
+C. Mọi transition path được test                      D. Tất cả cặp state được thử
+
+Câu 10. Pairwise testing khai thác ý tưởng nào?
+A. Lỗi phát sinh từ một tham số đầu vào đơn lẻ       B. Lỗi phát sinh từ tổ hợp giá trị của cặp tham số
+C. Lỗi phát sinh từ độ trễ trong hệ thống             D. Lỗi phát sinh từ dữ liệu lớn
+
+Câu 11. Chương trình được coi là "testable" khi nào?
+A. Output của tất cả input có thể được xác minh       B. Chương trình có output duy nhất
+C. Chương trình chạy nhanh                            D. Chương trình có code đơn giản
+
+Câu 12. Ví dụ nào dưới đây là untestable program?
+A. Tính 4 * 7 = 28                                    B. Tính trung bình của 100 triệu số thực
+C. Kiểm tra giá trị input                             D. Tìm kiếm phần tử trong danh sách
+
+Câu 13. Test oracle là gì?
+A. Cơ chế quyết định output chương trình đúng hay sai B. Cơ sở dữ liệu kiểm thử
+C. Kế hoạch kiểm thử                                  D. Báo cáo lỗi
+
+Câu 14. Quy trình Metamorphic Testing bắt đầu bằng bước nào?
+A. Xác định metamorphic relations                     B. Tạo và chạy source test cases
+C. Tạo follow-up test cases                           D. Xác minh tất cả MR
+
+Câu 15. Trong ví dụ metamorphic testing về tính tổng danh sách số, nếu thêm số a vào input thì output sẽ thay đổi như thế nào?
+A. Giảm a đơn vị                                      B. Tăng a đơn vị
+C. Không thay đổi                                     D. Nhân lên a lần
+
+PHẦN II. Câu trắc nghiệm điền từ.
+
+Câu 1. Black-box testing còn được gọi là ... technique vì tập trung vào input và output.
+A. behavioral                                         B. structural
+C. integration                                        D. unit
+
+Câu 2. Valid equivalence partition chứa ... hợp lệ mà hệ thống phải chấp nhận.
+A. cấu trúc                                           B. giá trị
+C. quy tắc                                            D. điều kiện
+
+Câu 3. Coverage được đo bằng số partition đã được test chia cho tổng số partition đã xác định, biểu diễn theo ...
+A. tỉ số                                              B. phân số
+C. phần trăm                                          D. giá trị tuyệt đối
+
+Câu 4. Boundary Value Analysis mở rộng từ kỹ thuật ... nhưng chỉ dùng được khi partition có thứ tự.
+A. Decision Table                                     B. Equivalence Partitioning
+C. State Transition                                   D. Pairwise Testing
+
+Câu 5. Hành vi ở biên thường dễ sai hơn hành vi bên trong ... theo BVA.
+A. test case                                          B. partition
+C. transition                                         D. state
+
+Câu 6. Trong kỹ thuật BVA, một biến thể dùng 3 điểm cho mỗi biên bao gồm: giá trị ngay trước biên, giá trị tại biên, và ...
+A. giá trị ngay sau biên                             B. giá trị trung bình
+C. giá trị cực đại                                    D. giá trị cực tiểu
+
+Câu 7. Các hàng trong decision table thường gồm conditions ở trên và ... ở dưới.
+A. effects                                            B. actions
+C. events                                             D. transitions
+
+Câu 8. Mỗi cột trong decision table tương ứng một ... : một tổ hợp điều kiện duy nhất dẫn tới tập action.
+A. decision rule                                      B. business rule
+C. test case                                          D. data element
+
+Câu 9. Trong ký hiệu decision table, "-" hay "N/A" dùng cho conditions có ý nghĩa điều kiện ...
+A. đúng                                               B. sai
+C. không quan trọng                                   D. bắt buộc
+
+Câu 10. State transition diagram mô tả các trạng thái có thể của phần mềm và cách hệ thống ... trạng thái.
+A. giữ nguyên                                         B. vào, thoát, chuyển
+C. so sánh                                            D. ghi nhớ
+
+Câu 11. Transition được kích hoạt bởi ... (ví dụ người dùng nhập giá trị) tạo ra chuyển trạng thái.
+A. error                                              B. event
+C. state                                              D. action
+
+Câu 12. Cùng một event có thể tạo 2 hoặc nhiều transition khác nhau từ cùng một ... theo state transition.
+A. output                                             B. condition
+C. state                                              D. rule
+
+Câu 13. Coverage level 1 trong state transition testing yêu cầu mỗi state xuất hiện ... lần.
+A. đúng 1                                             B. ít nhất 1
+C. đúng 2                                             D. ít nhất 2
+
+Câu 14. Coverage level 2 trong state transition testing yêu cầu mỗi ... xảy ra ít nhất một lần.
+A. state                                              B. action
+C. event                                              D. transition
+
+Câu 15. Testing level 3 trong state transition testing yêu cầu mọi ... được test.
+A. trạng thái                                         B. sự kiện
+C. đường chuyển trạng thái                            D. action
+
+Câu 16. Trong pairwise testing, ta chọn tập input parameters và ... tương ứng.
+A. output values                                      B. test cases
+C. các giá trị tương ứng                              D. business rules
+
+Câu 17. Nếu test toàn bộ tổ hợp trong ví dụ View Options (7 thuộc tính với 2-4 giá trị mỗi thuộc tính) cần tổng cộng ... test cases.
+A. 96                                                 B. 192
+C. 384                                                D. 768
+
+Câu 18. Pairwise testing giảm số lượng test cases bằng cách chỉ bao phủ các cặp ... giữa các tham số.
+A. liên tiếp                                          B. có thứ tự
+C. có ý nghĩa                                         D. tất cả
+
+Câu 19. Chương trình untestable (non-testable) là chương trình mà output của ... input không thể xác minh trực tiếp.
+A. tất cả                                             B. một số
+C. không có                                           D. ít
+
+Câu 20. Test oracle problem xảy ra khi không có test oracle hoặc oracle quá ... để áp dụng.
+A. đơn giản                                           B. đắt
+C. phức tạp                                           D. mới
+
+Câu 21. Metamorphic Testing khai thác mối quan hệ giữa các ... liên quan và output tương ứng.
+A. rules                                              B. conditions
+C. input                                              D. states
+
+Câu 22. Nếu tổng của 100 triệu số thực là S, khi thêm số m vào tập số, tổng mới phải là ...
+A. S * m                                              B. S / m
+C. S + m                                              D. S - m
+
+Câu 23. Trong quy trình Metamorphic Testing, ... là các thuộc tính của bài toán mà ta xác định.
+A. test cases                                         B. metamorphic relations (MR)
+C. invalid transitions                                D. oracle functions
+
+Câu 24. Follow-up test cases trong Metamorphic Testing được tạo từ ... test cases bằng các MR đã xác định.
+A. invalid                                            B. source
+C. failed                                             D. passed
+
+Câu 25. Khi follow-up test output không thỏa metamorphic relation đã xác định, kết luận là chương trình ...
+A. chạy quá chậm                                      B. có thể chứa lỗi
+C. thiếu input                                        D. hoạt động tốt
+
+---------------------------HẾT------------------------
+
+ĐÁP ÁN
+
+PHẦN I
+
+1.B
+
+2.C
+
+3.B
+
+4.B
+
+5.A
+
+6.A
+
+7.B
+
+8.C
+
+9.C
+
+10.B
+
+11.A
+
+12.B
+
+13.A
+
+14.B
+
+15.B
+
+PHẦN II
+
+1.A
+
+2.B
+
+3.C
+
+4.B
+
+5.B
+
+6.A
+
+7.B
+
+8.A
+
+9.C
+
+10.B
+
+11.B
+
+12.C
+
+13.B
+
+14.C
+
+15.C
+
+16.C
+
+17.C
+
+18.D
+
+19.B
+
+20.B
+
+21.C
+
+22.C
+
+23.B
+
+24.B
+
+25.B
+
+LỜI GIẢI
+
+PHẦN I
+
+Câu 1: B đúng vì Black-box testing (hay behavioral/behavior-based techniques) không cần tham chiếu cấu trúc nội bộ, chỉ tập trung vào input và output của đối tượng kiểm thử.
+
+Câu 2: C đúng vì theo nội dung, việc chọn kỹ thuật test phụ thuộc vào 10 yếu tố: độ phức tạp, tiêu chuẩn pháp quy, yêu cầu khách hàng, mức rủi ro, tài liệu, kiến thức tester, công cụ, thời gian, mô hình SDLC, và loại defect dự kiến.
+
+Câu 3: B đúng vì Equivalence partitioning chia dữ liệu thành các partition dựa trên nguyên tắc: tất cả phần tử trong cùng một partition được kỳ vọng xử lý giống nhau.
+
+Câu 4: B đúng vì trong Boundary Value Analysis, giá trị nhỏ nhất/lớn nhất (hoặc đầu/cuối) của partition được gọi là boundary values.
+
+Câu 5: A đúng vì BVA là mở rộng của equivalence partitioning, nhưng chỉ dùng được khi partition có thứ tự (dữ liệu số hoặc dữ liệu tuần tự như ngày/giờ).
+
+Câu 6: A đúng vì Decision table là cách tốt để ghi lại các business rules phức tạp mà hệ thống phải triển khai, giúp tester xác định conditions và actions tương ứng.
+
+Câu 7: B đúng vì trong decision table, ký hiệu "X" dùng cho actions có ý nghĩa action phải xảy ra (hay có thể ghi Y, T, 1).
+
+Câu 8: C đúng vì State transition testing áp dụng tốt cho ứng dụng menu-based, embedded, mô hình hóa business scenario có trạng thái cụ thể, hoặc kiểm thử điều hướng màn hình.
+
+Câu 9: C đúng vì Testing level 3 (hay Coverage level 3) yêu cầu tạo path sao cho mọi transition path (đường chuyển trạng thái từ input state đến end state) được test.
+
+Câu 10: B đúng vì Pairwise testing khai thác ý tưởng: nhiều lỗi phát sinh từ tổ hợp giá trị của cặp tham số đầu vào.
+
+Câu 11: A đúng vì theo nội dung, một chương trình được xem là testable nếu output của mọi input có thể được xác minh.
+
+Câu 12: B đúng vì ví dụ untestable program bao gồm: tính trung bình của 100 triệu số thực, Compiler, Search engine, hệ machine learning, Simulator - những chương trình mà output không thể xác minh trực tiếp.
+
+Câu 13: A đúng vì Test oracle là cơ chế có thể quyết định output chương trình đúng hay sai trong thời gian hợp lý.
+
+Câu 14: B đúng vì Quy trình Metamorphic Testing bắt đầu bằng bước: tạo và chạy source test cases (test gốc ban đầu).
+
+Câu 15: B đúng vì Trong metamorphic testing, nếu thêm một số m vào tập số có tổng S, thì tổng mới phải là S + m, tức output tăng m đơn vị.
+
+PHẦN II
+
+Câu 1: A đúng vì từ cần điền là "behavioral" do Black-box testing còn gọi là behavioral/behavior-based techniques vì dựa trên phân tích test basis và tập trung vào input/output.
+
+Câu 2: B đúng vì từ cần điền là "giá trị" do Valid equivalence partition chứa những giá trị hợp lệ mà hệ thống phải chấp nhận.
+
+Câu 3: C đúng vì từ cần điền là "phần trăm" do Coverage được đo bằng số partition đã test chia cho tổng số partition, thường biểu diễn theo phần trăm.
+
+Câu 4: B đúng vì từ cần điền là "Equivalence Partitioning" do BVA là mở rộng của equivalence partitioning nhưng chỉ dùng khi partition có thứ tự.
+
+Câu 5: B đúng vì từ cần điền là "partition" do theo BVA, hành vi ở biên thường dễ sai hơn hành vi bên trong partition.
+
+Câu 6: A đúng vì từ cần điền là "giá trị ngay sau biên" do một biến thể BVA dùng 3 điểm cho mỗi biên: trước biên, tại biên, sau biên.
+
+Câu 7: B đúng vì từ cần điền là "actions" do các conditions tạo thành các hàng, thường conditions ở trên và actions ở dưới trong decision table.
+
+Câu 8: A đúng vì từ cần điền là "decision rule" do mỗi cột tương ứng một decision rule: một tổ hợp điều kiện duy nhất dẫn tới tập action.
+
+Câu 9: C đúng vì từ cần điền là "không quan trọng" do ký hiệu "-" hay "N/A" trong decision table biểu diễn điều kiện không quan trọng (don't care).
+
+Câu 10: B đúng vì từ cần điền là "vào, thoát, chuyển" do State transition diagram mô tả cách hệ thống vào trạng thái, thoát trạng thái và chuyển trạng thái.
+
+Câu 11: B đúng vì từ cần điền là "event" do Transition được kích hoạt bởi event (ví dụ người dùng nhập giá trị) và event tạo ra chuyển trạng thái.
+
+Câu 12: C đúng vì từ cần điền là "state" do Cùng một event có thể tạo 2 hoặc nhiều transition khác nhau từ cùng một state.
+
+Câu 13: B đúng vì từ cần điền là "ít nhất 1" do Coverage level 1 yêu cầu tạo test case sao cho mỗi state xuất hiện ít nhất một lần.
+
+Câu 14: C đúng vì từ cần điền là "event" do Coverage level 2 yêu cầu tạo test case sao cho mỗi event xảy ra ít nhất một lần.
+
+Câu 15: C đúng vì từ cần điền là "đường chuyển trạng thái" do Testing level 3 yêu cầu tạo path sao cho mọi transition path (đường chuyển trạng thái xác định) được test.
+
+Câu 16: C đúng vì từ cần điền là "các giá trị tương ứng" do Trong pairwise testing, ta chọn tập input parameters và các giá trị tương ứng cho mỗi tham số.
+
+Câu 17: C đúng vì từ cần điền là "384" do Nếu test toàn bộ tổ hợp: 2 x 4 x 3 x 2 x 2 x 2 x 2 = 384 test cases cho 7 thuộc tính.
+
+Câu 18: D đúng vì từ cần điền là "tất cả" do Pairwise testing giảm số test cases bằng cách xây test set bao phủ hết các cặp tất cả giữa 2 tham số.
+
+Câu 19: B đúng vì từ cần điền là "một số" do Untestable program là chương trình mà output của một số input không thể xác minh trực tiếp.
+
+Câu 20: B đúng vì từ cần điền là "đắt" do Test oracle problem xảy ra khi không có test oracle hoặc có oracle nhưng quá đắt để áp dụng.
+
+Câu 21: C đúng vì từ cần điền là "input" do Metamorphic Testing khai thác mối quan hệ giữa các input liên quan và output tương ứng.
+
+Câu 22: C đúng vì từ cần điền là "S + m" do Nếu tổng của các số là S, khi thêm số m, tổng mới phải là S + m (tăng đúng m đơn vị).
+
+Câu 23: B đúng vì từ cần điền là "Metamorphic relations (MR)" do Trong quy trình Metamorphic Testing, MR là các thuộc tính của bài toán mà tester xác định.
+
+Câu 24: B đúng vì từ cần điền là "source" do Follow-up test cases được tạo từ source test cases (test gốc ban đầu) bằng các MR đã xác định.
+
+Câu 25: B đúng vì từ cần điền là "có thể chứa lỗi" do Khi follow-up test output không thỏa MR đã xác định, kết luận là chương trình có thể chứa lỗi và cần điều tra.

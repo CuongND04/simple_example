@@ -1,0 +1,383 @@
+PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.
+
+Câu 1. Theo IEEE, review là hoạt động gì?
+A. Một work product được trình bày cho các stakeholder để nhận xét hoặc phê duyệt
+B. Chỉ là quá trình kiểm thử phần mềm
+C. Giai đoạn vận hành hệ thống
+D. Bước triển khai cho khách hàng cuối cùng
+
+Câu 2. Mục tiêu trực tiếp của review là:
+A. Giảm chi phí nhân sự dự án
+B. Phát hiện lỗi phân tích, thiết kế và phê duyệt sản phẩm
+C. Tăng tốc độ phát triển mã nguồn
+D. Chuẩn bị bản phát hành sản phẩm
+
+Câu 3. Mục tiêu gián tiếp của review là:
+A. Tạo diễn đàn trao đổi tri thức chuyên môn
+B. Giảm buổi họp dự án
+C. Loại bỏ lỗi hoàn toàn
+D. Tăng số lượng thành viên dự án
+
+Câu 4. Management review được sử dụng để:
+A. Phát hiện lỗi chi tiết trong mã
+B. Xác định trạng thái kế hoạch và lịch tiến độ
+C. Kiểm thử giao diện người dùng
+D. Thực hiện sao lưu dữ liệu
+
+Câu 5. Technical review được sử dụng để:
+A. Quản lý ngân sách dự án
+B. Đánh giá mức phù hợp của sản phẩm và xác định sai lệch
+C. Huấn luyện nhân sự mới
+D. Cài đặt phần mềm trên máy chủ
+
+Câu 6. Inspection được sử dụng để:
+A. Kiểm tra hiệu năng hệ thống
+B. Phát hiện và định danh anomaly theo tiêu chí định trước
+C. Triển khai chức năng mới
+D. Chuẩn bị tài liệu người dùng
+
+Câu 7. Walk-through là hoạt động review:
+A. Chỉ có quản lý tham gia
+B. Không cần người tham gia
+C. Do người tác giả trình bày để nhân sự khác góp ý
+D. Ngoài phạm vi dự án
+
+Câu 8. Số lượng thành viên trong Inspection là:
+A. 1-2 người
+B. 2-3 người
+C. 3-6 người
+D. 7-10 người
+
+Câu 9. Review Leader của một cuộc review nên:
+A. Luôn là Project Leader
+B. Độc lập với team dự án và có kinh nghiệm
+C. Là người junior nhất trong team
+D. Không cần kinh nghiệm đặc biệt
+
+Câu 10. Tài liệu chuẩn bị trước phiên review bao gồm:
+A. Chỉ danh sách thành viên
+B. Đọc tài liệu, lập danh sách comment, hoàn thành checklist
+C. Chỉ đánh giá ngân sách
+D. Chỉ tính toán chi phí
+
+Câu 11. Thời lượng một phiên review không nên quá:
+A. 30 phút
+B. 1 giờ
+C. 2 giờ
+D. 4 giờ
+
+Câu 12. Mức quyết định "Partial approval" trong review có nghĩa:
+A. Toàn bộ dự án được duyệt
+B. Chỉ một phần dự án được duyệt, phần còn lại cần action item
+C. Không cho phép duyệt
+D. Hoãn quyết định
+
+Câu 13. Follow-up process trong review là:
+A. Kết thúc sau phiên review
+B. Xác minh action item đã được sửa theo yêu cầu
+C. Không cần thiết
+D. Chỉ dành cho management
+
+Câu 14. Checklist review được sử dụng trong loại review nào?
+A. Chỉ Management review
+B. Chỉ Technical review
+C. Đặc biệt quan trọng trong Inspection và tùy chọn ở các loại khác
+D. Không được sử dụng ở bất cứ đâu
+
+Câu 15. Theo định hướng thực hành review, phiên review nên tránh:
+A. Ghi chép chi tiết
+B. Sa vào thảo luận giải pháp sâu
+C. Xác minh comment
+D. Chuẩn bị tài liệu đầy đủ
+
+---
+
+PHẦN II. Câu trắc nghiệm điền từ.
+
+Câu 1. Review là hoạt động quan trọng vì con người thường khó tự phát hiện ... của chính mình.
+A. thành công
+B. lỗi
+C. kế hoạch
+D. tiến độ
+
+Câu 2. Review ở giai đoạn ... là cực kỳ quan trọng vì chi phí sửa lỗi ở giai đoạn muộn rất cao.
+A. cuối
+B. sớm
+C. vận hành
+D. triển khai
+
+Câu 3. Walk-through trong review nhằm tìm ... tiềm ẩn và vi phạm tiêu chuẩn.
+A. ưu điểm
+B. anomaly
+C. thành công
+D. yêu cầu
+
+Câu 4. Thành viên ... nên gồm các chuyên gia senior để có góc nhìn đa chiều.
+A. quản lý
+B. review team
+C. khách hàng
+D. nhà cung cấp
+
+Câu 5. Review Leader nên có mức seniority ít nhất tương đương ...
+A. intern
+B. junior developer
+C. project leader
+D. tester
+
+Câu 6. Trước phiên review, thành viên review team cần ... tài liệu để lập danh sách comment.
+A. tóm tắt lại
+B. đọc kỹ
+C. phê phán
+D. ký duyệt
+
+Câu 7. Danh sách ... là trách nhiệm chính của Review Leader sau phiên review.
+A. thành viên
+B. chi phí
+C. action item
+D. lịch biểu
+
+Câu 8. Review report bao gồm tóm tắt thảo luận, quyết định dự án, danh sách action item, và ...
+A. tên quản lý
+B. tên thành viên follow-up
+C. tên khách hàng
+D. tên nhà cung cấp
+
+Câu 9. Mỗi action item trong review report cần có ... và người chịu trách nhiệm.
+A. mục tiêu chỉ
+B. priority
+C. ngày hoàn thành dự kiến
+D. ngân sách
+
+Câu 10. Follow-up process cần xác minh từng action item đã được sửa như ... cho phép dự án đi tiếp.
+A. yêu cầu thêm
+B. điều kiện bắt buộc
+C. gợi ý
+D. tùy chọn
+
+Câu 11. Hạ tầng review bao gồm xây dựng ... cho các loại tài liệu phổ biến.
+A. chuẩn mã
+B. checklist
+C. quy trình
+D. báo cáo
+
+Câu 12. Trong phiên review, cần tránh sa vào thảo luận ... chi tiết.
+A. yêu cầu
+B. đặc tá
+C. giải pháp
+D. lỗi
+
+Câu 13. Thảo luận trong phiên review nên theo hướng ... không cá nhân hóa vấn đề.
+A. chỉ trích
+B. xây dựng
+C. tiêu cực
+D. cạnh tranh
+
+Câu 14. Khi tranh cãi về một lỗi trong review, nên ... tranh luận bằng cách ghi nhận issue.
+A. tiếp tục
+B. tránh
+C. kết thúc
+D. hoãn
+
+Câu 15. Lịch review nên được đưa vào ... chính thức của dự án.
+A. thông báo
+B. email
+C. kế hoạch
+D. agenda
+
+Câu 16. Checklist review cho lập kế hoạch phần mềm cần kiểm tra xem phạm vi ... hay không.
+A. quá lớn
+B. đã được xác định rõ ràng, không mơ hồ
+C. đã hoàn thành
+D. đã triển khai
+
+Câu 17. Checklist review cho phân tích yêu cầu cần xác minh rằng tất cả yêu cầu có truy vết được lên ...
+A. khách hàng
+B. mức hệ thống
+C. team phát triển
+D. nhà cung cấp
+
+Câu 18. Checklist review cho Preliminary Design Review cần kiểm tra ... của các module.
+A. chi phí
+B. tính độc lập chức năng
+C. số lượng
+D. kích thước
+
+Câu 19. Checklist review cho Design Walkthrough cần xác minh rằng thuật toán có ... logic.
+A. phức tạp
+B. sai
+C. đúng
+D. tương tự
+
+Câu 20. Checklist review cho coding cần kiểm tra xem thiết kế đã được ... sang mã nguồn chưa.
+A. tóm tắt
+B. chuyển dịch đúng
+C. hoàn thành
+D. kiểm thử
+
+Câu 21. Checklist review cho Test Plan cần xác nhận truy vết tới tiêu chí ... đã được thiết lập chưa.
+A. hiệu năng
+B. bảo mật
+C. validation/yêu cầu
+D. độ phúc tạp
+
+Câu 22. Checklist review cho Test Procedure cần kiểm tra xem có kiểm thử ... không.
+A. chỉ hành vi bình thường
+B. cả white-box và black-box
+C. chỉ tốc độ
+D. chỉ giao diện
+
+Câu 23. Checklist review cho bảo trì phần mềm cần xác minh thay đổi đã được ... và phê duyệt chưa.
+A. hoàn thành
+B. gợi ý
+C. tài liệu hóa, đánh giá
+D. kiểm thử
+
+Câu 24. FTR là viết tắt của ... được sử dụng phổ biến trong quy trình review.
+A. Formal Test Review
+B. Formal Technical Review
+C. Final Test Report
+D. Final Technical Review
+
+Câu 25. Mục đích của audit trong các hoạt động review là phân tích ... và đưa ra hành động khắc phục.
+A. lợi nhuận
+B. ngoại lệ
+C. thắng lợi
+D. chất lượng
+
+---
+
+ĐÁP ÁN
+
+PHẦN I
+
+1. A
+2. B
+3. A
+4. B
+5. B
+6. B
+7. C
+8. C
+9. B
+10. B
+11. C
+12. B
+13. B
+14. C
+15. B
+
+PHẦN II
+
+1. B
+2. B
+3. B
+4. B
+5. C
+6. B
+7. C
+8. B
+9. C
+10. B
+11. B
+12. C
+13. B
+14. C
+15. C
+16. B
+17. B
+18. B
+19. C
+20. B
+21. C
+22. B
+23. C
+24. B
+25. B
+
+---
+
+LỜI GIẢI
+
+PHẦN I
+
+Câu 1: A đúng vì theo định nghĩa IEEE, review là hoạt động mà trong đó một work product được trình bày cho các stakeholder để nhận xét hoặc phê duyệt.
+
+Câu 2: B đúng vì mục tiêu trực tiếp của review bao gồm phát hiện lỗi phân tích và thiết kế, xác định nội dung cần sửa đổi, và phê duyệt sản phẩm để chuyển sang pha kế tiếp.
+
+Câu 3: A đúng vì mục tiêu gián tiếp của review là tạo một diễn đàn để trao đổi tri thức chuyên môn về phương pháp, công cụ và kinh nghiệm.
+
+Câu 4: B đúng vì Management review được sử dụng để xác định trạng thái kế hoạch, lịch tiến độ, yêu cầu và phân bổ, cùng đánh giá hiệu quả các cách tiếp cận quản trị.
+
+Câu 5: B đúng vì Technical review dùng để đánh giá mức phù hợp của sản phẩm phần mềm với mục đích sử dụng và xác định sai lệch so với đặc tá.
+
+Câu 6: B đúng vì Inspection dùng để phát hiện và định danh anomaly trong phần mềm, bao gồm lỗi và sai lệch so với tiêu chuẩn/đặc tá.
+
+Câu 7: C đúng vì trong Walk-through, người tác giả trình bày công việc của mình và những người tham gia khác đặt câu hỏi, góp ý về anomaly tiềm ẩn.
+
+Câu 8: C đúng vì theo bảng so sánh các loại review, Inspection cần 3-6 người tham gia.
+
+Câu 9: B đúng vì Review Leader nên độc lập với team dự án, có kiến thức và kinh nghiệm với loại review được áp dụng.
+
+Câu 10: B đúng vì chuẩn bị review bao gồm đọc tài liệu trước phiên, lập danh sách comment, và hoàn thành checklist.
+
+Câu 11: C đúng vì theo hướng dẫn thực hành, thời lượng một phiên review không nên quá 2 giờ.
+
+Câu 12: B đúng vì Partial approval có nghĩa chỉ một phần dự án được chuyển pha, phần còn lại cần action item lớn trước khi được phép tiếp tục.
+
+Câu 13: B đúng vì Follow-up process là quá trình xác minh từng action item đã được sửa theo yêu cầu để cho phép dự án tiếp tục.
+
+Câu 14: C đúng vì Checklist review là yếu tố quan trọng đặc biệt trong Inspection và tùy chọn ở các loại review khác.
+
+Câu 15: B đúng vì theo hướng dẫn thực hành review, cần tránh sa vào thảo luận giải pháp sâu trong phiên review.
+
+PHẦN II
+
+Câu 1: B đúng vì từ cần điền là "lỗi" - con người thường khó tự phát hiện lỗi của chính mình, nên cần người khác tham gia review.
+
+Câu 2: B đúng vì từ cần điền là "sớm" - Review ở giai đoạn sớm là cực kỳ quan trọng vì chi phí sửa lỗi ở giai đoạn muộn rất cao.
+
+Câu 3: B đúng vì từ cần điền là "anomaly" - Walk-through nhằm tìm điểm bất thường tiềm ẩn và vi phạm tiêu chuẩn phát triển.
+
+Câu 4: B đúng vì từ cần điền là "review team" - thành viên review team nên gồm các chuyên gia senior từ team nội bộ kết hợp thêm các senior từ bộ phận khác.
+
+Câu 5: C đúng vì từ cần điền là "project leader" - Review Leader nên có mức seniority ít nhất tương đương project leader.
+
+Câu 6: B đúng vì từ cần điền là "đọc kỹ" - Thành viên review team cần đọc kỹ tài liệu trước phiên để lập danh sách comment.
+
+Câu 7: C đúng vì từ cần điền là "action item" - danh sách các hạng mục hành động cần xử lý là trách nhiệm chính của Review Leader.
+
+Câu 8: B đúng vì từ cần điền là "tên thành viên follow-up" - Review report cần nêu tên thành viên review team được giao follow-up.
+
+Câu 9: C đúng vì từ cần điền là "ngày hoàn thành dự kiến" - mỗi action item cần có ngày hoàn thành dự kiến và người chịu trách nhiệm.
+
+Câu 10: B đúng vì từ cần điền là "điều kiện bắt buộc" - Follow-up phải xác minh action item như điều kiện bắt buộc để dự án được phép tiếp tục.
+
+Câu 11: B đúng vì từ cần điền là "checklist" - hạ tầng review bao gồm xây dựng checklist cho các loại tài liệu phổ biến.
+
+Câu 12: C đúng vì từ cần điền là "giải pháp" - cần tránh sa vào thảo luận giải pháp chi tiết trong phiên review.
+
+Câu 13: B đúng vì từ cần điền là "xây dựng" - thảo luận nên theo hướng xây dựng, không cá nhân hóa vấn đề.
+
+Câu 14: C đúng vì từ cần điền là "kết thúc" - khi tranh cãi, nên kết thúc tranh luận bằng cách ghi nhận issue để xử lý ở diễn đàn khác.
+
+Câu 15: C đúng vì từ cần điền là "kế hoạch" - lịch review cần được đưa vào kế hoạch dự án chính thức.
+
+Câu 16: B đúng vì từ cần điền là "đã được xác định rõ ràng, không mơ hồ" - checklist hỏi liệu phạm vi có rõ ràng hay không.
+
+Câu 17: B đúng vì từ cần điền là "mức hệ thống" - tất cả yêu cầu cần có truy vết được lên mức hệ thống.
+
+Câu 18: B đúng vì từ cần điền là "tính độc lập chức năng" - cần kiểm tra các module có độc lập chức năng không.
+
+Câu 19: C đúng vì từ cần điền là "đúng" - thuật toán cần có đúng logic khi thực hiện.
+
+Câu 20: B đúng vì từ cần điền là "chuyển dịch đúng" - thiết kế cần được chuyển dịch đúng sang mã nguồn.
+
+Câu 21: C đúng vì từ cần điền là "validation/yêu cầu" - cần truy vết tới tiêu chí validation/yêu cầu từ pha phân tích.
+
+Câu 22: B đúng vì từ cần điền là "cả white-box và black-box" - Test Procedure cần đặc tá cả hai loại kiểm thử này.
+
+Câu 23: C đúng vì từ cần điền là "tài liệu hóa, đánh giá" - yêu cầu thay đổi cần được tài liệu hóa, đánh giá trước khi phê duyệt.
+
+Câu 24: B đúng vì từ cần điền là "Formal Technical Review" - FTR là rà soát kỹ thuật chính thức được sử dụng trong quy trình review.
+
+Câu 25: B đúng vì từ cần điền là "ngoại lệ" - audit nhằm phân tích các ngoại lệ và đưa ra hành động khắc phục.
