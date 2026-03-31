@@ -1,812 +1,649 @@
-const EXAM_SOURCES = [
-  { id: "quest1", label: "Đề 1", file: "quest1.txt" },
-  { id: "quest2", label: "Đề 2", file: "quest2.txt" },
-  { id: "quest3", label: "Đề 3", file: "quest3.txt" },
-  { id: "quest4_1", label: "Đề 4.1", file: "quest4.1.txt" },
-  { id: "quest4_2", label: "Đề 4.2", file: "quest4.2.txt" },
-];
+/**
+ * Question Parser
+ * Parses TXT files to extract question objects
+ */
+const QuestionParser = (() => {
+  const parseFile = (content) => {
+    const questions = [];
+    const blocks = content
+      .split("===QUESTION===")
+      .filter((block) => block.trim());
 
-const THEORY_SOURCES = [
-  "chap1_vi.md",
-  "chap2_vi.md",
-  "chap3_vi.md",
-  "chap4.1_vi.md",
-  "chap4.2_vi.md",
-];
-
-const THEORY_EXAM_ID = "theory_generated";
-const FINAL_SIZE_PER_EXAM = 10;
-const THEORY_EXAM_SIZE = 40;
-const EXAM_DURATION_SECONDS = 40 * 60;
-
-const ANSWER_SPLIT_REGEX = /(ĐÁP\s*ÁN|DAP\s*AN)/i;
-const PART_II_REGEX = /(PHẦN|PHAN)\s*II/i;
-const QUESTION_REGEX =
-  /(Câu|Cau)\s+(\d+)\.\s*([\s\S]*?)(?=\n\s*(Câu|Cau)\s+\d+\.|$)/gi;
-
-const state = {
-  pools: {},
-  activeExamType: null,
-  activeExamLabel: "",
-  activeQuestions: [],
-  timerLeft: EXAM_DURATION_SECONDS,
-  timerId: null,
-};
-
-const ui = {
-  homeView: document.getElementById("home-view"),
-  examView: document.getElementById("exam-view"),
-  resultView: document.getElementById("result-view"),
-  examButtons: document.getElementById("exam-buttons"),
-  loadingStatus: document.getElementById("loading-status"),
-  examTitle: document.getElementById("exam-title"),
-  examSubtitle: document.getElementById("exam-subtitle"),
-  timer: document.getElementById("timer"),
-  examForm: document.getElementById("exam-form"),
-  submitBtn: document.getElementById("submit-btn"),
-  backBtn: document.getElementById("back-btn"),
-  resultSummary: document.getElementById("result-summary"),
-  resultDetails: document.getElementById("result-details"),
-  retryBtn: document.getElementById("retry-btn"),
-  homeBtn: document.getElementById("home-btn"),
-};
-
-init();
-
-async function init() {
-  setupExamButtons();
-  setupActions();
-  await loadAllQuestionPools();
-}
-
-function setupExamButtons() {
-  const examButtons = EXAM_SOURCES.map(
-    (exam) =>
-      `<button class="btn btn-primary" data-exam-id="${exam.id}" disabled>${exam.label}</button>`,
-  ).join("");
-
-  ui.examButtons.innerHTML = `${examButtons}<button class="btn btn-primary" data-exam-id="final" disabled>Final Test (50 câu)</button><button class="btn btn-primary" data-exam-id="${THEORY_EXAM_ID}" disabled>Đề bổ sung (từ lý thuyết)</button>`;
-}
-
-function setupActions() {
-  ui.examButtons.addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-exam-id]");
-    if (!button) {
-      return;
+    for (const block of blocks) {
+      const question = parseBlock(block);
+      if (question) {
+        questions.push(question);
+      }
     }
-    startExam(button.getAttribute("data-exam-id"));
-  });
 
-  ui.submitBtn.addEventListener("click", () => submitExam(false));
-  ui.backBtn.addEventListener("click", () => {
-    stopTimer();
-    showView("home");
-  });
-  ui.homeBtn.addEventListener("click", () => showView("home"));
-  ui.retryBtn.addEventListener("click", () => {
-    if (state.activeExamType) {
-      startExam(state.activeExamType);
-    }
-  });
-}
+    return questions;
+  };
 
-async function loadAllQuestionPools() {
-  try {
-    const loadTasks = EXAM_SOURCES.map(async (exam) => {
-      const response = await fetch(exam.file);
-      if (!response.ok) {
-        throw new Error(`Không thể đọc file ${exam.file}`);
-      }
+  const parseBlock = (block) => {
+    const lines = block.trim().split("\n");
+    const data = {};
+    let multilineMode = null;
+    let multilineContent = [];
 
-      const text = await response.text();
-      const parsed = parseQuestionFile(text, exam.id);
-      if (!parsed.length) {
-        throw new Error(`Không tìm thấy câu hỏi trong ${exam.file}`);
-      }
-      state.pools[exam.id] = parsed;
-    });
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
 
-    await Promise.all(loadTasks);
-
-    const existingPromptSet = buildExistingPromptSet();
-
-    const theoryTask = (async () => {
-      try {
-        const theoryTexts = await Promise.all(
-          THEORY_SOURCES.map(async (file) => {
-            const response = await fetch(file);
-            if (!response.ok) {
-              throw new Error(`Không thể đọc file ${file}`);
-            }
-            return response.text();
-          }),
-        );
-
-        state.pools[THEORY_EXAM_ID] = buildTheoryQuestionPool(
-          theoryTexts,
-          existingPromptSet,
-        );
-      } catch (error) {
-        state.pools[THEORY_EXAM_ID] = [];
-        console.warn("Không thể tạo đề bổ sung từ lý thuyết:", error);
-      }
-    })();
-
-    await theoryTask;
-
-    [...ui.examButtons.querySelectorAll("button")].forEach((button) => {
-      button.disabled = false;
-    });
-
-    ui.loadingStatus.textContent = `Đã tải xong ngân hàng câu hỏi. Đề bổ sung từ lý thuyết: ${(state.pools[THEORY_EXAM_ID] || []).length} câu.`;
-  } catch (error) {
-    ui.loadingStatus.textContent = `Lỗi: ${error.message}`;
-    console.error(error);
-  }
-}
-
-function parseQuestionFile(content, examId) {
-  const split = content.split(ANSWER_SPLIT_REGEX);
-  const questionPart = split[0] || "";
-  const answerPart = split.slice(1).join(" ") || "";
-
-  const questionSections = splitByPart(questionPart);
-  const answerSections = splitByPart(answerPart);
-  const explanationSections = parseExplanations(content);
-
-  const result = [];
-
-  ["I", "II"].forEach((partKey) => {
-    const questions = parseQuestions(questionSections[partKey] || "");
-    const answers = parseAnswers(answerSections[partKey] || "");
-
-    for (const question of questions) {
-      const answer = answers.get(question.number) || "";
-      const hasAnswerOption = question.options.some(
-        (option) => option.key === answer,
-      );
-
-      if (!question.options.length || !answer || !hasAnswerOption) {
-        continue;
-      }
-
-      result.push({
-        uid: `${examId}-${partKey}-${question.number}`,
-        number: question.number,
-        part: partKey,
-        prompt: question.prompt,
-        options: question.options,
-        answer,
-        explanation:
-          explanationSections[partKey].get(question.number) ||
-          "Chưa có lời giải chi tiết cho câu này.",
-      });
-    }
-  });
-
-  return result;
-}
-
-function splitByPart(rawText) {
-  const sections = { I: "", II: "" };
-  const matchPartII = rawText.search(PART_II_REGEX);
-
-  if (matchPartII === -1) {
-    sections.I = rawText;
-    return sections;
-  }
-
-  sections.I = rawText.slice(0, matchPartII);
-  sections.II = rawText.slice(matchPartII);
-  return sections;
-}
-
-function parseQuestions(sectionText) {
-  const matches = [...sectionText.matchAll(QUESTION_REGEX)];
-
-  return matches
-    .map((match) => {
-      const number = Number(match[2]);
-      const body = match[3]
-        .replace(/\r/g, " ")
-        .replace(/\n+/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-      const firstOption = body.search(/[A-D]\.\s/);
-      if (firstOption < 0) {
-        return null;
-      }
-
-      const prompt = body.slice(0, firstOption).trim();
-      const optionText = body.slice(firstOption).trim();
-      const options = [];
-
-      const optionMatches = optionText.matchAll(
-        /([A-D])\.\s*([\s\S]*?)(?=(?:\s+[A-D]\.\s)|$)/g,
-      );
-
-      for (const optionMatch of optionMatches) {
-        options.push({
-          key: optionMatch[1].toUpperCase(),
-          text: optionMatch[2].trim(),
-        });
-      }
-
-      const seen = new Set();
-      const dedupedOptions = options.filter((option) => {
-        if (seen.has(option.key)) {
-          return false;
+      if (line.startsWith("id:")) {
+        data.id = line.substring(3).trim();
+      } else if (line.startsWith("topic:")) {
+        data.topic = line.substring(6).trim();
+      } else if (line.startsWith("context:")) {
+        data.context = line.substring(8).trim();
+        multilineMode = null;
+      } else if (line.startsWith("type:")) {
+        data.type = line.substring(5).trim();
+        multilineMode = null;
+      } else if (line.startsWith("question:")) {
+        multilineMode = "question";
+        const rest = line.substring(9).trim();
+        multilineContent = rest ? [rest] : [];
+      } else if (line.startsWith("answer:")) {
+        if (multilineMode === "question" && multilineContent.length > 0) {
+          data.question = multilineContent.join("\n").trim();
         }
-        seen.add(option.key);
-        return true;
-      });
-
-      return {
-        number,
-        prompt,
-        options: dedupedOptions,
-      };
-    })
-    .filter((q) => q && q.prompt && q.options.length >= 2);
-}
-
-function parseAnswers(sectionText) {
-  const map = new Map();
-  const matches = [...sectionText.matchAll(/(\d+)\.\s*([A-D])/gi)];
-
-  matches.forEach((match) => {
-    map.set(Number(match[1]), match[2].toUpperCase());
-  });
-
-  return map;
-}
-
-function parseExplanations(content) {
-  const sections = { I: new Map(), II: new Map() };
-  const split = content.split(/(LỜI\s*GIẢI|LOI\s*GIAI)/i);
-  if (split.length < 3) {
-    return sections;
-  }
-
-  const explanationRaw = split.slice(2).join(" ");
-  const explanationByPart = splitByPart(explanationRaw);
-
-  ["I", "II"].forEach((partKey) => {
-    const matches = [
-      ...explanationByPart[partKey].matchAll(
-        /(Câu|Cau)\s+(\d+)\s*:\s*([\s\S]*?)(?=\n\s*(Câu|Cau)\s+\d+\s*:|$)/gi,
-      ),
-    ];
-
-    matches.forEach((match) => {
-      const number = Number(match[2]);
-      const text = match[3]
-        .replace(/\r/g, "\n")
-        .replace(/\n{2,}/g, "\n")
-        .replace(/\s+$/g, "")
-        .trim();
-
-      if (number && text) {
-        sections[partKey].set(number, text);
+        data.answer = line.substring(7).trim();
+        multilineMode = null;
+      } else if (line.match(/^[A-D]:/)) {
+        if (!data.options) data.options = {};
+        const key = line[0];
+        data.options[key] = line.substring(2).trim();
+        multilineMode = null;
+      } else if (line.trim()) {
+        if (multilineMode === "question") {
+          multilineContent.push(line);
+        }
       }
+    }
+
+    if (multilineMode === "question" && multilineContent.length > 0) {
+      data.question = multilineContent.join("\n").trim();
+    }
+
+    // Validate required fields
+    if (data.id && data.type && data.question && data.answer) {
+      return data;
+    }
+
+    return null;
+  };
+
+  return {
+    parseFile,
+  };
+})();
+
+/**
+ * Storage Manager
+ * Handles localStorage for progress tracking
+ */
+const StorageManager = (() => {
+  const STORAGE_KEY_SCORES = "exam_scores_history";
+  const STORAGE_KEY_WRONG_COUNT = "exam_wrong_count";
+
+  const getScoresHistory = () => {
+    const data = localStorage.getItem(STORAGE_KEY_SCORES);
+    return data ? JSON.parse(data) : [];
+  };
+
+  const addScore = (examName, score, total) => {
+    const history = getScoresHistory();
+    history.push({
+      exam: examName,
+      score,
+      total,
+      percentage: Math.round((score / total) * 100),
+      timestamp: new Date().toISOString(),
     });
-  });
+    localStorage.setItem(STORAGE_KEY_SCORES, JSON.stringify(history));
+  };
 
-  return sections;
-}
+  const getWrongCounts = () => {
+    const data = localStorage.getItem(STORAGE_KEY_WRONG_COUNT);
+    return data ? JSON.parse(data) : {};
+  };
 
-function startExam(examId) {
-  if (examId === "final") {
-    state.activeQuestions = buildFinalExamQuestions();
-    state.activeExamLabel = "Final Test";
-  } else if (examId === THEORY_EXAM_ID) {
-    const pool = state.pools[THEORY_EXAM_ID] || [];
-    state.activeQuestions = shuffleArray(pool).slice(0, THEORY_EXAM_SIZE);
-    state.activeExamLabel = "Đề bổ sung (từ lý thuyết)";
-  } else {
-    const source = EXAM_SOURCES.find((item) => item.id === examId);
-    const pool = state.pools[examId] || [];
-    state.activeQuestions = shuffleArray(pool);
-    state.activeExamLabel = source ? source.label : "Đề thi";
-  }
+  const recordWrongAnswer = (questionId) => {
+    const counts = getWrongCounts();
+    counts[questionId] = (counts[questionId] || 0) + 1;
+    localStorage.setItem(STORAGE_KEY_WRONG_COUNT, JSON.stringify(counts));
+  };
 
-  if (!state.activeQuestions.length) {
-    ui.loadingStatus.textContent =
-      "Chưa tạo được câu hỏi bổ sung. Vui lòng kiểm tra file lý thuyết.";
-    showView("home");
-    return;
-  }
+  const getWeakQuestions = (allQuestions, threshold = 2) => {
+    const wrongCounts = getWrongCounts();
+    return allQuestions.filter((q) => (wrongCounts[q.id] || 0) >= threshold);
+  };
 
-  state.activeExamType = examId;
-  state.timerLeft = EXAM_DURATION_SECONDS;
+  return {
+    getScoresHistory,
+    addScore,
+    getWrongCounts,
+    recordWrongAnswer,
+    getWeakQuestions,
+  };
+})();
 
-  renderExam();
-  startTimer();
-  showView("exam");
-}
+/**
+ * Grader
+ * Compares user answers with correct answers
+ */
+const Grader = (() => {
+  const gradeQuestion = (question, userAnswer) => {
+    const correctAnswer = question.answer.trim();
 
-function buildFinalExamQuestions() {
-  const all = [];
-
-  EXAM_SOURCES.forEach((exam) => {
-    const pool = state.pools[exam.id] || [];
-    const picked = shuffleArray(pool).slice(0, FINAL_SIZE_PER_EXAM);
-    all.push(...picked.map((q) => ({ ...q, sourceLabel: exam.label })));
-  });
-
-  return shuffleArray(all);
-}
-
-function renderExam() {
-  const subtitle =
-    state.activeExamType === "final"
-      ? "50 câu (mỗi đề 10 câu), thời gian 40 phút"
-      : state.activeExamType === THEORY_EXAM_ID
-        ? `${state.activeQuestions.length} câu tạo từ chương 1 đến chương 4.2, thời gian 40 phút`
-        : "40 câu đầy đủ từ đề gốc, ngẫu nhiên thứ tự, thời gian 40 phút";
-
-  ui.examTitle.textContent = state.activeExamLabel;
-  ui.examSubtitle.textContent = subtitle;
-  ui.timer.textContent = formatTime(state.timerLeft);
-
-  ui.examForm.innerHTML = state.activeQuestions
-    .map((q, index) => {
-      const optionsHtml = q.options
-        .map(
-          (option) =>
-            `<label class="option"><input type="radio" name="q_${index}" value="${option.key}" /> <span><strong>${option.key}.</strong> ${escapeHtml(option.text)}</span></label>`,
-        )
-        .join("");
-
-      const sourceTag = q.sourceLabel
-        ? `<p class="muted">Nguồn: ${q.sourceLabel}</p>`
-        : "";
-
-      return `<article class="question-card"><h3>Câu ${index + 1}: ${escapeHtml(q.prompt)}</h3>${sourceTag}${optionsHtml}</article>`;
-    })
-    .join("");
-}
-
-function startTimer() {
-  stopTimer();
-  state.timerId = setInterval(() => {
-    state.timerLeft -= 1;
-    ui.timer.textContent = formatTime(state.timerLeft);
-
-    if (state.timerLeft <= 0) {
-      stopTimer();
-      submitExam(true);
-    }
-  }, 1000);
-}
-
-function stopTimer() {
-  if (state.timerId) {
-    clearInterval(state.timerId);
-    state.timerId = null;
-  }
-}
-
-function submitExam(isTimeUp) {
-  stopTimer();
-
-  const answers = state.activeQuestions.map((_, index) => {
-    const selected = ui.examForm.querySelector(
-      `input[name="q_${index}"]:checked`,
-    );
-    return selected ? selected.value : "";
-  });
-
-  let correctCount = 0;
-  const detailHtml = state.activeQuestions
-    .map((question, index) => {
-      const selected = answers[index];
-      const correctOption = question.options.find(
-        (option) => option.key === question.answer,
-      );
-
-      const isCorrect = selected && selected === question.answer;
-      if (isCorrect) {
-        correctCount += 1;
-      }
-
-      const optionsHtml = question.options
-        .map((option) => {
-          const classes = ["result-option"];
-          if (option.key === question.answer) {
-            classes.push("correct");
-          }
-          if (selected === option.key && selected !== question.answer) {
-            classes.push("wrong-selected");
-          }
-
-          return `<li class="${classes.join(" ")}"><span class="option-key">${option.key}.</span> ${escapeHtml(option.text)}</li>`;
-        })
-        .join("");
-
-      const explanationText = question.explanation
-        ? escapeHtmlWithBreaks(question.explanation)
-        : "Chưa có lời giải chi tiết cho câu này.";
-
-      const selectedText = selected
-        ? `Bạn chọn: ${escapeHtml(selected)}`
-        : "Bạn chọn: (bỏ trống)";
-      const correctText = correctOption
-        ? `Đáp án đúng: ${escapeHtml(correctOption.key)}`
-        : `Đáp án đúng: ${escapeHtml(question.answer)}`;
-
-      return `<div class="result-item ${isCorrect ? "ok" : "bad"}"><div class="result-status ${isCorrect ? "ok" : "bad"}">${isCorrect ? "Đúng" : "Sai"}</div><p><strong>Câu ${index + 1}:</strong> ${escapeHtml(question.prompt)}</p><p class="result-meta">${selectedText} | ${correctText}</p><ul class="result-options">${optionsHtml}</ul><div class="result-explanation"><strong>Giải thích:</strong> ${explanationText}</div></div>`;
-    })
-    .join("");
-
-  const total = state.activeQuestions.length;
-  const score10 = ((correctCount / total) * 10).toFixed(2);
-  const timeMessage = isTimeUp ? " (Hết giờ)" : "";
-
-  ui.resultSummary.textContent = `Đúng ${correctCount}/${total} câu. Điểm quy đổi: ${score10}/10.${timeMessage}`;
-  ui.resultDetails.innerHTML = detailHtml;
-
-  showView("result");
-}
-
-function showView(name) {
-  ui.homeView.classList.toggle("hidden", name !== "home");
-  ui.examView.classList.toggle("hidden", name !== "exam");
-  ui.resultView.classList.toggle("hidden", name !== "result");
-}
-
-function formatTime(totalSeconds) {
-  const safe = Math.max(0, totalSeconds);
-  const mins = Math.floor(safe / 60)
-    .toString()
-    .padStart(2, "0");
-  const secs = (safe % 60).toString().padStart(2, "0");
-  return `${mins}:${secs}`;
-}
-
-function shuffleArray(input) {
-  const arr = [...input];
-  for (let i = arr.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-function escapeHtml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function escapeHtmlWithBreaks(value) {
-  return escapeHtml(value).replaceAll("\n", "<br />");
-}
-
-function buildTheoryQuestionPool(chapterTexts, existingPromptSet = new Set()) {
-  const chapterLabels = [
-    "Chương 1",
-    "Chương 2",
-    "Chương 3",
-    "Chương 4.1",
-    "Chương 4.2",
-  ];
-  const pairs = [];
-
-  chapterTexts.forEach((text, chapterIndex) => {
-    const chapterPairs = extractTheoryPairs(text).map((pair) => ({
-      ...pair,
-      source: chapterLabels[chapterIndex] || `Chương ${chapterIndex + 1}`,
-    }));
-    pairs.push(...chapterPairs);
-  });
-
-  const uniquePairs = dedupePairs(pairs);
-  const terms = [...new Set(uniquePairs.map((item) => item.term))].filter(
-    (term) => term.length >= 3,
-  );
-
-  const questions = uniquePairs
-    .map((item, index) => {
-      const distractors = pickDistractors(terms, item.term, 3);
-      if (distractors.length < 3) {
-        return null;
-      }
-
-      const options = shuffleArray([item.term, ...distractors]).map(
-        (term, optionIndex) => ({
-          key: ["A", "B", "C", "D"][optionIndex],
-          text: term,
-        }),
-      );
-
-      const correctOption = options.find((option) => option.text === item.term);
-      if (!correctOption) {
-        return null;
-      }
-
-      const prompt = `Theo nội dung lý thuyết, mô tả sau thuộc khái niệm nào? ${item.clue}`;
-      const normalizedPrompt = normalizePromptForCompare(prompt);
-      if (isPromptTooSimilar(normalizedPrompt, existingPromptSet)) {
-        return null;
-      }
-
-      return {
-        uid: `${THEORY_EXAM_ID}-${index + 1}`,
-        number: index + 1,
-        part: "T",
-        prompt,
-        options,
-        answer: correctOption.key,
-        explanation: `Đáp án đúng là "${item.term}" vì mô tả này được trích từ ${item.source}.`,
-      };
-    })
-    .filter(Boolean);
-
-  return shuffleArray(questions).slice(0, 200);
-}
-
-function extractTheoryPairs(markdown) {
-  const text = normalizeTheoryText(markdown);
-  const lines = splitTheoryLines(markdown);
-  const terms = extractCandidateTerms(markdown);
-  const pairs = [];
-
-  lines.forEach((line) => {
-    const searchLine = normalizeForSearch(line);
-    if (!isDefinitionLikeSentence(searchLine)) {
-      return;
+    if (question.type === "fill") {
+      return gradeFill(userAnswer, correctAnswer);
+    } else if (question.type === "single") {
+      return gradeSingle(userAnswer, correctAnswer);
+    } else if (question.type === "multiple") {
+      return gradeMultiple(userAnswer, correctAnswer);
     }
 
-    const term = extractTermFromDefinition(line);
-    if (!term) {
-      return;
-    }
+    return false;
+  };
 
-    const clue = trimClue(line, term);
-    if (!clue || clue.length < 20) {
-      return;
-    }
+  const gradeFill = (userAnswer, correctAnswer) => {
+    return userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
+  };
 
-    pairs.push({ term, clue });
-  });
+  const gradeSingle = (userAnswer, correctAnswer) => {
+    return userAnswer.trim().toUpperCase() === correctAnswer.toUpperCase();
+  };
 
-  // Fallback: map heading/bold terms into nearby definition lines.
-  terms.forEach((term) => {
-    const termKey = normalizeForSearch(term);
-    const matched = lines.find((line) => {
-      const key = normalizeForSearch(line);
-      return key.includes(termKey) && isDefinitionLikeSentence(key);
-    });
+  const gradeMultiple = (userAnswer, correctAnswer) => {
+    const userAnswers = userAnswer
+      .split(",")
+      .map((a) => a.trim().toUpperCase())
+      .sort();
+    const correctAnswers = correctAnswer
+      .split(",")
+      .map((a) => a.trim().toUpperCase())
+      .sort();
 
-    if (!matched) {
-      return;
-    }
-
-    const clue = trimClue(matched, term);
-    if (!clue || clue.length < 20) {
-      return;
-    }
-
-    pairs.push({ term, clue });
-  });
-
-  return dedupePairs(pairs);
-}
-
-function normalizeTheoryText(markdown) {
-  return markdown
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/\r/g, "\n")
-    .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-    .replace(/[>*`#]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function extractCandidateTerms(markdown) {
-  const headingTerms = [...markdown.matchAll(/^#{2,4}\s+(.+)$/gm)].map((m) =>
-    cleanCandidateTerm(m[1]),
-  );
-  const boldTerms = [...markdown.matchAll(/\*\*([^*]{3,120})\*\*/g)].map((m) =>
-    cleanCandidateTerm(m[1]),
-  );
-
-  return [...new Set([...headingTerms, ...boldTerms])].filter((term) => {
-    if (!term || term.length < 4 || term.length > 80) {
+    if (userAnswers.length !== correctAnswers.length) {
       return false;
     }
 
-    const normalized = normalizeForSearch(term);
-    const isAcronym = /^[A-Z0-9]{2,10}$/.test(term);
-    const wordCount = term.split(/\s+/).length;
+    return userAnswers.every((a, i) => a === correctAnswers[i]);
+  };
 
-    return (
-      (wordCount >= 2 || isAcronym) &&
-      !normalized.startsWith("chuong") &&
-      !normalized.startsWith("phan") &&
-      !normalized.startsWith("dan y") &&
-      !normalized.startsWith("tai lieu") &&
-      !normalized.includes("loi giai") &&
-      !normalized.includes("mastering software quality assurance") &&
-      !normalized.includes("introduction to software testing")
-    );
-  });
-}
+  return {
+    gradeQuestion,
+  };
+})();
 
-function splitTheoryLines(markdown) {
-  return markdown
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/\r/g, "\n")
-    .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-    .replace(/\n+/g, "\n")
-    .replace(/\n/g, ". ")
-    .split(/(?<=[.;:!?])\s+/)
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter((line) => line.length >= 24 && line.length <= 320)
-    .filter((line) => !/^\d+\.\s*[A-D]\b/.test(line));
-}
+/**
+ * Renderer
+ * Renders UI components
+ */
+const Renderer = (() => {
+  const renderExamSelector = (exams) => {
+    const container = document.getElementById("examList");
+    container.innerHTML = "";
 
-function trimClue(sentence, term) {
-  const cleaned = sentence
-    .replace(/\*+/g, " ")
-    .replace(/#+/g, " ")
-    .replace(/[<>`]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!normalizeForSearch(cleaned).includes(normalizeForSearch(term))) {
-    return "";
-  }
-
-  const withoutTerm = cleaned
-    .replace(new RegExp(escapeRegExp(term), "gi"), "")
-    .replace(
-      /^(là|bao gồm|gồm|là\s+gì|được\s+xem\s+là|được\s+định\s+nghĩa\s+là)\s*/i,
-      "",
-    )
-    .replace(/^[\s:;,.\-–—]+/, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  const finalClue = withoutTerm || cleaned;
-  const maxLength = 180;
-
-  if (finalClue.length <= maxLength) {
-    return finalClue;
-  }
-
-  return `${finalClue.slice(0, maxLength).trim()}...`;
-}
-
-function dedupePairs(pairs) {
-  const map = new Map();
-  pairs.forEach((item) => {
-    const key = `${normalizeForSearch(item.term)}|${normalizeForSearch(item.clue)}`;
-    if (!map.has(key)) {
-      map.set(key, item);
+    for (const exam of exams) {
+      const btn = document.createElement("button");
+      btn.className = "exam-btn";
+      btn.type = "button";
+      btn.textContent = exam.label;
+      btn.dataset.examId = exam.id;
+      btn.onclick = () => ExamEngine.startExam(exam.id, exam.label, exam.file);
+      container.appendChild(btn);
     }
-  });
-  return [...map.values()];
-}
+  };
 
-function extractTermFromDefinition(line) {
-  const compact = line.replace(/\s+/g, " ").trim();
-  if (!compact) {
+  const renderQuestions = (questions, submitted = false) => {
+    const container = document.getElementById("questionsContainer");
+    container.innerHTML = "";
+
+    questions.forEach((question, index) => {
+      const card = document.createElement("div");
+      card.className = "question-card";
+      card.id = `question-${question.id}`;
+
+      let contentHTML = `
+        <div class="question-number">Question ${index + 1}</div>
+        ${question.topic ? `<span class="question-topic">${escapeHtml(question.topic)}</span>` : ""}
+        ${question.context ? `<div class="question-context">${escapeHtml(question.context)}</div>` : ""}
+        <div class="question-text">${escapeHtml(question.question)}</div>
+      `;
+
+      if (question.type === "fill") {
+        contentHTML += renderFillInput(question, submitted);
+      } else if (question.type === "single") {
+        contentHTML += renderSingleChoice(question, submitted);
+      } else if (question.type === "multiple") {
+        contentHTML += renderMultipleChoice(question, submitted);
+      }
+
+      card.innerHTML = contentHTML;
+
+      if (submitted) {
+        card.classList.add("submitted");
+      }
+
+      container.appendChild(card);
+    });
+  };
+
+  const renderFillInput = (question, submitted) => {
+    const value = document.getElementById(`answer-${question.id}`)?.value || "";
+    const disabled = submitted ? "disabled" : "";
+    return `
+      <div class="form-group">
+        <input
+          type="text"
+          id="answer-${question.id}"
+          class="fill-input"
+          placeholder="Enter your answer"
+          value="${escapeHtml(value)}"
+          ${disabled}
+        />
+      </div>
+    `;
+  };
+
+  const renderSingleChoice = (question, submitted) => {
+    const selectedValue =
+      document.querySelector(`input[name="answer-${question.id}"]:checked`)
+        ?.value || "";
+    const disabled = submitted ? "disabled" : "";
+    const optionKeys = ["A", "B", "C", "D"];
+    let html = '<div class="form-group options">';
+
+    for (const key of optionKeys) {
+      if (question.options && question.options[key]) {
+        const checked = selectedValue === key ? "checked" : "";
+        html += `
+          <label class="option-label">
+            <input
+              type="radio"
+              name="answer-${question.id}"
+              value="${key}"
+              ${checked}
+              ${disabled}
+            />
+            <span class="option-text"><strong>${key}:</strong> ${escapeHtml(question.options[key])}</span>
+          </label>
+        `;
+      }
+    }
+
+    html += "</div>";
+    return html;
+  };
+
+  const renderMultipleChoice = (question, submitted) => {
+    const selectedValues = Array.from(
+      document.querySelectorAll(`input[name="answer-${question.id}"]:checked`),
+    ).map((el) => el.value);
+    const disabled = submitted ? "disabled" : "";
+    const optionKeys = ["A", "B", "C", "D"];
+    let html = '<div class="form-group options">';
+
+    for (const key of optionKeys) {
+      if (question.options && question.options[key]) {
+        const checked = selectedValues.includes(key) ? "checked" : "";
+        html += `
+          <label class="option-label">
+            <input
+              type="checkbox"
+              name="answer-${question.id}"
+              value="${key}"
+              ${checked}
+              ${disabled}
+            />
+            <span class="option-text"><strong>${key}:</strong> ${escapeHtml(question.options[key])}</span>
+          </label>
+        `;
+      }
+    }
+
+    html += "</div>";
+    return html;
+  };
+
+  const renderResults = (questions, gradeResults) => {
+    document.getElementById("selectorPage").classList.remove("active");
+    document.getElementById("examPage").classList.remove("active");
+    document.getElementById("resultsPage").classList.add("active");
+
+    const correctCount = gradeResults.filter((r) => r.isCorrect).length;
+    const totalCount = gradeResults.length;
+    const percentage = Math.round((correctCount / totalCount) * 100);
+
+    document.getElementById("totalScore").textContent =
+      `${correctCount}/${totalCount}`;
+    document.getElementById("correctCount").textContent = correctCount;
+    document.getElementById("wrongCount").textContent =
+      totalCount - correctCount;
+    document.getElementById("percentage").textContent = `${percentage}%`;
+
+    const feedbackContainer = document.getElementById("resultsFeedback");
+    feedbackContainer.innerHTML = "";
+
+    questions.forEach((question, index) => {
+      const result = gradeResults[index];
+      const item = document.createElement("div");
+      item.className = `result-item ${result.isCorrect ? "correct" : "wrong"}`;
+
+      let answerDisplay = "";
+
+      if (question.type === "fill") {
+        answerDisplay = `Your answer: <span class="result-answer-label">"${escapeHtml(result.userAnswer)}"</span>`;
+      } else if (question.type === "single") {
+        answerDisplay = `Your answer: <span class="result-answer-label">${result.userAnswer}</span>`;
+      } else if (question.type === "multiple") {
+        answerDisplay = `Your answer: <span class="result-answer-label">${result.userAnswer || "Not answered"}</span>`;
+      }
+
+      item.innerHTML = `
+        <div class="result-header">
+          <span>${result.isCorrect ? "✓ Correct" : "✗ Wrong"}</span>
+          <div class="question-id">Q${index + 1}: ${escapeHtml(question.id)}</div>
+        </div>
+        <div class="result-answer">${answerDisplay}</div>
+        <div class="result-answer">Correct answer: <span class="result-answer-label">${escapeHtml(result.correctAnswer)}</span></div>
+      `;
+
+      feedbackContainer.appendChild(item);
+    });
+  };
+
+  return {
+    renderExamSelector,
+    renderQuestions,
+    renderResults,
+  };
+})();
+
+/**
+ * Exam Engine
+ * Main exam management logic
+ */
+const ExamEngine = (() => {
+  let currentExamQuestions = [];
+  let currentExamName = "";
+  let currentExamFile = "";
+  let isSubmitted = false;
+
+  const loadExamFile = async (filename) => {
+    try {
+      const response = await fetch(filename);
+
+      if (!response.ok) throw new Error(`Failed to load ${filename}`);
+      const text = await response.text();
+      return QuestionParser.parseFile(text);
+    } catch (error) {
+      console.error("Error loading exam file:", error);
+      alert(`Error loading exam: ${error.message}`);
+      return [];
+    }
+  };
+
+  const shuffleArray = (array) => {
+    const arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr;
+  };
+
+  const startExam = async (examId, examLabel, examFile) => {
+    currentExamName = examLabel;
+    currentExamFile = examFile;
+    isSubmitted = false;
+
+    const questions = await loadExamFile(examFile);
+
+    if (questions.length === 0) {
+      alert("No questions loaded from the exam file.");
+      return;
+    }
+
+    // Shuffle questions while preserving their identity
+    currentExamQuestions = shuffleArray(questions);
+
+    // Render questions
+    Renderer.renderQuestions(currentExamQuestions, false);
+
+    // Update UI
+    document.getElementById("selectorPage").classList.remove("active");
+    document.getElementById("examPage").classList.add("active");
+    document.getElementById("examTitleDisplay").textContent = examLabel;
+    document.getElementById("questionCount").textContent =
+      `(${currentExamQuestions.length} questions)`;
+
+    // Reset scroll
+    window.scrollTo(0, 0);
+  };
+
+  const submitExam = () => {
+    if (isSubmitted) {
+      alert("Exam already submitted!");
+      return;
+    }
+
+    isSubmitted = true;
+
+    // Collect answers
+    const gradeResults = [];
+
+    for (const question of currentExamQuestions) {
+      const userAnswer = getUserAnswer(question);
+      const isCorrect = Grader.gradeQuestion(question, userAnswer);
+
+      gradeResults.push({
+        userAnswer,
+        correctAnswer: question.answer,
+        isCorrect,
+      });
+
+      // Track wrong answers
+      if (!isCorrect) {
+        StorageManager.recordWrongAnswer(question.id);
+      }
+    }
+
+    // Save score
+    const correctCount = gradeResults.filter((r) => r.isCorrect).length;
+    StorageManager.addScore(
+      currentExamName,
+      correctCount,
+      currentExamQuestions.length,
+    );
+
+    // Render results
+    Renderer.renderResults(currentExamQuestions, gradeResults);
+  };
+
+  const getUserAnswer = (question) => {
+    if (question.type === "fill") {
+      const input = document.getElementById(`answer-${question.id}`);
+      return input ? input.value : "";
+    } else if (question.type === "single") {
+      const radio = document.querySelector(
+        `input[name="answer-${question.id}"]:checked`,
+      );
+      return radio ? radio.value : "";
+    } else if (question.type === "multiple") {
+      const checkboxes = Array.from(
+        document.querySelectorAll(
+          `input[name="answer-${question.id}"]:checked`,
+        ),
+      );
+      return checkboxes
+        .map((cb) => cb.value)
+        .sort()
+        .join(",");
+    }
+
     return "";
-  }
+  };
 
-  const patterns = [
-    /^(.{3,90}?)\s+là\s+/i,
-    /^(.{3,90}?)\s+bao gồm\s+/i,
-    /^(.{3,90}?)\s+gồm\s+/i,
-    /^(.{3,90}?)\s+được\s+xem\s+là\s+/i,
-    /^(.{3,90}?)\s+được\s+định\s+nghĩa\s+là\s+/i,
+  const retakeExam = async () => {
+    // Reload the same exam but with shuffled questions
+    if (currentExamFile) {
+      await startExam(currentExamName, currentExamName, currentExamFile);
+    }
+  };
+
+  return {
+    startExam,
+    submitExam,
+    retakeExam,
+  };
+})();
+
+/**
+ * UI Event Listeners
+ */
+const initializeUI = () => {
+  // Exam selector
+  const exams = [
+    {
+      id: "Chuong_1_De_1",
+      label: "Chapter 1 - Exam 1",
+      file: "Chuong_1_De_1.txt",
+    },
+    {
+      id: "Chuong_1_De_2",
+      label: "Chapter 1 - Exam 2",
+      file: "Chuong_1_De_2.txt",
+    },
+    {
+      id: "Chuong_2_De_1",
+      label: "Chapter 2 - Exam 1",
+      file: "Chuong_2_De_1.txt",
+    },
+    {
+      id: "Chuong_2_De_2",
+      label: "Chapter 2 - Exam 2",
+      file: "Chuong_2_De_2.txt",
+    },
+    {
+      id: "Chuong_3_De_1",
+      label: "Chapter 3 - Exam 1",
+      file: "Chuong_3_De_1.txt",
+    },
+    {
+      id: "Chuong_3_De_2",
+      label: "Chapter 3 - Exam 2",
+      file: "Chuong_3_De_2.txt",
+    },
+    {
+      id: "Chuong_4.1_De_1",
+      label: "Chapter 4.1 - Exam 1",
+      file: "Chuong_4.1_De_1.txt",
+    },
+    {
+      id: "Chuong_4.1_De_2",
+      label: "Chapter 4.1 - Exam 2",
+      file: "Chuong_4.1_De_2.txt",
+    },
+    {
+      id: "Chuong_4.2_De_1",
+      label: "Chapter 4.2 - Exam 1",
+      file: "Chuong_4.2_De_1.txt",
+    },
+    {
+      id: "Chuong_4.2_De_2",
+      label: "Chapter 4.2 - Exam 2",
+      file: "Chuong_4.2_De_2.txt",
+    },
+    {
+      id: "Chuong_5_De_1",
+      label: "Chapter 5 - Exam 1",
+      file: "Chuong_5_De_1.txt",
+    },
+    {
+      id: "Chuong_5_De_2",
+      label: "Chapter 5 - Exam 2",
+      file: "Chuong_5_De_2.txt",
+    },
   ];
 
-  for (const pattern of patterns) {
-    const matched = compact.match(pattern);
-    if (!matched) {
-      continue;
-    }
+  Renderer.renderExamSelector(exams);
 
-    const term = cleanCandidateTerm(matched[1]);
-    const wordCount = term.split(/\s+/).length;
-    if (term.length >= 3 && term.length <= 80 && wordCount <= 10) {
-      return term;
-    }
-  }
+  // Event listeners
+  document.getElementById("submitBtn").onclick = ExamEngine.submitExam;
+  document.getElementById("backBtn").onclick = goBackToSelector;
+  document.getElementById("retakeBtn").onclick = retakeExam;
+  document.getElementById("backToSelectorBtn").onclick = goBackToSelector;
+  document.getElementById("practiceWeakBtn").onclick = practiceWeakQuestions;
+};
 
-  return "";
-}
+const goBackToSelector = () => {
+  document.getElementById("selectorPage").classList.add("active");
+  document.getElementById("examPage").classList.remove("active");
+  document.getElementById("resultsPage").classList.remove("active");
+  window.scrollTo(0, 0);
+};
 
-function buildExistingPromptSet() {
-  const allPrompts = [];
+const retakeExam = () => {
+  ExamEngine.retakeExam();
+};
 
-  EXAM_SOURCES.forEach((exam) => {
-    const pool = state.pools[exam.id] || [];
-    pool.forEach((question) => {
-      allPrompts.push(normalizePromptForCompare(question.prompt));
-    });
-  });
+const practiceWeakQuestions = async () => {
+  const allQuestions = [];
 
-  return new Set(allPrompts.filter(Boolean));
-}
+  const exams = [
+    { id: "Chuong_1_De_1", file: "Chuong_1_De_1.txt" },
+    { id: "Chuong_1_De_2", file: "Chuong_1_De_2.txt" },
+    { id: "Chuong_2_De_1", file: "Chuong_2_De_1.txt" },
+    { id: "Chuong_2_De_2", file: "Chuong_2_De_2.txt" },
+    { id: "Chuong_3_De_1", file: "Chuong_3_De_1.txt" },
+    { id: "Chuong_3_De_2", file: "Chuong_3_De_2.txt" },
+    { id: "Chuong_4.1_De_1", file: "Chuong_4.1_De_1.txt" },
+    { id: "Chuong_4.1_De_2", file: "Chuong_4.1_De_2.txt" },
+    { id: "Chuong_4.2_De_1", file: "Chuong_4.2_De_1.txt" },
+    { id: "Chuong_4.2_De_2", file: "Chuong_4.2_De_2.txt" },
+    { id: "Chuong_5_De_1", file: "Chuong_5_De_1.txt" },
+    { id: "Chuong_5_De_2", file: "Chuong_5_De_2.txt" },
+  ];
 
-function normalizePromptForCompare(value) {
-  return normalizeForSearch(value)
-    .replace(/[^a-z0-9\s]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+  // Load all questions
+  for (const exam of exams) {
+    try {
+      const response = await fetch(exam.file);
 
-function isPromptTooSimilar(normalizedPrompt, existingPromptSet) {
-  if (!normalizedPrompt || normalizedPrompt.length < 18) {
-    return true;
-  }
-
-  for (const existing of existingPromptSet) {
-    if (!existing) {
-      continue;
-    }
-
-    if (existing === normalizedPrompt) {
-      return true;
-    }
-
-    if (
-      normalizedPrompt.length >= 45 &&
-      existing.length >= 45 &&
-      (existing.includes(normalizedPrompt) ||
-        normalizedPrompt.includes(existing))
-    ) {
-      return true;
+      if (response.ok) {
+        const text = await response.text();
+        const questions = QuestionParser.parseFile(text);
+        allQuestions.push(...questions);
+      }
+    } catch (e) {
+      console.error(`Failed to load ${exam.file}:`, e);
     }
   }
 
-  return false;
-}
+  // Get weak questions
+  const weakQuestions = StorageManager.getWeakQuestions(allQuestions, 1);
 
-function pickDistractors(allTerms, correctTerm, count) {
-  const pool = allTerms.filter((term) => term !== correctTerm);
-  return shuffleArray(pool).slice(0, count);
-}
+  if (weakQuestions.length === 0) {
+    alert("No weak questions found. You are doing great!");
+    return;
+  }
 
-function normalizeForSearch(value) {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replaceAll("đ", "d")
-    .replaceAll("Đ", "D")
-    .toLowerCase();
-}
-
-function isDefinitionLikeSentence(searchText) {
-  return (
-    searchText.includes(" la ") ||
-    searchText.includes(" la:") ||
-    searchText.includes(" bao gom") ||
-    searchText.includes(" duoc dung de") ||
-    searchText.includes(" duoc xem la") ||
-    searchText.includes(" la ky thuat") ||
-    searchText.includes(" la qua trinh") ||
-    searchText.includes(" muc tieu")
+  // Start exam with weak questions
+  alert(
+    `Found ${weakQuestions.length} weak questions. Practice mode not fully implemented yet.`,
   );
-}
+};
 
-function cleanCandidateTerm(value) {
-  return value
-    .replace(/^\d+(?:\.\d+)*\.?\s*/, "")
-    .replace(/[\[\]`*_]/g, " ")
-    .replace(/[\-–—:]+$/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+const escapeHtml = (text) => {
+  if (!text) return "";
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+};
 
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", initializeUI);

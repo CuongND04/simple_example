@@ -1,65 +1,110 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Examer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>Exam Practice Engine - QA Certification</title>
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
-    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
-    <main class="app">
-      <header class="app-header">
-        <h1>Simple Examer</h1>
-        <p>Luyện đề trắc nghiệm từ file TXT, làm bài 40 phút/đề.</p>
-      </header>
-      <section id="home-view" class="card">
-        <h2>Chọn đề thi</h2>
-        <p class="muted">
-          Đề 1-4.2: đủ 40 câu, ngẫu nhiên thứ tự. Final: 50 câu (mỗi đề 10 câu).
-        </p>
-        <div id="exam-buttons" class="exam-grid"></div>
-        <p id="loading-status" class="muted">Đang tải ngân hàng câu hỏi...</p>
-      </section>
-      <section id="exam-view" class="card hidden">
-        <div class="exam-top">
-          <div>
-            <h2 id="exam-title">Đề thi</h2>
-            <p id="exam-subtitle" class="muted"></p>
+    <div id="app">
+      <!-- Selector Page -->
+      <div id="selectorPage" class="page active">
+        <header class="header">
+          <h1>📚 Exam Practice Engine</h1>
+          <p>Master QA Concepts & Practice Exams</p>
+        </header>
+
+        <div class="selector-container">
+          <h2>Select an Exam</h2>
+          <div id="examList" class="exam-grid">
+            <!-- Dynamically populated -->
           </div>
-          <div class="timer-box">
-            <span>Thời gian còn lại</span><strong id="timer">40:00</strong>
+
+          <div class="action-buttons">
+            <button id="practiceWeakBtn" class="btn btn-secondary">
+              📋 Practice Weak Questions
+            </button>
+          </div>
+
+          <div class="history-section">
+            <h3>Recent Scores</h3>
+            <div id="scoreHistory" class="score-history">
+              <!-- Dynamically populated -->
+            </div>
           </div>
         </div>
-        <form id="exam-form" class="question-list"></form>
-        <div class="actions">
-          <button id="submit-btn" type="button" class="btn btn-primary">
-            Nộp bài</button
-          ><button id="back-btn" type="button" class="btn btn-ghost">
-            Về trang chọn đề
-          </button>
+      </div>
+
+      <!-- Exam Page -->
+      <div id="examPage" class="page">
+        <header class="exam-header">
+          <div class="header-top">
+            <h1 id="examTitleDisplay"></h1>
+            <button id="backBtn" class="btn btn-small">← Back</button>
+          </div>
+          <div class="timer-container">
+            <div id="timer" class="timer">60:00</div>
+            <span id="questionCount" class="question-count"></span>
+          </div>
+        </header>
+
+        <div class="exam-container">
+          <div id="questionsContainer" class="questions-grid">
+            <!-- Dynamically populated -->
+          </div>
+
+          <div class="submit-section">
+            <button id="submitBtn" class="btn btn-primary">Submit Exam</button>
+          </div>
         </div>
-      </section>
-      <section id="result-view" class="card hidden">
-        <h2>Kết quả</h2>
-        <p id="result-summary"></p>
-        <div id="result-details" class="result-list"></div>
-        <div class="actions">
-          <button id="retry-btn" type="button" class="btn btn-primary">
-            Làm lại đề này</button
-          ><button id="home-btn" type="button" class="btn btn-ghost">
-            Chọn đề khác
-          </button>
+      </div>
+
+      <!-- Results Page -->
+      <div id="resultsPage" class="page">
+        <header class="results-header">
+          <h1>📊 Exam Results</h1>
+        </header>
+
+        <div class="results-container">
+          <div class="results-summary">
+            <div class="score-card">
+              <div class="score-value" id="totalScore">0/50</div>
+              <div class="score-label">Total Score</div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-value" id="correctCount">0</div>
+                <div class="stat-label">Correct</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="wrongCount">0</div>
+                <div class="stat-label">Wrong</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="percentage">0%</div>
+                <div class="stat-label">Percentage</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="resultsFeedback" class="results-feedback">
+            <!-- Dynamically populated with answer review -->
+          </div>
+
+          <div class="results-actions">
+            <button id="retakeBtn" class="btn btn-primary">
+              🔄 Retake Exam
+            </button>
+            <button id="backToSelectorBtn" class="btn btn-secondary">
+              Back to Exams
+            </button>
+          </div>
         </div>
-      </section>
-    </main>
-    <script src="script.js"></script>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
