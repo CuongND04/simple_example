@@ -1,0 +1,555 @@
+===QUESTION===
+id: CH4.1-D1-Q001
+topic: Testing Definition
+context: IEEE Standard vs Practice Definition
+type: fill
+question: Theo IEEE Standard, kiểm thử là hoạt động thực thi hệ thống dưới các điều kiện xác định, quan sát kết quả, và đánh giá khía cạnh nào của hệ thống/thành phần?
+answer: xác định
+
+===QUESTION===
+id: CH4.1-D1-Q002
+topic: Test Maturity Levels
+context: Organizational testing capability progression
+type: fill
+question: Ở Level 0 của mức trưởng thành quy trình kiểm thử, không có khác biệt giữa testing và hoạt động nào?
+answer: debugging
+
+===QUESTION===
+id: CH4.1-D1-Q003
+topic: Test Coverage Planning
+context: Resource and time constraint
+type: fill
+question: Tactical goal của kiểm thử yêu cầu xác định: test bao nhiêu là đủ? Khái niệm này gọi là?
+answer: coverage
+
+===QUESTION===
+id: CH4.1-D1-Q004
+topic: Seven Testing Principles
+context: Principle 1 - presence vs absence
+type: fill
+question: Nguyên lý kiểm thử thứ nhất: Test chỉ cho thấy sự _______ của lỗi, không chứng minh được không còn lỗi.
+answer: hiện diện
+
+===QUESTION===
+id: CH4.1-D1-Q005
+topic: Exhaustive Testing Impossibility
+context: Real-world system testing limitations
+type: fill
+question: Kiểm thử vét cạn là bất khả thi. Thay vào đó, cần dùng phân tích rủi ro, kỹ thuật test và _______ để tập trung nỗ lực.
+answer: ưu tiên
+
+===QUESTION===
+id: CH4.1-D1-Q006
+topic: Shift-Left Testing
+context: Early defect detection in SDLC
+type: fill
+question: Nguyên lý "kiểm thử sớm tiết kiệm thời gian và chi phí" thường được gọi là _______ testing.
+answer: shift-left
+
+===QUESTION===
+id: CH4.1-D1-Q007
+topic: Defect Clustering
+context: Risk analysis for test prioritization
+type: fill
+question: Các lỗi có xu hướng tập trung theo _______. Một số ít module thường chứa phần lớn defect phát hiện trước phát hành.
+answer: cụm
+
+===QUESTION===
+id: CH4.1-D1-Q008
+topic: Pesticide Paradox
+context: Repeated test execution limitations
+type: fill
+question: Nếu lặp đi lặp lại cùng một bộ test, hiệu quả của test sẽ giảm vì không tìm được _______ mới.
+answer: lỗi
+
+===QUESTION===
+id: CH4.1-D1-Q009
+topic: Context-Dependent Testing
+context: Industry and methodology variations
+type: fill
+question: Test process phụ thuộc vào _______. Ví dụ: phần mềm điều khiển công nghiệp an toàn cao kiểm thử khác ứng dụng e-commerce.
+answer: ngữ cảnh
+
+===QUESTION===
+id: CH4.1-D1-Q010
+topic: Test Process Activities
+context: Fundamental phases of testing
+type: fill
+question: Những nhóm hoạt động chính của test process gồm: planning, analysis, design, implementation, execution, completion, và _______.
+answer: monitoring and control
+
+===QUESTION===
+id: CH4.1-D1-Q011
+topic: Test Monitoring vs Control
+context: Progress tracking and corrective action
+type: fill
+question: Test monitoring là so sánh tiến độ thực tế với kế hoạch bằng _______, trong khi test control là thực hiện hành động cần thiết để đạt mục tiêu.
+answer: metric
+
+===QUESTION===
+id: CH4.1-D1-Q012
+topic: Test Analysis Phase
+context: Defect detection in test basis
+type: fill
+question: Test analysis nhận diện defect trong tài liệu hoặc sản phẩm nền tảng. Các defect loại: ambiguities, omissions, inconsistencies, inaccuracies, contradictions, và _______.
+answer: superfluous statements
+
+===QUESTION===
+id: CH4.1-D1-Q013
+topic: Test Design Phase
+context: Test case derivation from conditions
+type: fill
+question: Nếu test analysis trả lời "test cái gì?", thì test design trả lời "_______?"
+answer: test như thế nào
+
+===QUESTION===
+id: CH4.1-D1-Q014
+topic: Test Implementation Readiness
+context: Testware preparation verification
+type: fill
+question: Test implementation bước này trả lời: "đã sẵn sàng mọi thứ để chạy test _______?" bằng cách chuẩn bị đầy đủ testware.
+answer: chưa
+
+===QUESTION===
+id: CH4.1-D1-Q015
+topic: Bug Lifecycle States
+context: Defect workflow in QA process
+type: fill
+question: Trong vòng đời bug, các trạng thái bao gồm: New, Assigned, Rejected, Fixed, Deferred, Re-Opened, Duplicate, Retested, Verified, và _______.
+answer: Closed
+
+===QUESTION===
+id: CH4.1-D1-Q016
+topic: Test Maturity Level 3
+context: Risk-based testing approach
+type: single
+question: Mục đích kiểm thử ở Level 3 của mức trưởng thành là gì?
+A: Chứng minh tính đúng đắn của phần mềm
+B: Chỉ ra phần mềm không hoạt động đúng
+C: Giảm rủi ro khi sử dụng phần mềm
+D: Phát triển phần mềm chất lượng cao hơn
+answer: C
+
+===QUESTION===
+id: CH4.1-D1-Q017
+topic: Test Basis Traceability
+context: Linking requirements to coverage
+type: single
+question: Khi test objective truy vết được về test basis, ta có thể đo được:
+A: Mức độ bao phủ (coverage) đạt được
+B: Số lượng defect phát hiện
+C: Thời gian thực thi test
+D: Chi phí của process kiểm thử
+answer: A
+
+===QUESTION===
+id: CH4.1-D1-Q018
+topic: Integration Testing Purpose
+context: Multi-component system validation
+type: single
+question: Mục tiêu chính của integration testing là:
+A: Test chức năng của từng hàm/method đơn lẻ
+B: Phát hiện lỗi giao tiếp giữa các component
+C: Đánh giá khả năng chấp nhận theo business requirements
+D: Đo hiệu năng và khả năng mở rộng của hệ thống
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q019
+topic: Big Bang Integration Strategy
+context: All-at-once integration approach
+type: single
+question: Ưu điểm lớn nhất của Big Bang Integration Testing là:
+A: Dễ cô lập nguyên nhân lỗi
+B: Phát hiện defect sớm trong quy trình
+C: Đơn giản về tổ chức ban đầu
+D: Phủ đủ chức năng hệ thống sớm nhất
+answer: C
+
+===QUESTION===
+id: CH4.1-D1-Q020
+topic: Test Stub Purpose
+context: Top-Down Integration approach
+type: single
+question: Test stub được dùng trong integration testing để:
+A: Ghi nhận dữ liệu input từ người dùng
+B: Mô phỏng hành vi input-output của subsystem còn thiếu
+C: Chạy test case từ trên xuống dưới
+D: Tối ưu hóa vòng lặp integration
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q021
+topic: Bottom-Up Integration Advantage
+context: Leaf-node testing strategy
+type: single
+question: Ưu điểm của Bottom-Up Integration Testing là:
+A: Test case bám theo chức năng hệ thống
+B: Hiệu quả với hệ thống hướng đối tượng và thời gian thực
+C: Cần ít stub để mô phỏng
+D: Subsystem quan trọng được test sớm
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q022
+topic: Sandwich Testing Concept
+context: Three-layer integration strategy
+type: single
+question: Sandwich Testing kết hợp những chiến lược nào?
+A: Big Bang và Bottom-Up
+B: Top-Down và Bottom-Up
+C: Big Bang và Top-Down
+D: Tất cả ba chiến lược trên
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q023
+topic: System Testing Objective
+context: End-to-end requirements validation
+type: single
+question: Mục tiêu của System Testing là:
+A: Kiểm thử chức năng của từng unit/component
+B: Đánh giá phần mềm có tuân thủ yêu cầu đặc tả hay không
+C: Kiểm tra giao tiếp giữa các module
+D: Xác nhận sửa lỗi từ integration phase
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q024
+topic: Unit Testing Performer
+context: Developer vs Tester responsibility
+type: single
+question: Ai thực hiện Unit Testing và tại sao?
+A: QA tester độc lập, vì cần tư duy kiểm thử khách quan
+B: Developer, vì cần hiểu thiết kế chương trình và code
+C: Business analyst, vì cần đánh giá requirements
+D: System architect, vì cần kiến thức về tư duy hệ thống
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q025
+topic: Alpha vs Beta Testing
+context: Acceptance testing phases
+type: single
+question: Điểm khác biệt giữa Alpha và Beta Test là:
+A: Alpha ở không gian nhà phát triển, Beta ở môi trường thực của khách hàng
+B: Alpha là manual test, Beta là automated test
+C: Alpha kiểm tra unit, Beta kiểm tra system
+D: Alpha do dev làm, Beta do khách hàng làm
+answer: A
+
+===QUESTION===
+id: CH4.1-D1-Q026
+topic: Test Plan Purpose
+context: High-level testing strategy document
+type: single
+question: Test plan được xây dựng để:
+A: Liệt kê chi tiết hoàn toàn từng test case
+B: Xác định mục tiêu kiểm thử và cách tiếp cận đạt mục tiêu trong các ràng buộc ngữ cảnh
+C: Ghi nhận chi tiết tất cả defect tìm thấy
+D: Báo cáo tiến độ hiện tại của project
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q027
+topic: Test Execution Anomaly Analysis
+context: Failure vs Defect discrimination
+type: single
+question: Khi phân tích anomaly trong test execution, failure có thể do:
+A: Chỉ do defect trong code
+B: Chỉ do global variable conflict
+C: Defect trong code hoặc false positive
+D: Chỉ do lỗi thiết kế architecture
+answer: C
+
+===QUESTION===
+id: CH4.1-D1-Q028
+topic: Bug Logging Best Practice
+context: Clear and precise defect reporting
+type: single
+question: Khi ghi lỗi trong hệ thống, subject line phải:
+A: Mô tả chi tiết toàn bộ lỗi
+B: [function name] - [short explanation]: để dễ truy vết nhanh từ tiêu đề
+C: Sử dụng định dạng tự do để linh hoạt
+D: Gồm cả expected result và actual result
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q029
+topic: Test Data Preparation
+context: Test environment setup phase
+type: single
+question: Test data được chuẩn bị trong giai đoạn nào của test process?
+A: Test planning
+B: Test analysis
+C: Test implementation
+D: Test execution
+answer: C
+
+===QUESTION===
+id: CH4.1-D1-Q030
+topic: Test Completion Activity
+context: End-of-level testing deliverables
+type: single
+question: Hoạt động test completion bao gồm:
+A: Chỉ đóng tất cả test case
+B: Kiểm tra defect report, tạo test summary report, lưu trữ testware, phân tích bài học
+C: Chỉ gửi báo cáo cho stakeholder
+D: Chỉ sửa lỗi còn lại trước phát hành
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q031
+topic: Test Process Context Factors
+context: Organizational and project constraints
+type: single
+question: Yếu tố nào KHÔNG ảnh hưởng đến quy trình kiểm thử trong tổ chức?
+A: Rủi ro sản phẩm và rủi ro dự án
+B: Miền nghiệp vụ (business domain)
+C: Ngôn ngữ lập trình được sử dụng
+D: Ràng buộc hợp đồng và pháp lý
+answer: C
+
+===QUESTION===
+id: CH4.1-D1-Q032
+topic: Testing Definition Differentiation
+context: Art of Software Testing vs practice
+type: single
+question: Theo "The Art of Software Testing", kiểm thử là:
+A: Quá trình chạy hệ thống để xác định phần mềm đáp ứng đặc tả
+B: Quá trình thực thi chương trình với mục đích tìm lỗi
+C: Hoạt động xác minh hệ thống đáp ứng yêu cầu
+D: Kỹ thuật để phát triển test case từ requirements
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q033
+topic: Unit Definition in Testing
+context: Smallest testable component
+type: single
+question: Unit trong unit testing được định nghĩa là:
+A: Toàn bộ module của ứng dụng
+B: Thành phần nhỏ nhất có thể kiểm thử, ví dụ: function, class, method
+C: Tập hợp các module cùng chức năng
+D: Layer giao tiếp giữa các subsystem
+answer: B
+
+===QUESTION===
+id: CH4.1-D1-Q034
+topic: Tactical Goals for Testing
+context: Cost and time optimization
+type: multiple
+question: Những mục tiêu tactical nào được coi là tốt cho kiểm thử?
+A: Xác định mức độ coverage dự kiến
+B: Tài liệu hóa mục tiêu test bằng văn bản
+C: Trả lời câu hỏi test bao nhiêu là đủ
+D: Dùng hết ngân sách test cho tới ngày ship
+E: Thu thập metric để đo lường hiệu quả
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q035
+topic: Test Harness in Integration
+context: Infrastructure for test execution
+type: multiple
+question: Các phần tử nào được bao gồm trong test environment setup?
+A: Test harness
+B: Service virtualization
+C: Hardware simulator
+D: Customer database
+E: Mockup services
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q036
+topic: Verification vs Validation Phase Mapping
+context: SDLC testing levels relationship
+type: multiple
+question: Các bước nào là Verification phase (xác định yêu cầu, thiết kế)?
+A: Requirement Analysis
+B: Unit Testing
+C: Functional Specification
+D: System Testing
+E: Detailed Design
+answer: A,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q037
+topic: Regression Testing Trigger
+context: When to re-execute existing tests
+type: multiple
+question: Regression testing được thực hiện trong trường hợp nào?
+A: Sau khi sửa lỗi để xác nhận sửa đúng
+B: Để kiểm tra các tính năng cũ không bị ảnh hưởng bởi thay đổi mới
+C: Khi phát hành phiên bản mới của phần mềm
+D: Kiểm tra unit trừu tượng ban đầu
+E: Sau khi có change request hoặc enhancement
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q038
+topic: Quality Attributes per ISO
+context: Software product quality characteristics
+type: multiple
+question: Các thuộc tính chất lượng phần mềm nào liên quan trực tiếp tới user experience?
+A: Functional suitability
+B: Usability
+C: Reliability
+D: Testability
+E: Accessibility
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q039
+topic: Defect Detection Activities
+context: Early phase testing benefits
+type: multiple
+question: Hoạt động nào của test process có thể phát hiện defect sớm trong requirements/design?
+A: Test analysis
+B: Test design
+C: Test execution
+D: Test implementation
+answer: A,B
+
+===QUESTION===
+id: CH4.1-D1-Q040
+topic: Test Completion Deliverables
+context: Project handover and lessons learned
+type: multiple
+question: Test completion activity gồm những tác vụ nào?
+A: Kiểm tra defect report đã đóng
+B: Tạo test summary report cho stakeholder
+C: Lưu trữ testware để tái sử dụng
+D: Viết lại tất cả test case từ đầu
+E: Phân tích bài học kinh nghiệm
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q041
+topic: Testing Process Activities Order
+context: Sequence and dependencies
+type: multiple
+question: Những hoạt động nào phải xảy ra trước test execution?
+A: Test planning
+B: Test analysis
+C: Test design
+D: Test implementation
+E: Test completion
+answer: A,B,C,D
+
+===QUESTION===
+id: CH4.1-D1-Q042
+topic: Integration Strategy Selection
+context: Choosing appropriate approach
+type: multiple
+question: Khi chọn chiến lược integration testing, những yếu tố nào cần xem xét?
+A: Cấu trúc hệ thống (lớp, module, dependency)
+B: Khả năng cô lập nguyên nhân lỗi nhanh
+C: Số lượng stub và driver cần viết
+D: Tóc màu của team lead
+E: Thứ tự test theo chức năng hay theo cấp bậc
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q043
+topic: Bug Report Quality Indicators
+context: Clear vs Poor bug descriptions
+type: multiple
+question: Một bug report tốt cần chứa những thông tin nào?
+A: Trình tự thao tác chi tiết
+B: Dữ liệu gây lỗi(nếu liên quan)
+C: Kết quả thực tế vs kết quả mong đợi
+D: Danh sách toàn bộ file trong project
+E: Phiên bản software/environment
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q044
+topic: Exit Criteria in Testing
+context: Determining test completion
+type: multiple
+question: Exit criteria được dùng để:
+A: Quyết định khi nào hoàn thành test level nào đó
+B: Hỗ trợ test monitoring và control
+C: Xác định test bao nhiêu là đủ để phát hành
+D: Thay thế cho test plan
+E: Định nghĩa definition of done
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q045
+topic: Test Basis Analysis
+context: Identifying test conditions from requirements
+type: multiple
+question: Khi phân tích test basis, cần xác định những defect nào?
+A: Ambiguities (mơ hồ)
+B: Inconsistencies (không nhất quán)
+C: Inaccuracies (không chính xác)
+D: Những câu quá dài
+E: Contradictions (mâu thuẫn)
+answer: A,B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q046
+topic: Absence-of-Errors Fallacy
+context: Software success vs defect fixing
+type: multiple
+question: Nguyên lý #7 (Absence-of-errors fallacy) cảnh báo rằng:
+A: Tìm được lỗi không chứng minh phần mềm đúng
+B: Sửa tất cả lỗi không đảm bảo success
+C: Defect-free không bằng successful software
+D: Phải dừng test sau một lỗi
+E: QA là bộ phận kiểm chứng thành công
+answer: B,C,E
+
+===QUESTION===
+id: CH4.1-D1-Q047
+topic: Test Design High-Level Output
+context: Testware preparation
+type: multiple
+question: Những hoạt động nào trong test design phát hiện defect sớm?
+A: Phân tích requirement để tìm mơ hồ
+B: Xây dựng chi tiết test case từ condition
+C: Thiết kế test environment
+D: Phân tích gap giữa specification và test
+E: Chuẩn bị test data
+answer: A,B,D
+
+===QUESTION===
+id: CH4.1-D1-Q048
+topic: Organizational Test Process Layers
+context: Multi-level testing framework
+type: multiple
+question: Mô hình quy trình test multi-layer bao gồm những lớp nào?
+A: Organizational level
+B: Project level
+C: Level-specific testing
+D: Developer level
+E: Individual engineer level
+answer: A,B,C
+
+===QUESTION===
+id: CH4.1-D1-Q049
+topic: Test Procedure from Conditions
+context: Test implementation specification
+type: multiple
+question: Khi phát triển test procedures, cần dựa trên:
+A: Test cases đã thiết kế
+B: Test data được chuẩn bị
+C: Test environment available
+D: Developer preference
+E: Historical data
+answer: A,B,C
+
+===QUESTION===
+id: CH4.1-D1-Q050
+topic: Feature Prioritization in Analysis
+context: Test condition definition methodology
+type: multiple
+question: Test condition được ưu tiên trong test analysis dựa trên:
+A: Đặc trưng chức năng
+B: Đặc trưng phi chức năng
+C: Đặc trưng cấu trúc
+D: Yếu tố business/technical
+E: Thời gian khả dụng
+answer: A,B,C,D

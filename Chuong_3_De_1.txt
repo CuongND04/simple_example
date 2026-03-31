@@ -1,0 +1,624 @@
+===QUESTION===
+id: CH3-D1-Q001
+topic: Review concept and importance
+context: Early lifecycle review cost benefit
+type: fill
+question: Review ở giai đoạn sớm là quan trọng vì chi phí sửa lỗi ở giai đoạn _______ rất cao.
+
+answer: downstream
+
+===QUESTION===
+id: CH3-D1-Q002
+topic: Review definition IEEE
+context: IEEE definition of review
+type: fill
+question: Theo IEEE, review là hoạt động mà một work product được trình bày cho nhân sự để _______ hoặc phê duyệt.
+
+answer: nhận xét
+
+===QUESTION===
+id: CH3-D1-Q003
+topic: Review team composition
+context: Stakeholder involvement
+type: fill
+question: Quy trình review cần có các _______ khác nhau để có các góc nhìn khác nhau.
+
+answer: stakeholder
+
+===QUESTION===
+id: CH3-D1-Q004
+topic: Review objectives direct
+context: Project-specific goals
+type: fill
+question: Phát hiện lỗi phân tích và thiết kế, xác định rủi ro mới, và _______ sản phẩm là ba mục tiêu trực tiếp chính của review.
+
+answer: phê duyệt
+
+===QUESTION===
+id: CH3-D1-Q005
+topic: Management review purpose
+context: Project control and governance
+type: fill
+question: Management review dùng để xác định trạng thái kế hoạch, phân bổ yêu cầu, và đánh giá hiệu quả _______ quản trị.
+
+answer: các cách tiếp cận
+
+===QUESTION===
+id: CH3-D1-Q006
+topic: Technical review objective
+context: Conformance verification
+type: fill
+question: Technical review dùng để đánh giá mức phù hợp của sản phẩm phần mềm và xác định _______ so với đặc tả.
+
+answer: sai lệch
+
+===QUESTION===
+id: CH3-D1-Q007
+topic: Inspection definition
+context: Anomaly detection and naming
+type: fill
+question: Inspection dùng để phát hiện và _______ anomaly trong phần mềm, bao gồm lỗi và sai lệch.
+
+answer: định danh
+
+===QUESTION===
+id: CH3-D1-Q008
+topic: Walk-through activity
+context: Collaborative examination
+type: fill
+question: Trong walk-through, người tham gia đặt câu hỏi về anomaly tiềm ẩn, vi phạm tiêu chuẩn, và _______.
+
+answer: các vấn đề khác
+
+===QUESTION===
+id: CH3-D1-Q009
+topic: Review leader independence
+context: Role and responsibility
+type: fill
+question: Review leader nên _______ với team dự án để đảm bảo tính công tâm của review.
+
+answer: độc lập
+
+===QUESTION===
+id: CH3-D1-Q010
+topic: Review team seniority
+context: Expertise requirement
+type: fill
+question: Review team nên gồm thành viên _______ trong team, kết hợp thêm thành viên senior từ bộ phận khác.
+
+answer: senior
+
+===QUESTION===
+id: CH3-D1-Q011
+topic: Review reporting main purpose
+context: Defect elimination timeline
+type: fill
+question: Mục tiêu chính của review report là _______ sớm để giảm trễ tiến độ dự án.
+
+answer: sửa
+
+===QUESTION===
+id: CH3-D1-Q012
+topic: Review session duration
+context: Meeting efficiency guideline
+type: fill
+question: Thời lượng một phiên review không nên quá _______ giờ để duy trì hiệu quả thảo luận.
+
+answer: 2
+
+===QUESTION===
+id: CH3-D1-Q013
+topic: Checklist application
+context: Anomaly detection tooling
+type: fill
+question: _______ review phải sử dụng anomaly checklists, còn các loại review khác thì tùy chọn.
+
+answer: Inspection
+
+===QUESTION===
+id: CH3-D1-Q014
+topic: Review action item tracking
+context: Change completion verification
+type: fill
+question: Follow-up phải được _______ đầy đủ để có thể làm rõ chỉnh sửa về sau khi cần.
+
+answer: tài liệu hóa
+
+===QUESTION===
+id: CH3-D1-Q015
+topic: Review infrastructure building
+context: Long-term QA capability
+type: fill
+question: Đào tạo chuyên gia senior để tạo nguồn lực cho review team là một phần của xây dựng _______ review.
+
+answer: hạ tầng
+
+===QUESTION===
+id: CH3-D1-Q016
+topic: Management review vs Technical review decision authority
+context: Group decision making process
+type: single
+question: Sự khác biệt chính giữa Management review và Technical review trong khía cạnh Decision making là gì?
+
+A: Management review do đội quản lý quyết định, Technical review do nhóm review đề nghị hành động
+B: Cả hai đều do review leader quyết định
+C: Technical review có quyền cao hơn trong quyết định thay đổi
+D: Management review không có quyền quyết định ràng buộc
+
+answer: A
+
+===QUESTION===
+id: CH3-D1-Q017
+topic: Inspection vs Walk-through group size
+context: Participant number requirements
+type: single
+question: Nếu một cuộc review có 7 người tham gia, loại review nào có thể không tuân thủ tiêu chuẩn nhân sự?
+
+A: Management review (yêu cầu >= 2 người)
+B: Technical review (yêu cầu >= 3 người)
+C: Inspection (yêu cầu 3-6 người)
+D: Walk-through (yêu cầu 2-7 người)
+
+answer: C
+
+===QUESTION===
+id: CH3-D1-Q018
+topic: Review type selection based on objectives
+context: Matching review type to purpose
+type: single
+question: Khi mục tiêu chính là xem xét phương án thay thế và cải tiến sản phẩm với hướng học tập, nên chọn loại review nào?
+
+A: Management review
+B: Technical review
+C: Inspection
+D: Walk-through
+
+answer: D
+
+===QUESTION===
+id: CH3-D1-Q019
+topic: Change verification responsibility
+context: Action item closure process
+type: single
+question: Trong Management review, việc xác minh thay đổi chi tiết được đảm nhận bởi ai?
+
+A: Review leader
+B: Cơ chế kiểm soát dự án khác
+C: Toàn bộ review team
+D: Management member
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q020
+topic: Data collection requirement
+context: Formality vs flexibility
+type: single
+question: Loại review nào không bắt buộc phải thu thập dữ liệu hình thức mà có thể làm cục bộ?
+
+A: Management review
+B: Technical review
+C: Inspection
+D: Walk-through
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q021
+topic: Review presenter role
+context: Who presents in different review types
+type: single
+question: Trong Inspection, vai trò presenter được đảm nhận bởi ai?
+
+A: Author
+B: Review leader
+C: Reader
+D: Manager
+
+answer: C
+
+===QUESTION===
+id: CH3-D1-Q022
+topic: Review approval levels
+context: Continuation criteria
+type: single
+question: Khi chỉ một phần yêu cầu dự án được phê duyệt để chuyển pha, phần còn lại cần action item lớn, loại phê duyệt này được gọi là gì?
+
+A: Full approval
+B: Partial approval
+C: Conditional approval
+D: Provisional approval
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q023
+topic: Review infrastructure component
+context: Building review capability
+type: single
+question: Phân tích định kỳ hiệu quả review trong quá khứ là một phần của việc:
+
+A: Chuẩn bị review
+B: Xây dựng hạ tầng review
+C: Phiên review
+D: Follow-up process
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q024
+topic: Review anomaly handling during session
+context: Conflict resolution approach
+type: single
+question: Khi tranh cãi về một lỗi trong phiên review, cách tiếp cận đúng là:
+
+A: Tiếp tục tranh luận cho đến khi đạt thỏa thuận
+B: Kết thúc tranh luận, ghi nhận issue, chuyển sang diễn đàn khác
+C: Bỏ qua vấn đề này
+D: Để cho review leader quyết định ngay
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q025
+topic: Review team preparation checklist
+context: Pre-review activities
+type: single
+question: Trong giai đoạn chuẩn bị review, review team nên:
+
+A: Chỉ tham dự lúc phiên review diễn ra
+B: Đọc tài liệu và lập danh sách comment trước phiên họp
+C: Chờ review leader gửi hướng dẫn chi tiết
+D: Không cần chuẩn bị trước vì sẽ thảo luận tại cuộc họp
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q026
+topic: Review leadership qualification
+context: Seniority and independence requirement
+type: single
+question: Mức seniority tối thiểu của review leader so với project leader là:
+
+A: Cao hơn project leader
+B: Bằng project leader
+C: Ít nhất tương đương project leader
+D: Có thể thấp hơn project leader
+
+answer: C
+
+===QUESTION===
+id: CH3-D1-Q027
+topic: Management participation in reviews
+context: Stakeholder involvement rules
+type: single
+question: Management tham gia vào loại review nào?
+
+A: Chỉ Management review
+B: Management review và Technical review (khi cần)
+C: Inspection và Walk-through
+D: Tất cả các loại review
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q028
+topic: Volume of review material constraint
+context: Inspection material size limitation
+type: single
+question: Đối với Inspection, khi tài liệu quá lớn, biện pháp xử lý là:
+
+A: Bỏ qua phần tài liệu lớn
+B: Chia nhỏ tài liệu để inspection
+C: Tăng thời gian inspection lên
+D: Chuyển sang loại review khác
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q029
+topic: Review type for software lifecycle stages
+context: Which review for design phase
+type: single
+question: Checklist "Yêu cầu phần mềm đã phản ánh vào kiến trúc?" thuộc về review loại nào?
+
+A: Inspection
+B: Preliminary Design Review (Technical review)
+C: Walk-through
+D: Management review
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q030
+topic: Anomaly definition in review context
+context: What constitutes an anomaly
+type: single
+question: Anomaly trong quy trình review bao gồm cái gì?
+
+A: Chỉ các lỗi logic
+B: Lỗi và sai lệch so với tiêu chuẩn/đặc tả
+C: Chỉ sai lệch so với đặc tả
+D: Chỉ những vấn đề lớn
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q031
+topic: Review process knowledge sharing objective
+context: Indirect objectives and benefits
+type: multiple
+question: Mục tiêu gián tiếp của review bao gồm những gì?
+
+A: Tạo diễn đàn trao đổi tri thức chuyên môn
+B: Phát hiện lỗi phân tích và thiết kế
+C: Xây dựng cơ sở học tập cho team
+D: Phê duyệt sản phẩm để chuyển pha
+
+answer: A,C
+
+===QUESTION===
+id: CH3-D1-Q032
+topic: Technical review output information
+context: Documentation of findings
+type: multiple
+question: Technical review report bao gồm những nội dung nào?
+
+A: Action item cần thực hiện
+B: Danh sách tất cả anomaly phát hiện
+C: Trách nhiệm và hạn hoàn thành
+D: Tóm tắt thống kê anomaly
+
+answer: A,C
+
+===QUESTION===
+id: CH3-D1-Q033
+topic: Review type comparison presentation role
+context: Who presents in each review type
+type: multiple
+question: Trong các loại review, review leader quyết định presenter là:
+
+A: Management review
+B: Technical review
+C: Inspection
+D: Walk-through
+
+answer: A,B
+
+===QUESTION===
+id: CH3-D1-Q034
+topic: Review meeting governance best practices
+context: In-session discussion guidelines
+type: multiple
+question: Trong phiên review, cần tuân thủ những nguyên tắc nào?
+
+A: Thảo luận chuyên môn theo hướng xây dựng
+B: Bám sát agenda của phiên review
+C: Tập trung phát hiện defect thông qua verify/validate
+D: Tránh thảo luận chi tiết giải pháp
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q035
+topic: Inspection vs Walk-through decision process
+context: Disposition determination
+type: multiple
+question: Sự khác biệt giữa Inspection và Walk-through trong Decision making là:
+
+A: Inspection: nhóm review chọn disposition đã định trước
+B: Walk-through: nhóm thống nhất thay đổi để tác giả thực hiện
+C: Cả hai đều do management quyết định
+D: Inspection không có quy trình quyết định cố định
+
+answer: A,B
+
+===QUESTION===
+id: CH3-D1-Q036
+topic: Review report main components
+context: Post-review documentation
+type: multiple
+question: Review report phải bao gồm những thành phần nào?
+
+A: Tóm tắt nội dung thảo luận
+B: Quyết định về việc tiếp tục dự án
+C: Danh sách đầy đủ action item với deadline
+D: Tên review team được giao follow-up
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q037
+topic: Checklist review for requirement analysis
+context: Software requirements review items
+type: multiple
+question: Checklist review cho phân tích yêu cầu bao gồm kiểm tra những gì?
+
+A: Phân tích miền thông tin đã đầy đủ
+B: Interface bên ngoài và bên trong
+C: Yêu cầu truy vết lên mức hệ thống
+D: Yêu cầu nhất quán với tiến độ và ngân sách
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q038
+topic: Design review checklist items
+context: Preliminary Design Review inspection points
+type: multiple
+question: Checklist review cho thiết kế kiến trúc (Preliminary Design Review) kiểm tra:
+
+A: Yêu cầu phần mềm có phản ánh vào kiến trúc
+B: Tính mô-đun hiệu quả của các module
+C: Interface của module có được định nghĩa
+D: Độ phức tạp logic có hợp lý
+
+answer: A,B,C
+
+===QUESTION===
+id: CH3-D1-Q039
+topic: Code review checklist concerns
+context: Source code verification items
+type: multiple
+question: Checklist review cho coding kiểm tra những gì?
+
+A: Thiết kế đã chuyển dịch đúng sang mã nguồn
+B: Tuân thủ coding standards
+C: Khai báo kiểu và dữ liệu có đúng
+D: Chức năng của chương trình
+
+answer: A,B,C
+
+===QUESTION===
+id: CH3-D1-Q040
+topic: Test plan review checklist items
+context: Test strategy and planning verification
+type: multiple
+question: Checklist review cho Test Plan kiểm tra những gì?
+
+A: Các pha test có được nhận diện và sắp thứ tự đúng
+B: Truy vết tới tiêu chí validation/yêu cầu
+C: Tài nguyên và công cụ test đã được xác định
+D: Test driver và stub đã được xác định
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q041
+topic: Test procedure review checklist items
+context: Test execution verification
+type: multiple
+question: Checklist review cho kiểm thử phần mềm (Test Procedure) bao gồm:
+
+A: Cả white-box và black-box test đã đặc tả
+B: Tất cả đường logic độc lập đã kiểm thử
+C: Test case có expected result
+D: Kiểm thử xử lý lỗi và giá trị biên
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q042
+topic: Maintenance review checklist items
+context: Change management verification
+type: multiple
+question: Checklist review cho bảo trì phần mềm bao gồm:
+
+A: Xét các side effect liên quan thay đổi
+B: Yêu cầu thay đổi tài liệu hóa và phê duyệt
+C: Thực hiện FTR phù hợp
+D: Final acceptance review đảm bảo cập nhật
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q043
+topic: Review leader responsibilities
+context: Pre-review activities
+type: multiple
+question: Trách nhiệm của Review Leader trước phiên review:
+
+A: Chỉ định thành viên review team
+B: Thiết lập lịch review
+C: Phân phối tài liệu
+D: Lập danh sách comment review
+
+answer: A,B,C
+
+===QUESTION===
+id: CH3-D1-Q044
+topic: Review vs development process integration
+context: Schedule and planning
+type: multiple
+question: Để tích hợp review vào quy trình phát triển, cần làm gì?
+
+A: Xây dựng checklist cho các loại tài liệu phổ biến
+B: Đào tạo chuyên gia senior
+C: Đưa lịch review vào kế hoạch dự án chính thức
+D: Phân tích định kỳ hiệu quả review
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH3-D1-Q045
+topic: Review conduct principles
+context: Meeting governance best practices
+type: multiple
+question: Khi tiến hành phiên review, những nguyên tắc nào là cần thiết?
+
+A: Thảo luận chuyên môn không cá nhân hóa
+B: Ghi chép đầy đủ comment và kết quả verify/validate
+C: Tránh thảo luận về ngôn ngữ lập trình
+D: Tập trung phát hiện defect qua verify/validate
+
+answer: A,B,D
+
+===QUESTION===
+id: CH3-D1-Q046
+topic: Follow-up process characteristics
+context: Action item verification
+type: multiple
+question: Follow-up process cho review phải đảm bảo:
+
+A: Xác minh từng action item được thực hiện như yêu cầu
+B: Là điều kiện cho phép dự án đi tiếp
+C: Được tài liệu hóa đầy đủ
+D: Được thực hiện độc lập mà không cần xác nhận
+
+answer: A,B,C
+
+===QUESTION===
+id: CH3-D1-Q047
+topic: Inspection vs Management review size requirements
+context: Group composition and size
+type: multiple
+question: Giữa Inspection và Management review, loại nào có yêu cầu cụ thể về số lượng người?
+
+A: Inspection có yêu cầu 3-6 người
+B: Management review yêu cầu >= 2 người
+C: Cả hai đều không có yêu cầu cụ thể
+D: Inspection yêu cầu tối thiểu 5 người
+
+answer: A,B
+
+===QUESTION===
+id: CH3-D1-Q048
+topic: Review checklist development and use
+context: Tooling and templates
+type: single
+question: Để xây dựng hạ tầng review hiệu quả, yếu tố nào là KHÔNG cần thiết?
+
+A: Xây dựng checklist cho các loại tài liệu
+B: Sử dụng cùng checklist cho tất cả các giai đoạn
+C: Đào tạo chuyên gia senior
+D: Phân tích hiệu quả review quá khứ
+
+answer: B
+
+===QUESTION===
+id: CH3-D1-Q049
+topic: Review work product definition
+context: Scope of review activities
+type: single
+question: Cái gì KHÔNG phải là work product cần review trong phát triển phần mềm?
+
+A: Kế hoạch dự án
+B: Tài liệu yêu cầu
+C: Email nội bộ của team
+D: Mã nguồn
+
+answer: C
+
+===QUESTION===
+id: CH3-D1-Q050
+topic: Comprehensive review strategy
+context: Integrating all review types
+type: single
+question: Loại review nào kết hợp tất cả khía cạnh: phát hiện anomaly, học tập, verify/validate?
+
+A: Chỉ Management review
+B: Walk-through kết hợp các loại review khác
+C: Inspection là review duy nhất
+D: Technical review toàn bộ
+
+answer: B

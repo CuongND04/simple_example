@@ -1,0 +1,589 @@
+===QUESTION===
+id: CH2-D2-Q001
+topic: QA strategy
+context: phòng ngừa lỗi xuyên vòng đời
+type: fill
+question:
+Hoạt động có mục tiêu phòng ngừa lỗi bằng chuẩn, quy trình, đo lường và cải tiến liên tục được gọi là ______.
+answer: SQA
+
+===QUESTION===
+id: CH2-D2-Q002
+topic: testing levels
+context: kiểm thử mức đơn vị
+type: fill
+question:
+Mức kiểm thử tập trung vào từng lớp/hàm và hành vi cục bộ là ______ Testing.
+answer: Unit
+
+===QUESTION===
+id: CH2-D2-Q003
+topic: testing levels
+context: kiểm thử ghép nối thành phần
+type: fill
+question:
+Mức kiểm thử nhằm phát hiện lỗi giao tiếp giữa các component là ______ Testing.
+answer: Integration
+
+===QUESTION===
+id: CH2-D2-Q004
+topic: testing levels
+context: xác nhận từ góc nhìn người dùng
+type: fill
+question:
+Mức kiểm thử do người dùng/khách hàng xác nhận hệ thống đáp ứng nhu cầu thực tế là ______ Testing.
+answer: Acceptance
+
+===QUESTION===
+id: CH2-D2-Q005
+topic: quality metrics
+context: hiệu suất lọc lỗi
+type: fill
+question:
+Chỉ số phản ánh mức hiệu quả loại bỏ lỗi của một hoạt động QA là ______.
+answer: DRE
+
+===QUESTION===
+id: CH2-D2-Q006
+topic: causal analysis
+context: sự kiện kích hoạt phân tích nguyên nhân
+type: fill
+question:
+Trong các trigger được nêu, sự kiện mang nghĩa tích cực và vẫn phải kích hoạt causal analysis là ______.
+answer: Success
+
+===QUESTION===
+id: CH2-D2-Q007
+topic: audit planning
+context: lịch audit định kỳ
+type: fill
+question:
+Loại audit được lên lịch lặp lại theo chu kỳ tuân thủ là ______ conformance audit.
+answer: Periodic
+
+===QUESTION===
+id: CH2-D2-Q008
+topic: RUP phases
+context: đồng thuận stakeholder ban đầu
+type: fill
+question:
+Pha RUP tập trung đạt buy-in của các bên liên quan là pha ______.
+answer: Inception
+
+===QUESTION===
+id: CH2-D2-Q009
+topic: RUP phases
+context: chuyển giao cho cộng đồng người dùng
+type: fill
+question:
+Pha bao gồm phát hành, cài đặt, đào tạo và hỗ trợ kỹ thuật là pha ______.
+answer: Transition
+
+===QUESTION===
+id: CH2-D2-Q010
+topic: maintenance types
+context: nâng cao chất lượng và khả dụng
+type: fill
+question:
+Loại bảo trì nhằm cải tiến chức năng/chất lượng để hệ thống tốt hơn theo thời gian là bảo trì ______.
+answer: Perfective
+
+===QUESTION===
+id: CH2-D2-Q011
+topic: lifecycle model
+context: vòng lặp phản hồi nhanh
+type: fill
+question:
+Mô hình phát triển nhấn mạnh tạo mẫu nhanh và lấy phản hồi khách hàng lặp lại là ______.
+answer: Prototyping
+
+===QUESTION===
+id: CH2-D2-Q012
+topic: test planning
+context: điều kiện bắt đầu thực thi
+type: fill
+question:
+Trong test plan, điều kiện cần thỏa trước khi bắt đầu chạy test được gọi là ______ criteria.
+answer: Entry
+
+===QUESTION===
+id: CH2-D2-Q013
+topic: quality metrics
+context: theo dõi lệch tiến độ
+type: fill
+question:
+Chỉ số dùng để đo mức lệch so với kế hoạch thời gian là ______.
+answer: Schedule variances
+
+===QUESTION===
+id: CH2-D2-Q014
+topic: review techniques
+context: kiểm tra chéo trong nhóm
+type: fill
+question:
+Hình thức rà soát mã/tài liệu bởi đồng nghiệp cùng vai trò là ______ review.
+answer: Peer
+
+===QUESTION===
+id: CH2-D2-Q015
+topic: defect removal cost
+context: chi phí tương đối theo pha
+type: fill
+question:
+Trong bảng ví dụ chi phí, pha có chi phí tương đối bằng 16 là ______ coding.
+answer: Integration
+
+===QUESTION===
+id: CH2-D2-Q016
+topic: RUP disciplines
+context: phân loại core và supporting
+type: single
+question:
+Mục nào sau đây KHÔNG thuộc core disciplines theo nội dung chương?
+A: Business Modeling
+B: Test and Assessment
+C: Project Management
+D: Implementation
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q017
+topic: V-Model mapping
+context: liên kết hai nhánh chữ V
+type: single
+question:
+Theo V-Model trong chương, cặp đối ứng đúng là cặp nào?
+A: Requirement Analysis <-> Acceptance Test
+B: Architecture Design <-> Acceptance Test
+C: Module Design <-> System Test
+D: Coding <-> Requirement Analysis
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q018
+topic: model selection
+context: dự án vừa, cần phản hồi nhanh
+type: single
+question:
+Đội dự án cần ra nguyên mẫu nhanh để khách hàng phản hồi liên tục trước khi chốt giải pháp. Mô hình phù hợp nhất là gì?
+A: SDLC tuyến tính
+B: Prototyping
+C: Waterfall không lặp
+D: Chỉ dùng acceptance test
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q019
+topic: object-oriented development
+context: tái sử dụng component
+type: single
+question:
+Trong mô hình hướng đối tượng, nguồn cung thành phần ưu tiên trước khi tự viết mới là gì?
+A: Thư viện component tái sử dụng hoặc mua
+B: Viết lại toàn bộ từ đầu
+C: Chỉ dùng script migration
+D: Chờ đến transition mới quyết định
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q020
+topic: component strategy
+context: thiếu component phù hợp
+type: single
+question:
+Khi không tìm được component phù hợp trong thư viện, hành động phù hợp theo chương là gì?
+A: Loại bỏ luôn yêu cầu liên quan
+B: Tự phát triển component cần thiết
+C: Chỉ cập nhật tài liệu mà không code
+D: Chuyển tất cả sang operation
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q021
+topic: testing axioms
+context: giới hạn bao phủ kiểm thử
+type: single
+question:
+Phát biểu nào đúng theo tiên đề kiểm thử?
+A: Exhaustive testing khả thi nếu tăng máy chủ CI
+B: Exhaustive testing bất khả thi với hệ không tầm thường
+C: Exhaustive testing không cần cho hệ thống an toàn cao
+D: Exhaustive testing là điều kiện bắt buộc để đóng test
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q022
+topic: testing objective
+context: mục tiêu thực chất của hoạt động test
+type: single
+question:
+Mục tiêu trực tiếp của kiểm thử theo chương là gì?
+A: Chứng minh hệ thống không còn lỗi
+B: Chứng minh hiệu năng tối đa
+C: Phát hiện lỗi
+D: Thay thế hoàn toàn review
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q023
+topic: exit decision
+context: kiểm soát dừng test theo tiêu chí
+type: single
+question:
+Đến cuối đợt test, còn nhiều lỗi mức nghiêm trọng cao chưa xử lý nhưng lịch release đã cận. Theo nguyên tắc quản lý test, lựa chọn nào đúng nhất?
+A: Đóng test ngay vì deadline là tuyệt đối
+B: Đóng test nếu số test PASS vượt 50%
+C: So khớp exit criteria và quyết định tiếp tục hoặc tái đàm phán
+D: Chuyển toàn bộ lỗi sang backlog vận hành
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q024
+topic: metrics
+context: so sánh hiệu quả các hoạt động QA
+type: single
+question:
+Để so hiệu quả lọc lỗi giữa design inspection, code inspection và integration test, chỉ số phù hợp nhất là gì?
+A: Defect removal effectiveness
+B: Team velocity
+C: Release frequency
+D: Build duration
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q025
+topic: documentation defects
+context: sai lệch tài liệu so với hệ thống thực
+type: single
+question:
+Tài liệu hướng dẫn vẫn mô tả chức năng đã bị hủy từ sớm. Nhóm lỗi phù hợp nhất theo chương là gì?
+A: User interface and procedure errors
+B: Arithmetic defects
+C: Boundary defects
+D: Thread scheduling defects
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q026
+topic: SQA in coding phase
+context: hoạt động QA gắn với coding
+type: single
+question:
+Trong pha coding, tổ hợp hoạt động SQA nào được nêu rõ trong chương?
+A: Inspection, Unit test, Integration test
+B: Acceptance test, Delivery audit, Training
+C: Cost-benefit analysis, Domain model, UAT
+D: System conversion, Legacy retirement, Packaging
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q027
+topic: conversion strategy
+context: giảm rủi ro gián đoạn dịch vụ
+type: single
+question:
+Doanh nghiệp ngân hàng cần chuyển hệ thống nhưng không được phép gián đoạn giao dịch. Chiến lược chuyển đổi phù hợp nhất là gì?
+A: Direct cutover một lần
+B: Chạy song song hệ cũ và mới trong thời gian chuyển tiếp
+C: Bỏ integration test để rút ngắn thời gian
+D: Chỉ phát hành tài liệu chuyển đổi
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q028
+topic: comprehensive filtering plan
+context: tăng hiệu quả loại lỗi sớm
+type: single
+question:
+Trong kế hoạch toàn diện, cặp hoạt động bổ sung nào ở pha thiết kế và coding là điểm khác biệt then chốt?
+A: Design inspection và Code inspection
+B: Delivery audit và UAT
+C: Unit test và acceptance test
+D: Training và release management
+answer: A
+
+===QUESTION===
+id: CH2-D2-Q029
+topic: defect economics
+context: chi phí xử lý lỗi ngoài hiện trường
+type: single
+question:
+Vì sao lỗi lọt đến operation gây chi phí cao nhất theo mô hình của chương?
+A: Vì operation không có dữ liệu log
+B: Vì operation loại bỏ lỗi nhanh hơn nên tốn chi phí đo lường
+C: Vì sửa lỗi muộn tác động khách hàng và kéo theo chi phí khắc phục diện rộng
+D: Vì defect density ở operation luôn cao nhất
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q030
+topic: defect report fields
+context: phân biệt severity và priority
+type: single
+question:
+Trong ticket lỗi, trường nào phản ánh mức khẩn để sắp lịch sửa trước-sau theo mục tiêu phát hành?
+A: Severity
+B: Priority
+C: Reproducibility
+D: Discovery phase
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q031
+topic: test case quality
+context: khả năng tái lập kết quả test
+type: single
+question:
+Một test case thiếu preconditions thường gây vấn đề gì nghiêm trọng nhất?
+A: Không thể compile code
+B: Khó tái lập kết quả và đánh giá PASS/FAIL nhất quán
+C: Tăng coverage tự động
+D: Loại bỏ nhu cầu test data
+answer: B
+
+===QUESTION===
+id: CH2-D2-Q032
+topic: system testing
+context: xác nhận hệ thống tích hợp hoàn chỉnh
+type: single
+question:
+Mức kiểm thử nào chịu trách nhiệm chính xác nhận cả yêu cầu chức năng và phi chức năng ở mức toàn hệ thống?
+A: Unit Testing
+B: Integration Testing
+C: System Testing
+D: Smoke Testing
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q033
+topic: acceptance collaboration
+context: vai trò khách hàng và nhà phát triển
+type: single
+question:
+Phát biểu nào phù hợp nhất với Acceptance test theo chương?
+A: Chỉ developer được phép chạy
+B: Chỉ tester độc lập chạy, khách hàng không tham gia
+C: Có thể do khách hàng thực hiện hoặc phối hợp với phía phát triển
+D: Chỉ dùng để xác nhận coding standard
+answer: C
+
+===QUESTION===
+id: CH2-D2-Q034
+topic: QA activity scope
+context: các cấu phần QA toàn diện
+type: multiple
+question:
+Chọn các hoạt động thuộc phạm vi QA theo chương.
+A: Standards phát triển
+B: Version control
+C: Release management
+D: Đào tạo
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q035
+topic: test design and specification
+context: nhiệm vụ thiết kế kiểm thử
+type: multiple
+question:
+Những nhiệm vụ nào thuộc giai đoạn Test Design and Specification?
+A: Review test basis
+B: Đánh giá testability của yêu cầu
+C: Xác định test condition và test data
+D: Mô tả preconditions và post-conditions của test case
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q036
+topic: defect categories
+context: nhóm lỗi thường gặp
+type: multiple
+question:
+Nhóm lỗi phổ biến nào được nêu rõ trong chương?
+A: Lỗi điều kiện biên
+B: Lỗi diễn giải dữ liệu
+C: Lỗi xử lý ngoại lệ
+D: Lỗi quản lý phiên bản
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q037
+topic: testing principles
+context: nguyên tắc lập kế hoạch kiểm thử
+type: multiple
+question:
+Những nguyên tắc nào phù hợp với nội dung chương?
+A: Test phải truy vết về yêu cầu khách hàng
+B: Nên lập kế hoạch test sớm
+C: Cần ưu tiên theo rủi ro do không thể test vét cạn
+D: Nguyên lý Pareto hữu ích trong kiểm thử
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q038
+topic: test control criteria
+context: quyết định dừng hay tiếp tục test
+type: multiple
+question:
+Các yếu tố nào có thể được dùng trong exit criteria theo chương?
+A: Coverage analysis
+B: Số lỗi còn pending
+C: Thời gian
+D: Chi phí
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q039
+topic: SQA plan standards
+context: chuẩn kỹ thuật cần công bố
+type: multiple
+question:
+Trong SQA Plan, các chuẩn nào nên được nêu rõ?
+A: Coding standards
+B: Database design standards
+C: GUI design standards
+D: Review standards
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q040
+topic: audit schedule
+context: loại audit theo kế hoạch
+type: multiple
+question:
+Những loại audit nào được chương khuyến nghị đưa vào lịch SQA Plan?
+A: Periodic conformance audits
+B: Phase-end audits
+C: Investigative audits
+D: Delivery audits
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q041
+topic: spiral revised model
+context: đặc điểm bản sửa đổi
+type: multiple
+question:
+Bản sửa đổi Spiral trong chương nhấn mạnh các điểm nào?
+A: Cơ hội thay đổi cho khách hàng
+B: Theo bám tiến độ và ngân sách tốt hơn
+C: Tách rõ hành động phía khách hàng và hoạt động kỹ thuật của developer
+D: Loại bỏ hoàn toàn phân tích rủi ro
+answer: A,B,C
+
+===QUESTION===
+id: CH2-D2-Q042
+topic: elaboration artifacts
+context: sản phẩm công việc phân tích-thiết kế
+type: multiple
+question:
+Nội dung nào thuộc trọng tâm Elaboration phase?
+A: Scenarios
+B: Sequence/Collaboration diagrams
+C: Class/Activity/Component/State diagrams
+D: Glossary và Domain model
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q043
+topic: construction characteristics
+context: phát triển tăng dần và ổn định hệ thống
+type: multiple
+question:
+Đặc trưng nào đúng với Construction phase theo chương?
+A: Chức năng tăng dần theo vòng lặp
+B: Stub được hoàn thiện sâu hơn
+C: Độ ổn định hệ thống tăng dần
+D: Thiết kế và coding là trọng tâm
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q044
+topic: transition characteristics
+context: chuyển giao và vận hành
+type: multiple
+question:
+Phát biểu nào đúng về Transition phase?
+A: Có các mốc Alpha/Beta/Final
+B: Quy mô đội phát triển thu hẹp dần
+C: Quyền kiểm soát chuyển về đội bảo trì
+D: Có thể tích hợp với hệ thống legacy
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q045
+topic: defect filtering model assumptions
+context: suy luận đầu vào-đầu ra của bộ lọc lỗi theo pha
+type: multiple
+question:
+Xét mô hình bộ lọc lỗi theo pha trong chương, những mệnh đề nào là tiền đề bắt buộc để tính chi phí tích lũy?
+A: Quá trình phát triển tuần tự kiểu waterfall
+B: Mỗi pha có thể sinh thêm lỗi mới
+C: Hoạt động review/test đóng vai trò bộ lọc
+D: Lỗi còn lại có thể đi tới khách hàng
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q046
+topic: defect origin distribution
+context: xác nhận dữ liệu đầu vào mô hình
+type: multiple
+question:
+Chọn các nhận định đúng theo bảng phân bố nguồn gốc lỗi trong chương.
+A: Requirement specs khoảng 15%
+B: Design khoảng 35%
+C: Coding/Integration khoảng 40%
+D: Documentation khoảng 10%
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q047
+topic: standard filtering effectiveness
+context: giá trị trung bình kế hoạch tiêu chuẩn
+type: multiple
+question:
+Những cặp hoạt động-hiệu quả nào phù hợp với bảng hiệu quả lọc lỗi trung bình được nêu?
+A: Requirements specs review - 50%
+B: Design inspection - 60%
+C: Code inspections - 65%
+D: Integration test - 50%
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q048
+topic: comprehensive plan metrics
+context: thay đổi thông số lọc lỗi
+type: multiple
+question:
+Theo ví dụ kế hoạch toàn diện, các thay đổi nào được nêu?
+A: Requirements review tăng lên 60%
+B: Design inspection ở mức 70%
+C: Code inspection ở mức 70%
+D: Integration tests tăng lên 60%
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D2-Q049
+topic: regression strategy
+context: tình huống sau sửa lỗi
+type: multiple
+question:
+Sau khi sửa lỗi ở module thanh toán, hành động nào thuộc chiến lược regression hợp lý?
+A: Chạy lại test case từng FAIL liên quan trực tiếp
+B: Chạy thêm test quanh khu vực bị ảnh hưởng gián tiếp
+C: Bỏ qua test cũ vì đã sửa source code
+D: Ghi nhận PASS/FAIL/NOT EXECUTED cho vòng chạy mới
+answer: A,B,D
+
+===QUESTION===
+id: CH2-D2-Q050
+topic: QC vs QA boundaries
+context: nhận diện hoạt động kiểm soát chất lượng
+type: multiple
+question:
+Những hoạt động nào nghiêng về QC trực tiếp trên sản phẩm/artefact hơn là hoạt động quản trị QA rộng?
+A: Code walkthrough
+B: Formal review
+C: Unit testing
+D: System testing
+answer: A,B,C,D

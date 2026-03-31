@@ -18,44 +18,44 @@
     <main class="app">
       <header class="app-header">
         <h1>Simple Examer</h1>
-        <p>Luyen de trac nghiem tu file TXT, lam bai 40 phut/de.</p>
+        <p>Luyện đề trắc nghiệm từ file TXT, làm bài 40 phút/đề.</p>
       </header>
       <section id="home-view" class="card">
-        <h2>Chon de thi</h2>
+        <h2>Chọn đề thi</h2>
         <p class="muted">
-          De 1-4.2: du 40 cau, random thu tu. Final: 50 cau (moi de 10 cau).
+          Đề 1-4.2: đủ 40 câu, ngẫu nhiên thứ tự. Final: 50 câu (mỗi đề 10 câu).
         </p>
         <div id="exam-buttons" class="exam-grid"></div>
-        <p id="loading-status" class="muted">Dang tai ngan hang cau hoi...</p>
+        <p id="loading-status" class="muted">Đang tải ngân hàng câu hỏi...</p>
       </section>
       <section id="exam-view" class="card hidden">
         <div class="exam-top">
           <div>
-            <h2 id="exam-title">De thi</h2>
+            <h2 id="exam-title">Đề thi</h2>
             <p id="exam-subtitle" class="muted"></p>
           </div>
           <div class="timer-box">
-            <span>Thoi gian con lai</span><strong id="timer">40:00</strong>
+            <span>Thời gian còn lại</span><strong id="timer">40:00</strong>
           </div>
         </div>
         <form id="exam-form" class="question-list"></form>
         <div class="actions">
           <button id="submit-btn" type="button" class="btn btn-primary">
-            Nop bai</button
+            Nộp bài</button
           ><button id="back-btn" type="button" class="btn btn-ghost">
-            Ve trang chon de
+            Về trang chọn đề
           </button>
         </div>
       </section>
       <section id="result-view" class="card hidden">
-        <h2>Ket qua</h2>
+        <h2>Kết quả</h2>
         <p id="result-summary"></p>
         <div id="result-details" class="result-list"></div>
         <div class="actions">
           <button id="retry-btn" type="button" class="btn btn-primary">
-            Lam lai de nay</button
+            Làm lại đề này</button
           ><button id="home-btn" type="button" class="btn btn-ghost">
-            Chon de khac
+            Chọn đề khác
           </button>
         </div>
       </section>

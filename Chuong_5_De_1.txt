@@ -1,0 +1,539 @@
+===QUESTION===
+id: CH5-D1-Q001
+topic: White-box Testing fundamentals
+context: Definition and scope of WBT approach
+type: fill
+question: White-box testing là kỹ thuật kiểm thử dựa vào _______ cụ thể và cấu trúc dữ liệu bên trong của module cần kiểm thử.
+answer: thuật toán
+
+===QUESTION===
+id: CH5-D1-Q002
+topic: WBT prerequisites
+context: Skills required for WBT tester
+type: multiple
+question: Để thực hiện WBT hiệu quả, tester cần những kỹ năng nào?
+A: Hiểu chi tiết mã nguồn
+B: Kiến thức lập trình
+C: Hiểu cấu trúc dữ liệu
+D: Nói tiếng Anh lưu loát
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q003
+topic: Control flow testing concepts
+context: Definition of execution path
+type: fill
+question: _______ thực thi là danh sách có thứ tự các lệnh được thực thi trong một lần chạy cụ thể của software unit.
+answer: Đường
+
+===QUESTION===
+id: CH5-D1-Q004
+topic: Test coverage definition
+context: Coverage concept and importance
+type: fill
+question: Coverage là _______ các thành phần thực sự được kiểm thử sau khi chạy tập test case.
+answer: tỷ lệ
+
+===QUESTION===
+id: CH5-D1-Q005
+topic: Statement coverage
+context: Coverage level 1 definition
+type: fill
+question: Ở mức coverage 1, mỗi _______ phải được thực thi ít nhất 1 lần.
+answer: câu lệnh
+
+===QUESTION===
+id: CH5-D1-Q006
+topic: Branch coverage
+context: Coverage level 2 definition
+type: fill
+question: Branch coverage yêu cầu mỗi quyết định phải được thực thi ít nhất 1 lần cho nhánh _______ và 1 lần cho nhánh false.
+answer: true
+
+===QUESTION===
+id: CH5-D1-Q007
+topic: Subcondition coverage
+context: Coverage level 3 definition
+type: fill
+question: Subcondition coverage đảm bảo mỗi điều kiện con phải được thực thi _______ true và _______ false.
+answer: ít nhất 1 lần
+
+===QUESTION===
+id: CH5-D1-Q008
+topic: Cyclomatic complexity
+context: McCabe complexity metric
+type: fill
+question: Độ phức tạp cyclomatic được tính bằng công thức V(G) = _______ - N + 2, với E là số cạnh, N là số nút.
+answer: E
+
+===QUESTION===
+id: CH5-D1-Q009
+topic: Cyclomatic complexity alternative formula
+context: McCabe complexity using decision nodes
+type: fill
+question: Công thức tính độ phức tạp cyclomatic có thể viết V(G) = _______ + 1, với P là số nút quyết định.
+answer: P
+
+===QUESTION===
+id: CH5-D1-Q010
+topic: Basis path testing process
+context: McCabe test case generation
+type: fill
+question: Sau khi tính độ phức tạp cyclomatic C, cần tạo tối thiểu _______ đường cơ sở tuyến tính để kiểm thử.
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q011
+topic: Loop testing - single loop
+context: Single loop test cases
+type: fill
+question: Với vòng lặp đơn, cần kiểm thử các trường hợp: bỏ qua vòng, chạy 1 lần, chạy k lần (k < n), và chạy _______.
+answer: n, n+1 lần
+
+===QUESTION===
+id: CH5-D1-Q012
+topic: Data flow testing operations
+context: Define, Reference, Undefine actions
+type: fill
+question: Trong data flow testing, 'd' ký hiệu cho hành động _______, 'r' ký hiệu cho hành động tham chiếu, 'u' ký hiệu cho hành động hủy.
+answer: định nghĩa
+
+===QUESTION===
+id: CH5-D1-Q013
+topic: Anomalous data flow pairs
+context: Identifying problematic variable sequences
+type: fill
+question: Cặp hành động 'ur' (hủy rồi dùng) là một _______ trong data flow testing vì biến được dùng sau khi bị hủy.
+answer: lỗi
+
+===QUESTION===
+id: CH5-D1-Q014
+topic: Data flow graph construction
+context: Building DFG from CFG
+type: fill
+question: Data flow graph được tạo tương tự control flow graph nhưng thêm _______ hành động biến (d, r, u) vào mỗi lệnh.
+answer: nhãn
+
+===QUESTION===
+id: CH5-D1-Q015
+topic: Unit test automation tool
+context: PathCrawler capabilities
+type: fill
+question: PathCrawler là công cụ tự động hóa structural unit testing bằng cách sinh _______ đầu vào để đạt full coverage.
+answer: test
+
+===QUESTION===
+id: CH5-D1-Q016
+topic: Path testing vs Branch testing
+context: Comparing coverage approaches
+type: single
+question: Số lượng đường thực thi (execution path) so với số lượng branch trong một module có 3 lệnh if/else tuần tự như thế nào?
+A: Bằng nhau
+B: Đường thực thi nhiều hơn rất nhiều
+C: Branch nhiều hơn rất nhiều
+D: Không thể so sánh
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q017
+topic: Coverage levels effectiveness
+context: Relationship between coverage levels
+type: single
+question: Nếu một test suite đạt 100% statement coverage nhưng chỉ 70% branch coverage, điều này có thể xảy ra vì:
+A: Statement coverage là tiêu chí yếu hơn branch coverage
+B: Các điều kiện false của một số quyết định chưa được kiểm thử
+C: Test suite chứa các test case không cần thiết
+D: Statement coverage và branch coverage không thể kết hợp
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q018
+topic: Cyclomatic complexity threshold
+context: Module complexity management
+type: single
+question: Theo Tom McCabe, nếu độ phức tạp cyclomatic V(G) > 10, nên làm gì?
+A: Tăng số test case để bao phủ đầy đủ
+B: Nâng cấp công cụ kiểm thử
+C: Chia module thành các module con để giảm xác suất lỗi
+D: Bỏ qua các đường thực thi phức tạp
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q019
+topic: Execution path concept
+context: Path vs branch distinction
+type: single
+question: Trong đoạn mã có 3 vòng lặp lồng nhau mỗi lặp 1000 lần, số lượng execution path là bao nhiêu?
+A: 3000
+B: 1
+C: 1 tỷ
+D: Không xác định được
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q020
+topic: Basis path selection strategy
+context: McCabe basis path test case generation
+type: multiple
+question: Khi tạo các đường cơ sở theo McCabe, những điều nào ĐÚNG?
+A: Đường cơ sở thứ 2 hoán đổi cạnh ở nút quyết định đầu tiên
+B: Mỗi đường cơ sở giữ tối đa phần giống đường đầu tiên
+C: Số lượng đường cơ sở bằng V(G)
+D: Các đường cơ sở phải độc lập hoàn toàn với nhau
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q021
+topic: Loop testing strategy - nested loops
+context: Testing nested loop structures
+type: single
+question: Khi kiểm thử vòng lặp lồng nhau, nên bắt đầu từ đâu?
+A: Vòng lặp ngoài cùng
+B: Tất cả vòng lặp cùng một lúc
+C: Vòng lặp trong cùng
+D: Không quan trọng, thứ tự không ảnh hưởng
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q022
+topic: Data flow testing application
+context: Identifying variable lifecycle issues
+type: single
+question: Phương pháp data flow testing đặc biệt hiệu quả trong việc phát hiện:
+A: Các nhánh điều kiện không được kiểm thử
+B: Vấn đề liên quan tới biến (sai gán, thiếu định nghĩa, scope)
+C: Hiệu suất của chương trình
+D: Giao diện người dùng không chính xác
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q023
+topic: Statement coverage limitation
+context: Coverage level 1 vs higher levels
+type: single
+question: Ví dụ với hàm `float foo(int a, int b, int c, int d) { ... e=1/x; }`, nếu chỉ đạt 100% statement coverage với 2 test case foo(0,0,0,0) và foo(1,1,1,1), vấn đề chính là:
+A: Không có đủ biến được kiểm thử
+B: Không kiểm thử được điều kiện false của quyết định
+C: Lỗi chia cho 0 tại dòng e=1/x vẫn không được phát hiện
+D: Không thể đạt 100% statement coverage với dữ liệu này
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q024
+topic: Branch coverage improvement
+context: Enhancing coverage level
+type: single
+question: Để tăng coverage từ 75% lên 100% (ở mức branch) cho hàm đã cho, cần thêm test case như thế nào?
+A: Cần thêm 1 test case với giá trị a==b nhưng c!=d hoặc không gọi bug(a)
+B: Cần thêm 1 test case bất kỳ
+C: Cần thêm 2 test case
+D: Không thể tăng được vì chỉ có 2 decision
+answer: A
+
+===QUESTION===
+id: CH5-D1-Q025
+topic: Subcondition coverage advantage
+context: Fine-grained condition testing
+type: single
+question: Ưu điểm của subcondition coverage so với branch coverage là:
+A: Giảm số test case cần thiết
+B: Đảm bảo mỗi điều kiện con riêng biệt được kiểm thử true/false
+C: Tính toán độ phức tạp nhanh hơn
+D: Dễ tự động hóa hơn
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q026
+topic: Branch & Subcondition coverage
+context: Coverage level 4 - MC/DC coverage
+type: multiple
+question: Branch & subcondition coverage (mức 4) có các đặc điểm nào?
+A: Yêu cầu true/false của subcondition phải ảnh hưởng kết quả decision
+B: Khác với subcondition coverage ở điểm này
+C: Còn gọi là MC/DC coverage
+D: Là mức coverage yếu nhất
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q027
+topic: Loop testing - minimum iterations
+context: Single loop boundary conditions
+type: single
+question: Khi kiểm thử vòng lặp `for(i=1; i<=10; i++)`, test case nào kiểm thử trường hợp "skip loop"?
+A: i = 1
+B: i = 11
+C: i = 10
+D: i = 5
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q028
+topic: Nested loop testing strategy
+context: Parameter fixing technique
+type: single
+question: Khi kiểm thử vòng lặp lồng nhau, giá trị của vòng ngoài được đặt như thế nào khi kiểm thử vòng trong?
+A: Giá trị tối đa
+B: Giá trị tối thiểu
+C: Giá trị điển hình
+D: Liên tục thay đổi
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q029
+topic: Data flow pairs - potential issues
+context: Anomalous variable sequences
+type: single
+question: Cặp hành động 'dd' (định nghĩa rồi định nghĩa lại) trong data flow testing có thể chỉ ra:
+A: Lỗi chắc chắn
+B: Không có vấn đề gì
+C: Có thể là lỗi lập trình hoặc chấp nhận được tùy ngữ cảnh
+D: Thiếu scope global
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q030
+topic: Data flow testing process
+context: Complete DFT methodology
+type: single
+question: Quy trình data flow testing hoàn chỉnh bao gồm bước nào KHÔNG phải?
+A: Tạo control flow graph rồi chuyển thành data flow graph
+B: Tính Cyclomatic complexity
+C: So sánh kết quả với test case của đối thủ
+D: Tạo C đường cơ sở
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q031
+topic: WBT complexity and effort
+context: Trade-off in WBT approach
+type: multiple
+question: White-box testing thường tốn nhiều thời gian và công sức. Khi nào WBT được xem là cần thiết?
+A: Đối với các module quan trọng thực hiện tính toán chính của hệ thống
+B: Đối với các module có khả năng ảnh hưởng lớn tới tính đúng đắn của hệ thống
+C: Đối với mã nguồn được cấp cao nhất
+D: Đối với module có độ phức tạp cyclomatic cao
+answer: A,B,D
+
+===QUESTION===
+id: CH5-D1-Q032
+topic: Coverage levels hierarchy
+context: Progression of coverage types
+type: multiple
+question: Các mức coverage nào KHÔNG bao hàm các mức trước nó (tức mức cao hơn không bao chứa mức thấp hơn)?
+A: Statement coverage (mức 1)
+B: Branch coverage (mức 2)
+C: Subcondition coverage (mức 3)
+D: All-path coverage
+answer: D
+
+===QUESTION===
+id: CH5-D1-Q033
+topic: Control flow vs Data flow testing
+context: Comparing two WBT techniques
+type: multiple
+question: Phương pháp data flow testing khác với control flow testing ở những điểm nào?
+A: Control flow tập trung vào lựa chọn nhánh, data flow tập trung vào sử dụng biến
+B: Data flow có trong bộ chủ đề ưu tiên của môn học
+C: Control flow phức tạp hơn data flow
+D: Data flow phát hiện vấn đề với biến (gán sai, thiếu định nghĩa, scope)
+answer: A,D
+
+===QUESTION===
+id: CH5-D1-Q034
+topic: Loop testing types
+context: Different loop structures and strategies
+type: multiple
+question: Những loại vòng lặp nào được nêu trong chương để kiểm thử?
+A: Single loop
+B: Nested loop
+C: Sequence loops
+D: Unstructured loops
+answer: A,B,C,D
+
+===QUESTION===
+id: CH5-D1-Q035
+topic: Basis path coverage
+context: McCabe methodology application
+type: multiple
+question: Đảm bảo C đường cơ sở được kiểm thử sẽ đảm bảo điều gì?
+A: 100% statement coverage
+B: 100% branch coverage
+C: Tất cả decision được chạy true và false
+D: 100% subcondition coverage
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q036
+topic: Data flow pair analysis
+context: Identifying variable lifecycle problems
+type: multiple
+question: Cặp hành động nào trong data flow là bất thường hoặc cần xem xét?
+A: dd (định nghĩa rồi định nghĩa)
+B: dr (định nghĩa rồi dùng)
+C: ur (hủy rồi dùng)
+D: uu (hủy rồi hủy)
+answer: A,C,D
+
+===QUESTION===
+id: CH5-D1-Q037
+topic: WBT suitability
+context: When to apply white-box testing
+type: multiple
+question: Khi nào nên ưu tiên sử dụng white-box testing?
+A: Module thực hiện tính toán phức tạp
+B: Module quan trọng cho tính toán chính của hệ thống
+C: Complexity cyclomatic cao
+D: Tất cả các hàm trong chương trình
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q038
+topic: Test case effectiveness
+context: Coverage requirements and test design
+type: multiple
+question: Test suite nào trong các lựa chọn sau có khả năng cao phát hiện lỗi nhất (giả sử module có 4 quyết định)?
+A: Test suite đạt 100% statement coverage
+B: Test suite đạt 100% branch coverage
+C: Test suite có 4 test case
+D: Test suite sử dụng basis path testing
+answer: B,D
+
+===QUESTION===
+id: CH5-D1-Q039
+topic: Cyclomatic complexity interpretation
+context: Code complexity and testability
+type: multiple
+question: Độ phức tạp cyclomatic cao (>10) của một module có ý nghĩa gì?
+A: Module khó hiểu và khó bảo trì
+B: Cần nhiều test case để kiểm thử đầy đủ
+C: Xác suất lỗi cao
+D: Nên chia module thành các module con nhỏ hơn
+answer: A,B,C,D
+
+===QUESTION===
+id: CH5-D1-Q040
+topic: PathCrawler automation
+context: Automated unit test generation tool
+type: multiple
+question: Công cụ PathCrawler có thể được sử dụng để:
+A: Sinh test input tự động để đạt full coverage
+B: Đáp ứng các tiêu chí coverage khác (branch, MC-DC)
+C: Sinh test bổ sung cải thiện coverage hiện có
+D: Viết unit test code trực tiếp bằng JUnit
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q041
+topic: Execution path complexity
+context: Combinatorial paths in conditionals
+type: fill
+question: Trong đoạn mã có 32 lệnh if/else tuần tự, số lượng execution path tối đa là _______.
+answer: 2^32
+
+===QUESTION===
+id: CH5-D1-Q042
+topic: Coverage tradeoff
+context: Balancing test effort and reliability
+type: single
+question: Vấn đề chính trong test coverage là xác định:
+A: Số test case tối đa để bao phủ tất cả đường thực thi
+B: Số test case tối thiểu nhưng đạt mức tin cậy tối đa
+C: Công cụ tốt nhất để sinh test
+D: Loại coverage cần áp dụng
+answer: B
+
+===QUESTION===
+id: CH5-D1-Q043
+topic: Code structure vs coverage
+context: Empty loop and test case selection
+type: single
+question: Nếu test case chọn giá trị vận hành vòng lặp result = 0 (skip loop), test này kiểm thử điều gì?
+A: Trường hợp input = 11 (vượt quá MAXIMUM)
+B: Trường hợp bình thường
+C: Tất cả các lần lặp
+D: Không thể xác định từ thông tin đã cho
+answer: A
+
+===QUESTION===
+id: CH5-D1-Q044
+topic: Data flow analysis
+context: Variable lifecycle pattern recognition
+type: single
+question: Scenario có vòng đời `~dduk` trong data flow testing, cặp bất thường 'dd' có thể chỉ ra:
+A: Biến được định nghĩa 2 lần liên tiếp, giá trị đầu tiên bị mất
+B: Lỗi chuẩn trong lập trình
+C: Không có vấn đề gì
+D: Biến được sử dụng sai scope
+answer: A
+
+===QUESTION===
+id: CH5-D1-Q045
+topic: Nested loop boundary testing
+context: Nested loop conditions at boundaries
+type: single
+question: Khi kiểm thử vòng lặp lồng nhau, với vòng ngoài ở giá trị min, cần kiểm thử vòng trong ở bao nhiêu giá trị?
+A: 1 giá trị
+B: 2 giá trị (min+1, max)
+C: 4 giá trị (min+1, typical, max-1, max)
+D: n giá trị tùy ý
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q046
+topic: Coverage level selection
+context: Choosing appropriate coverage criteria
+type: single
+question: Nếu dự án có budget hạn chế và module không quá phức tạp, coverage level tối thiểu nên là bao nhiêu?
+A: Level 0 (tự do)
+B: Level 1 (statement)
+C: Level 2 (branch)
+D: Level 3 (subcondition)
+answer: C
+
+===QUESTION===
+id: CH5-D1-Q047
+topic: Complex condition testing
+context: MC/DC vs simple branch coverage
+type: multiple
+question: Khi kiểm thử điều kiện phức tạp như `(a==b) || ((c==d) && bug(a))`, branch coverage có thể không bắt được những sai sót nào mà MC/DC sẽ bắt?
+A: Khi subcondition được tối ưu hóa compiler
+B: Khi một subcondition không ảnh hưởng tới kết quả của decision
+C: Khi branch được bỏ qua do short-circuit evaluation
+D: Khi 2 subcondition có giá trị trái ngược nhau
+answer: B,C
+
+===QUESTION===
+id: CH5-D1-Q048
+topic: Data flow testing completeness
+context: Variable scope and lifecycle
+type: multiple
+question: Để data flow testing hoàn chỉnh, cần xem xét điều gì với mỗi biến?
+A: Vòng đời 3 bước: tạo, dùng, hủy
+B: Phạm vi (scope): global, local
+C: Tất cả lệnh trong phạm vi biến
+D: Các cơn lỗi đã biết của biến đó
+answer: A,B,C
+
+===QUESTION===
+id: CH5-D1-Q049
+topic: Test case independence
+context: Basis path test design principle
+type: multiple
+question: Khi tạo basis path theo McCabe, mỗi đường cơ sở nên:
+A: Có ít nhất một cạnh hoán đổi so với đường trước
+B: Giữ tối đa phần tuyến tính với đường đầu tiên
+C: Độc lập hoàn toàn về logic
+D: Có xác suất phát hiện lỗi tương đương
+answer: A,B
+
+===QUESTION===
+id: CH5-D1-Q050
+topic: Unit test automation benefits
+context: Advantages of PathCrawler tool
+type: multiple
+question: Ưu điểm của tự động hóa unit testing bằng PathCrawler là:
+A: Sinh test input tự động đạt full coverage
+B: Giảm công sức tính toán coverage thủ công
+C: Hỗ trợ K-path coverage với giới hạn lần lặp
+D: Thay thế hoàn toàn coder trong viết test
+answer: A,B,C

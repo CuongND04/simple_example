@@ -1,0 +1,589 @@
+﻿===QUESTION===
+id: CH1-D2-Q001
+topic: Software definition
+context: Một nhóm đánh giá chất lượng chỉ dựa trên mã nguồn bàn giao, bỏ qua artifact khác.
+type: fill
+question:
+Theo định nghĩa IEEE/ISO trong chương, thành phần bị bỏ qua nhưng bắt buộc để vận hành hệ thống là ____.
+answer: documentation
+
+===QUESTION===
+id: CH1-D2-Q002
+topic: QA vs QC
+context: Doanh nghiệp muốn cơ chế phòng ngừa lỗi thay vì chỉ phát hiện lỗi ở cuối.
+type: fill
+question:
+Thành phần bao trùm nhằm phòng ngừa nguyên nhân lỗi xuyên vòng đời là ____.
+answer: QA
+
+===QUESTION===
+id: CH1-D2-Q003
+topic: QA vs QC
+context: Trong cột mốc nghiệm thu nội bộ, nhóm thực hiện inspection trên sản phẩm trung gian.
+type: fill
+question:
+Hoạt động đánh giá chất lượng đầu ra tại các mốc là ____.
+answer: QC
+
+===QUESTION===
+id: CH1-D2-Q004
+topic: Product Operation Factors
+context: Yêu cầu đầu ra phải đầy đủ, đúng và đúng hạn theo đặc tả nghiệp vụ.
+type: fill
+question:
+Yếu tố chất lượng phản ánh mức độ đúng theo yêu cầu là ____.
+answer: correctness
+
+===QUESTION===
+id: CH1-D2-Q005
+topic: Product Operation Factors
+context: Hệ thống cần bảo vệ dữ liệu trước truy cập không được phép.
+type: fill
+question:
+Yếu tố McCall tương ứng là ____.
+answer: integrity
+
+===QUESTION===
+id: CH1-D2-Q006
+topic: Product Revision Factors
+context: Nhóm test cần khả năng tự chẩn đoán và log để dễ kiểm chứng hành vi trung gian.
+type: fill
+question:
+Yếu tố chất lượng liên quan trực tiếp đến mức dễ kiểm thử là ____.
+answer: testability
+
+===QUESTION===
+id: CH1-D2-Q007
+topic: Product Transition Factors
+context: Doanh nghiệp muốn tái sử dụng thành phần đã ổn định để rút ngắn time-to-market.
+type: fill
+question:
+Yếu tố chất lượng phù hợp là ____.
+answer: reusability
+
+===QUESTION===
+id: CH1-D2-Q008
+topic: Error-Fault-Failure
+context: Trong báo cáo sự cố, hệ thống trả sai kết quả khi chạy thực tế cho một cấu hình đầu vào cụ thể.
+type: fill
+question:
+Hiện tượng sai hành vi quan sát được khi chạy được gọi là ____.
+answer: failure
+
+===QUESTION===
+id: CH1-D2-Q009
+topic: Error-Fault-Failure
+context: Lập trình viên chọn sai phép toán khi mã hóa một quy tắc nghiệp vụ.
+type: fill
+question:
+Sai sót con người ở bước tạo tác phần mềm được gọi là ____.
+answer: error
+
+===QUESTION===
+id: CH1-D2-Q010
+topic: Software lifecycle
+context: Kế hoạch SQA cần được gắn ngay từ đầu vào tiến trình phát triển tuần tự có pha rõ ràng.
+type: fill
+question:
+Mô hình SDLC điển hình có đặc trưng các pha chảy một chiều là ____.
+answer: Waterfall
+
+===QUESTION===
+id: CH1-D2-Q011
+topic: Software lifecycle
+context: Nhóm phân tích cần làm bản mẫu sớm để làm rõ yêu cầu trước khi hoàn tất thiết kế.
+type: fill
+question:
+Mô hình SDLC phù hợp với cách tiếp cận này là ____.
+answer: Prototyping
+
+===QUESTION===
+id: CH1-D2-Q012
+topic: Causes of Software Error
+context: Giao diện trợ giúp trực tuyến mô tả một chức năng đã bị hủy khỏi phiên bản phát hành.
+type: fill
+question:
+Nhóm nguyên nhân lỗi liên quan trực tiếp nhất là ____.
+answer: interface
+
+===QUESTION===
+id: CH1-D2-Q013
+topic: Quality perspectives
+context: Tổ chức đánh giá chất lượng theo tiêu chí "đáp ứng đúng yêu cầu đã chỉ định".
+type: fill
+question:
+Quan điểm này gắn với học giả ____.
+answer: Crosby
+
+===QUESTION===
+id: CH1-D2-Q014
+topic: Alternative quality factors
+context: Nhóm SQA muốn bổ sung tiêu chí quản trị và khả năng sống sót hệ thống trong điều kiện bất lợi.
+type: fill
+question:
+Yếu tố bổ sung mô tả khả năng hệ thống tiếp tục tồn tại/duy trì dịch vụ là ____.
+answer: survivability
+
+===QUESTION===
+id: CH1-D2-Q015
+topic: SQA intensity factors
+context: Khi thất bại dự án có thể gây hậu quả nghiêm trọng, tổ chức phải quyết định mức đầu tư QA.
+type: fill
+question:
+Nhóm yếu tố dùng để đánh giá mức nghiêm trọng hậu quả thất bại thuộc ____ factors.
+answer: project
+
+===QUESTION===
+id: CH1-D2-Q016
+topic: Error-Fault-Failure
+context: Một công thức trong mã bị viết sai nhưng toàn bộ bộ test hiện tại không chạm tới nhánh chứa công thức đó.
+type: single
+question:
+Nhận định đúng nhất là gì?
+A: Đã có failure vì công thức sai
+B: Có error và fault, chưa quan sát failure
+C: Chỉ có failure, không có fault
+D: Không có lỗi vì test đều pass
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q017
+topic: QA vs QC vs Testing
+context: PM đề xuất cắt bỏ hoạt động chuẩn hóa quy trình, chỉ giữ test cuối kỳ để tiết kiệm.
+type: single
+question:
+Theo tinh thần chương, quyết định nào chính xác nhất?
+A: Hợp lý vì test cuối kỳ thay thế được QA
+B: Không hợp lý vì QA nhằm phòng ngừa và diễn ra xuyên vòng đời
+C: Hợp lý nếu tăng số lượng test case
+D: Chỉ sai khi dự án dùng Spiral
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q018
+topic: Causes of Software Error
+context: Tài liệu yêu cầu ghi thiếu điều kiện nghiệp vụ ngoại lệ, dev triển khai theo phần còn lại và hệ thống sai khi gặp ngoại lệ.
+type: single
+question:
+Nguyên nhân gốc phù hợp nhất là gì?
+A: Faulty requirements definition
+B: Coding errors
+C: Non-compliance with coding standards
+D: User interface and procedure errors
+answer: A
+
+===QUESTION===
+id: CH1-D2-Q019
+topic: Causes of Software Error
+context: Analyst mô tả tiến trình nghiệp vụ bằng lưu đồ nhưng thiếu trạng thái xử lý thao tác bất hợp pháp.
+type: single
+question:
+Nhóm lỗi phù hợp nhất là gì?
+A: Communication failures
+B: Logical design errors
+C: Testing shortcomings
+D: Deliberate deviations
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q020
+topic: Causes of Software Error
+context: Nhóm phát triển nhận được phản hồi làm rõ từ khách hàng nhưng bỏ qua email do quá tải công việc.
+type: single
+question:
+Đây là trường hợp tiêu biểu của nhóm nào?
+A: Coding errors
+B: Client-developer communication failures
+C: Efficiency issues
+D: Portability issues
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q021
+topic: Deliberate deviations
+context: Dự án chủ động loại bỏ một chức năng nhỏ vì cho rằng "không ai dùng", dù yêu cầu đã phê duyệt.
+type: single
+question:
+Theo chương, cách phân loại đúng là?
+A: Shortcomings of testing process
+B: Deliberate deviations from software requirements
+C: Faulty requirements definition
+D: Integrity requirement
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q022
+topic: Testing shortcomings
+context: Nhiều defect bị phát hiện muộn vì test plan chỉ bao phủ happy-path.
+type: single
+question:
+Điểm yếu cốt lõi nào phản ánh đúng nhất?
+A: Kế hoạch test không đầy đủ
+B: Thiếu MIPS
+C: Thiếu interoperability
+D: Sai mô hình SDLC
+answer: A
+
+===QUESTION===
+id: CH1-D2-Q023
+topic: Product Operation Factors
+context: Cùng một chức năng, thời gian phản hồi tăng vọt khi băng thông mạng thấp.
+type: single
+question:
+Yếu tố chất lượng nào bị tác động trực tiếp nhất?
+A: Efficiency
+B: Reusability
+C: Flexibility
+D: Safety
+answer: A
+
+===QUESTION===
+id: CH1-D2-Q024
+topic: Product Revision Factors
+context: Mỗi lần sửa lỗi, đội mất nhiều ngày mới hiểu luồng do tài liệu kỹ thuật nội bộ kém.
+type: single
+question:
+Yếu tố chất lượng nào đang yếu nhất?
+A: Maintainability
+B: Portability
+C: Integrity
+D: Usability
+answer: A
+
+===QUESTION===
+id: CH1-D2-Q025
+topic: Product Transition Factors
+context: Hệ thống mới phải kết nối CSDL và dịch vụ thuộc hai nền tảng công nghệ khác nhau.
+type: single
+question:
+Yếu tố chất lượng trọng tâm là gì?
+A: Correctness
+B: Interoperability
+C: Learnability
+D: Expandability
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q026
+topic: SQA planning
+context: Kế hoạch chất lượng chỉ ghi "thực hiện review" mà không chỉ rõ ai làm và cần bao nhiêu nguồn lực.
+type: single
+question:
+Thiếu sót này vi phạm trực tiếp yêu cầu lập kế hoạch nào trong chương?
+A: Chỉ cần mô tả loại hoạt động là đủ
+B: Phải xác định thời điểm, loại hoạt động, người thực hiện và nguồn lực
+C: Chỉ cần xác định tiến độ coding
+D: Chỉ cần xác định chi phí test tool
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q027
+topic: SQA objectives in maintenance
+context: Đội bảo trì bị giao KPI chỉ về tốc độ đóng ticket, không theo dõi ràng buộc kỹ thuật và ngân sách.
+type: single
+question:
+Theo mục tiêu SQA trong bảo trì, thiếu thành phần nào?
+A: Chỉ thiếu yêu cầu giao diện
+B: Thiếu đảm bảo cho yêu cầu kỹ thuật chức năng và yêu cầu quản lý
+C: Không thiếu vì bảo trì không cần QA
+D: Chỉ thiếu portability
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q028
+topic: Quality perspectives
+context: Sản phẩm được người dùng ưa thích nhưng không đáp ứng đầy đủ đặc tả đã ký.
+type: single
+question:
+Kết luận phù hợp nhất là gì?
+A: Chắc chắn đạt cả Crosby và Juran
+B: Có thể đạt quan điểm Juran nhưng không đạt quan điểm Crosby
+C: Chắc chắn không đạt cả hai
+D: Chỉ cần test thêm để đạt Crosby tự động
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q029
+topic: SQA formal activities
+context: Trưởng dự án muốn dời toàn bộ hoạt động QA sang cuối dự án để "đỡ cản tiến độ".
+type: single
+question:
+Đánh giá nào đúng nhất theo chương?
+A: Đúng nếu có nhiều tester
+B: Sai vì SQA phải được xem là hoạt động chính thức gắn theo từng pha
+C: Đúng nếu dự án nhỏ
+D: Đúng nếu dùng Waterfall
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q030
+topic: Team factors
+context: Cùng quy mô dự án, nhóm A rất thông thạo miền nghiệp vụ, nhóm B mới hoàn toàn.
+type: single
+question:
+Nhận định phù hợp nhất về nhu cầu SQA là gì?
+A: Hai nhóm cần cường độ SQA như nhau
+B: Nhóm B thường cần cường độ SQA cao hơn do yếu tố đội ngũ
+C: Nhóm A cần cao hơn vì quen nghiệp vụ
+D: Cường độ SQA không phụ thuộc năng lực thành viên
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q031
+topic: Alternative quality factors
+context: Hội đồng chất lượng muốn bổ sung tiêu chí an toàn vận hành ngoài bộ 11 yếu tố McCall.
+type: single
+question:
+Yếu tố nào thuộc nhóm bổ sung trong chương?
+A: Safety
+B: Reliability
+C: Flexibility
+D: Usability
+answer: A
+
+===QUESTION===
+id: CH1-D2-Q032
+topic: Requirements quality
+context: Tài liệu ghi "hệ thống phải nhanh" nhưng không nêu ngưỡng định lượng thời gian phản hồi.
+type: single
+question:
+Lỗi đặc tả này gần nhất với dạng nào?
+A: Thiếu yêu cầu
+B: Yêu cầu mơ hồ/không rõ ràng
+C: Yêu cầu thừa
+D: Non-compliance with coding standards
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q033
+topic: Defect propagation scenario
+context: Một lỗi thiết kế làm biến trung gian nhận giá trị sai, sau đó lan tới đầu ra và chỉ lộ trong dữ liệu biên.
+type: single
+question:
+Mệnh đề đúng nhất là gì?
+A: Lỗi thiết kế luôn tạo failure ở mọi dữ liệu
+B: Failure chỉ xuất hiện khi fault được kích hoạt trong thực thi
+C: Nếu có propagation thì không còn là fault
+D: Propagation chỉ xảy ra ở runtime syntax error
+answer: B
+
+===QUESTION===
+id: CH1-D2-Q034
+topic: Software components in quality
+context: Đánh giá đầy đủ chất lượng phải xét cả phần có thể không phải mã chạy trực tiếp.
+type: multiple
+question:
+Theo ISO 9000-3 trong chương, những thành phần nào nằm trong phạm vi phần mềm?
+A: Chương trình máy tính
+B: Thủ tục/quy trình
+C: Tài liệu và dữ liệu vận hành
+D: Chỉ giao diện đồ họa
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q035
+topic: Operating system role
+context: Nhóm kiến thức nền cần phân biệt chức năng hệ điều hành so với ứng dụng.
+type: multiple
+question:
+Những chức năng nào được nêu là hoạt động chính của hệ điều hành?
+A: Quản lý bộ nhớ và kiểm soát truy cập tài nguyên
+B: Cung cấp lớp trung gian tạo tính độc lập phần cứng
+C: Hỗ trợ thực hiện chức năng phần cứng thông dụng
+D: Tự động đảm bảo correctness cho mọi ứng dụng
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q036
+topic: Causes taxonomy
+context: Nhóm hậu kiểm cần phân loại nguồn lỗi theo danh sách trong chương.
+type: multiple
+question:
+Mục nào sau đây thuộc danh sách nguyên nhân gây lỗi phần mềm đã nêu?
+A: Coding errors
+B: Shortcomings of the testing process
+C: User interface and procedure errors
+D: Quantum hardware instability
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q037
+topic: UI and procedure errors
+context: Phiên bản phát hành có thông điệp lỗi tối nghĩa và tài liệu hướng dẫn chứa chức năng không tồn tại.
+type: multiple
+question:
+Các biểu hiện nào khớp nhóm "user interface and procedure errors"?
+A: Lỗi trong trợ giúp trực tuyến
+B: Liệt kê chức năng đã bị loại bỏ
+C: Thông điệp lỗi khó hiểu/vô nghĩa
+D: Sai phép toán trong mã tính toán thuế
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q038
+topic: Reliability interpretation
+context: Dự án định nghĩa reliability requirement ở mức hệ thống dịch vụ liên tục.
+type: multiple
+question:
+Theo chương, các cách biểu diễn yêu cầu độ tin cậy có thể gồm?
+A: Failure rate mục tiêu
+B: Downtime tối đa theo chu kỳ
+C: Chỉ số MTBF/MTTR
+D: Số lượng màn hình giao diện
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q039
+topic: Maintainability determinants
+context: Kiểm toán chất lượng bảo trì tập trung vào khả năng phân tích và sửa lỗi nhanh.
+type: multiple
+question:
+Những yếu tố nào ảnh hưởng trực tiếp tới maintainability theo chương?
+A: Cấu trúc module
+B: Tài liệu nội bộ chương trình
+C: Tài liệu kiến trúc và thiết kế chi tiết
+D: Màu sắc giao diện đăng nhập
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q040
+topic: Flexibility and customer variation
+context: Cùng một sản phẩm phải điều chỉnh cho nhiều nhóm khách hàng có cách sử dụng khác nhau.
+type: multiple
+question:
+Nhận định nào phù hợp với flexibility requirements?
+A: Có thể cần nỗ lực perfective maintenance
+B: Sự khác nhau cách "exercise" hệ thống giữa khách hàng là yếu tố quan trọng
+C: Mục tiêu là giảm nguồn lực điều chỉnh cho các bối cảnh khác nhau
+D: Không liên quan vì flexibility chỉ là khái niệm của QC
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q041
+topic: Testability practices
+context: Đội QA muốn nâng khả năng kiểm thử và chẩn đoán sự cố.
+type: multiple
+question:
+Các biện pháp nào phù hợp với testability requirements trong chương?
+A: Định nghĩa kết quả trung gian để đối chiếu
+B: Tạo log/backup phục vụ phân tích
+C: Bổ sung cơ chế tự chẩn đoán trước và trong vận hành
+D: Chỉ tăng tốc độ CPU
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q042
+topic: Transition factors value
+context: Ban công nghệ đánh giá lợi ích chiến lược của các yếu tố chuyển đổi sản phẩm.
+type: multiple
+question:
+Những lợi ích nào gắn trực tiếp với reusability theo chương?
+A: Tiết kiệm chi phí phát triển
+B: Tận dụng thành phần đã được kiểm chứng
+C: Tăng tốc phát triển và cải thiện chất lượng
+D: Loại bỏ hoàn toàn nhu cầu kiểm thử
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q043
+topic: Alternative models
+context: Một nhóm chuyên gia muốn mở rộng bộ yếu tố chất lượng ngoài McCall.
+type: multiple
+question:
+Theo chương, các yếu tố bổ sung do các tác giả khác đề xuất gồm?
+A: Verifiability
+B: Expandability
+C: Manageability
+D: Efficiency
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q044
+topic: SQA time allocation
+context: Kế hoạch release chỉ cấp thời gian cho kiểm tra, không cấp thời gian cho xử lý sau khi phát hiện lỗi.
+type: multiple
+question:
+Hệ quả/ràng buộc nào được nhấn mạnh trong chương?
+A: Cần phân bổ thời gian riêng cho corrective actions
+B: Thiếu follow-up làm giảm hiệu lực hoạt động SQA
+C: SQA không thể chỉ làm hình thức rồi kỳ vọng tự hấp thụ
+D: Có thể bỏ qua sửa lỗi nếu báo cáo đã tạo
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q045
+topic: SQA intensity determinants
+context: Doanh nghiệp xây tiêu chí định mức cường độ QA cho từng dự án.
+type: multiple
+question:
+Các project factors nào được nêu là ảnh hưởng đến cường độ QA cần thiết?
+A: Quy mô dự án
+B: Độ phức tạp/độ khó kỹ thuật
+C: Mức nghiêm trọng hậu quả nếu thất bại
+D: Mức độ trang trí giao diện
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q046
+topic: Team factors in SQA
+context: Cùng phạm vi dự án, ban quản lý cân nhắc năng lực đội ngũ để quyết định kế hoạch chất lượng.
+type: multiple
+question:
+Các team factors nào được chương nêu rõ?
+A: Năng lực chuyên môn thành viên
+B: Mức quen thuộc dự án/kinh nghiệm lĩnh vực
+C: Mức sẵn có nhân sự phù hợp
+D: Số lượng màu trong guideline UI
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q047
+topic: QA-QC distinction with scenarios
+context: Tổ chức thiết kế bộ hoạt động chất lượng gồm phòng ngừa quy trình và kiểm tra đầu ra.
+type: multiple
+question:
+Những phát biểu nào đúng theo phân biệt QA và QC trong chương?
+A: QA nhấn mạnh phòng ngừa nguyên nhân lỗi
+B: QC tập trung đánh giá sản phẩm/đầu ra
+C: QC là một phần trong tổng thể QA
+D: QA chỉ là tên gọi khác của regression testing
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q048
+topic: Contextual quality prioritization
+context: Hệ thống cần ưu tiên khác nhau theo bối cảnh sử dụng và ràng buộc triển khai.
+type: multiple
+question:
+Theo chương, những yếu tố nào có thể thay đổi mức ưu tiên theo ngữ cảnh dự án?
+A: Scalability
+B: Maintainability
+C: Reliability
+D: Portability
+answer: A,B,C,D
+
+===QUESTION===
+id: CH1-D2-Q049
+topic: Fault-failure reasoning
+context: Một nhánh xử lý biên chứa defect. Dữ liệu thường không chạm nhánh này nên nhiều lần chạy vẫn đúng.
+type: multiple
+question:
+Kết luận nào hợp lý?
+A: Có thể tồn tại fault dù chưa thấy failure
+B: Khi dữ liệu kích hoạt nhánh lỗi, failure có thể xuất hiện
+C: Bộ test thiếu bao phủ biên có thể che giấu lỗi
+D: Một lần pass đủ chứng minh không còn defect
+answer: A,B,C
+
+===QUESTION===
+id: CH1-D2-Q050
+topic: Integrated SQA reasoning
+context: Dự án an toàn cao, deadline gắt, yêu cầu thường xuyên đổi, đội mới và hệ thống phải tích hợp nền tảng cũ.
+type: multiple
+question:
+Theo tinh thần chương, các hành động nào nên được ưu tiên đồng thời?
+A: Tăng cường lập kế hoạch SQA theo từng pha với nguồn lực rõ ràng
+B: Dành thời gian cho follow-up sửa lỗi sau hoạt động QA
+C: Nhấn mạnh cả yếu tố kỹ thuật lẫn tiến độ/ngân sách trong mục tiêu SQA
+D: Cắt bớt hoạt động QA chính thức để đẩy nhanh release
+answer: A,B,C

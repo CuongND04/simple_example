@@ -1,0 +1,575 @@
+===QUESTION===
+id: CH4.2-D1-Q001
+topic: Black-box testing definition
+context: Fundamental concept definition
+type: fill
+question: Black-box testing là kỹ thuật kiểm thử không cần biết ________ bên trong phần mềm.
+answer: mã nguồn
+
+===QUESTION===
+id: CH4.2-D1-Q002
+topic: Equivalence partitioning
+context: Partition classification in test design
+type: fill
+question: Trong equivalence partitioning, các giá trị không được hệ thống chấp nhận thuộc về partition ________.
+answer: không hợp lệ
+
+===QUESTION===
+id: CH4.2-D1-Q003
+topic: Boundary Value Analysis
+context: Boundary testing concept
+type: fill
+question: Kỹ thuật BVA tập trung vào các giá trị ________ của partition.
+answer: biên
+
+===QUESTION===
+id: CH4.2-D1-Q004
+topic: Decision Table
+context: Business rule documentation
+type: fill
+question: Trong decision table, mỗi cột tương ứng một ________ duy nhất giữa các điều kiện.
+answer: tổ hợp
+
+===QUESTION===
+id: CH4.2-D1-Q005
+topic: State Transition Testing
+context: Software state modeling
+type: fill
+question: Trong state transition diagram, ________ là sự kiện kích hoạt sự chuyển đổi giữa các trạng thái.
+answer: event
+
+===QUESTION===
+id: CH4.2-D1-Q006
+topic: Pairwise Testing
+context: Parameter combination testing
+type: fill
+question: Pairwise testing giảm số lượng test case bằng cách chỉ bao phủ tất cả tổ hợp ________ giữa 2 tham số.
+answer: cách
+
+===QUESTION===
+id: CH4.2-D1-Q007
+topic: Test oracle problem
+context: Metamorphic testing motivation
+type: fill
+question: ________ là cơ chế để quyết định output của chương trình đúng hay sai trong thời gian hợp lý.
+answer: Test oracle
+
+===QUESTION===
+id: CH4.2-D1-Q008
+topic: Metamorphic relation
+context: Metamorphic testing concept
+type: fill
+question: Trong metamorphic testing, ________ là mối quan hệ giữa các input liên quan và output tương ứng.
+answer: MR
+
+===QUESTION===
+id: CH4.2-D1-Q009
+topic: Valid vs Invalid partitions
+context: Equivalence partitioning categories
+type: fill
+question: Equivalence partitioning phải bao gồm cả partition chứa giá trị ________ và giá trị không hợp lệ.
+answer: hợp lệ
+
+===QUESTION===
+id: CH4.2-D1-Q010
+topic: Coverage measurement
+context: Test metrics in black-box testing
+type: fill
+question: Coverage của equivalence partitioning được đo bằng số partition đã test chia cho ________ partition xác định.
+answer: tổng
+
+===QUESTION===
+id: CH4.2-D1-Q011
+topic: BVA extension
+context: Boundary testing foundation
+type: fill
+question: Boundary Value Analysis là mở rộng của equivalence partitioning, nhưng chỉ dùng được khi partition có ________.
+answer: thứ tự
+
+===QUESTION===
+id: CH4.2-D1-Q012
+topic: Decision table symbols
+context: Decision table notation and interpretation
+type: fill
+question: Trong decision table, ký hiệu "________" biểu thị action phải xảy ra.
+answer: X
+
+===QUESTION===
+id: CH4.2-D1-Q013
+topic: State transition coverage
+context: Test design levels in state testing
+type: fill
+question: Coverage level 1 của state transition testing yêu cầu mỗi ________ xuất hiện ít nhất một lần.
+answer: trạng thái
+
+===QUESTION===
+id: CH4.2-D1-Q014
+topic: Untestable programs
+context: Metamorphic testing applications
+type: fill
+question: Compiler, search engine, và hệ machine learning được xem là các chương trình ________.
+answer: untestable
+
+===QUESTION===
+id: CH4.2-D1-Q015
+topic: Partition atomicity
+context: Equivalence partitioning principle
+type: fill
+question: Mỗi giá trị dữ liệu phải thuộc ________ và chỉ một equivalence partition.
+answer: một
+
+===QUESTION===
+id: CH4.2-D1-Q016
+topic: Black-box testing techniques selection
+context: Factors influencing technique choice
+type: single
+question: Yếu tố nào KHÔNG được liệt kê trong các yếu tố ảnh hưởng đến lựa chọn kỹ thuật test?
+A: Độ phức tạp của component
+B: Tiêu chuẩn pháp quy
+C: Năng lực của nhà quản lý dự án
+D: Loại rủi ro
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q017
+topic: Equivalence partitioning strategy
+context: Test case selection principle
+type: single
+question: Khi áp dụng equivalence partitioning, tester nên thiết kế test case như thế nào?
+A: Chỉ lựa chọn từng giá trị ngẫu nhiên trong mỗi partition
+B: Lựa chọn đại diện từ mỗi partition để bao phủ tất cả
+C: Chỉ test partition hợp lệ vì nó quan trọng hơn
+D: Test toàn bộ giá trị trong mỗi partition
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q018
+topic: BVA vs Equivalence partitioning
+context: Testing technique characteristics
+type: single
+question: Sự khác biệt chính giữa BVA và equivalence partitioning là gì?
+A: BVA chỉ test partition hợp lệ
+B: BVA tập trung vào các giá trị ở biên của partition
+C: Equivalence partitioning không test partition không hợp lệ
+D: BVA không cần xác định partition trước
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q019
+topic: Decision table completeness
+context: Test coverage in business rules
+type: single
+question: Khi tạo decision table với 3 điều kiện có 2 trạng thái mỗi cái, số decision rule tối đa là bao nhiêu?
+A: 3
+B: 6
+C: 8
+D: 12
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q020
+topic: State transition invalid transitions
+context: State testing design strategy
+type: single
+question: Tại sao kiểm thử các invalid transitions là quan trọng trong state transition testing?
+A: Vì chúng dễ bỏ sót trong thiết kế
+B: Vì chúng chiếm 50% tổng số transition
+C: Vì chúng không liên quan đến logic kinh doanh
+D: Vì chúng được thực hiện thường xuyên
+
+answer: A
+
+===QUESTION===
+id: CH4.2-D1-Q021
+topic: Pairwise testing effectiveness
+context: Test case reduction strategy
+type: single
+question: Ưu điểm chính của pairwise testing là gì?
+A: Tạo ra test case đơn giản hơn
+B: Giảm đáng kể số test case so với toàn bộ tổ hợp nhưng vẫn bao phủ cặp tham số quan trọng
+C: Khiến test oracle trở nên dễ xác định
+D: Không cần xác định các giá trị tham số
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q022
+topic: Test oracle and metamorphic testing relationship
+context: Solving untestable problem
+type: single
+question: Test oracle problem xảy ra khi nào?
+A: Khi output của mỗi input có thể được xác minh trực tiếp
+B: Khi không có oracle hoặc oracle quá đắt để áp dụng
+C: Khi chương trình chỉ có một input
+D: Khi hệ thống là testable programs
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q023
+topic: Metamorphic relation design
+context: Source and follow-up test case creation
+type: single
+question: Trong metamorphic testing, follow-up test case được tạo như thế nào từ source test case?
+A: Bằng cách thay đổi hoàn toàn đầu vào
+B: Bằng cách áp dụng metamorphic relation để biến đổi dữ liệu
+C: Bằng cách chạy lại source test case
+D: Bằng cách tạo đầu vào hoàn toàn ngẫu nhiên
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q024
+topic: Partition mutual exclusivity
+context: Equivalence partitioning rule
+type: single
+question: Nguyên tắc nào là BẮT BUỘC khi xác định equivalence partition?
+A: Tất cả partition phải có cùng số phần tử
+B: Mỗi giá trị thuộc một và chỉ một partition
+C: Partition hợp lệ phải nhiều hơn partition không hợp lệ
+D: Partition phải được đánh số tuần tự
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q025
+topic: Decision table symbols interpretation
+context: Action representation in decision rules
+type: single
+question: Trong decision table, nếu cell action để trống, ý nghĩa là gì?
+A: Action phải xảy ra
+B: Action có thể xảy ra hoặc không
+C: Action không xảy ra
+D: Dữ liệu bị thiếu
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q026
+topic: State transition coverage levels
+context: Test design depth in state testing
+type: single
+question: Mức coverage cao nhất trong state transition testing là gì?
+A: Coverage level 1: tất cả state được test
+B: Coverage level 2: tất cả event được test
+C: Coverage level 3: tất cả transition path được test
+D: Coverage level 4: tất cả chuỗi state được test
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q027
+topic: Black-box technique applicability
+context: Test level and technique matching
+type: single
+question: Kỹ thuật nào KHÔNG áp dụng được ở mọi test level?
+A: Equivalence partitioning
+B: Decision table
+C: Boundary value analysis
+D: Pairwise testing dựa trên kiến trúc hệ thống cụ thể
+
+answer: D
+
+===QUESTION===
+id: CH4.2-D1-Q028
+topic: BVA boundary points
+context: Boundary value selection strategy
+type: single
+question: Khi có 3 điểm biên (trước biên, tại biên, sau biên), biên nào là QUAN TRỌNG NHẤT?
+A: Giá trị trước biên
+B: Giá trị tại biên
+C: Giá trị sau biên
+D: Tất cả ba đều nhất quán
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q029
+topic: Metamorphic testing vs traditional testing
+context: Approach differences
+type: single
+question: Khác biệt cơ bản giữa metamorphic testing và traditional testing là gì?
+A: Metamorphic testing không cần chạy test
+B: Metamorphic testing khai thác quan hệ giữa input và output thay vì xác minh từng output riêng lẻ
+C: Traditional testing không sử dụng test case
+D: Metamorphic testing chỉ áp dụng cho chương trình toán học
+
+answer: B
+
+===QUESTION===
+id: CH4.2-D1-Q030
+topic: Decision table rule sufficiency
+context: Coverage adequacy assessment
+type: single
+question: Để bao phủ decision table với 8 decision rule, số test case tối thiểu là bao nhiêu?
+A: 1
+B: 4
+C: 8
+D: 16
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q031
+topic: Equivalence partitioning with invalid values
+context: Partition boundary conditions
+type: multiple
+question: Trong equivalence partitioning, cách phân chia nào là ĐÚNG cho yêu cầu "x phải trong khoảng 10-20"?
+A: Partition hợp lệ: 10 ≤ x ≤ 20
+B: Partition không hợp lệ 1: x < 10
+C: Partition không hợp lệ 2: x > 20
+D: Partition không hợp lệ 3: x = 0
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q032
+topic: BVA in different scenarios
+context: Application of boundary analysis
+type: multiple
+question: Kỹ thuật BVA có thể được áp dụng cho những yếu tố nào?
+A: Dữ liệu số có khoảng giá trị
+B: Dữ liệu ngày/giờ
+C: Dữ liệu có thứ tự tuần tự
+D: Dữ liệu string không có thứ tự
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q033
+topic: Decision table advantage
+context: Complex business logic testing
+type: multiple
+question: Những lợi ích nào của decision table testing?
+A: Giúp nhận diện đầy đủ các tổ hợp điều kiện
+B: Phát hiện lỗ hổng trong yêu cầu
+C: Tạo ra test case ít hơn equivalence partitioning
+D: Khiến test logic trở nên rõ ràng và hệ thống
+
+answer: A,B,D
+
+===QUESTION===
+id: CH4.2-D1-Q034
+topic: State transition invalid transitions
+context: Testing strategy for robust systems
+type: multiple
+question: Những trường hợp nào cần được kiểm thử khi test invalid transitions?
+A: Event không hợp lệ từ trạng thái hiện tại
+B: Transition không được định nghĩa trong state diagram
+C: Hệ thống xử lý lỗi không đúng cách
+D: Trạng thái không được cập nhật
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH4.2-D1-Q035
+topic: Pairwise testing parameter selection
+context: Comprehensive combination coverage
+type: multiple
+question: Khi lập kế hoạch pairwise testing, những yếu tố nào cần xem xét?
+A: Tất cả các input parameter cần được liệt kê
+B: Các giá trị khả thi cho mỗi parameter
+C: Các cặp parameter nào có mối quan hệ
+D: Mỗi parameter chỉ có một giá trị duy nhất
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q036
+topic: Test oracle alternatives
+context: Metamorphic testing solutions
+type: multiple
+question: Khi không có oracle trực tiếp, metamorphic testing giải quyết bằng cách nào?
+A: Sử dụng các metamorphic relation để kiểm tra tính nhất quán
+B: So sánh output giữa source và follow-up test case thay vì so với expected output
+C: Bỏ qua việc kiểm tra output
+D: Xây dựng constraint giữa các test case
+
+answer: A,B,D
+
+===QUESTION===
+id: CH4.2-D1-Q037
+topic: Testable vs untestable classification
+context: Program classification based on oracle availability
+type: multiple
+question: Những chương trình nào thường được xem là untestable programs?
+A: Compiler
+B: Hệ machine learning
+C: Simulator
+D: Hệ thống nhắn tin đơn giản
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q038
+topic: Black-box technique combination
+context: Test design strategy in practice
+type: multiple
+question: Tester thường kết hợp những kỹ thuật nào để tối ưu hiệu quả test effort?
+A: Equivalence partitioning và boundary value analysis
+B: Decision table và state transition testing
+C: Pairwise testing với các kỹ thuật khác
+D: Không kết hợp, dùng một kỹ thuật duy nhất
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q039
+topic: Partition sub-division
+context: Refinement of equivalence classes
+type: multiple
+question: Khi nào nên chia một equivalence partition thành sub-partition?
+A: Khi partition có quá nhiều phần tử
+B: Khi cần độ chi tiết cao hơn trong thiết kế test
+C: Khi các phần tử trong partition có hành vi khác nhau
+D: Luôn luôn chia để tăng số test case
+
+answer: B,C
+
+===QUESTION===
+id: CH4.2-D1-Q040
+topic: State transition event handling
+context: Multiple transitions from same state
+type: multiple
+question: Các khía cạnh nào cần được kiểm thử khi cùng một event có thể tạo 2 transition khác nhau từ cùng một state?
+A: Điều kiện nào xác định transition nào được chọn
+B: Action bổ sung được thực hiện cho mỗi transition
+C: State đích có khác nhau không
+D: Event phải giống nhau hoàn toàn
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q041
+topic: Metamorphic relation types
+context: MR design for different scenarios
+type: multiple
+question: Những loại metamorphic relation nào thường được sử dụng?
+A: Additive relation: thêm phần tử có output tăng tương ứng
+B: Permutation relation: sắp xếp lại input không ảnh hưởng output
+C: Inverse relation: áp dụng phép toán ngược khôi phục dữ liệu
+D: All relations phải giống nhau
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q042
+topic: Coverage inadequacy
+context: Single technique limitation
+type: multiple
+question: Những hạn chế nào khi chỉ sử dụng một kỹ thuật black-box duy nhất?
+A: Không bao phủ đủ tổ hợp điều kiện phức tạp
+B: Bỏ sót các giá trị biên quan trọng
+C: Không kiểm tra hối hộp logic kinh doanh
+D: Không bao giờ có hạn chế
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q043
+topic: BVA three-point technique
+context: Boundary value selection variant
+type: multiple
+question: Kỹ thuật 3 điểm BVA (trước-tại-sau biên) có lợi thế nào?
+A: Bao phủ hơn 2 điểm (chỉ tại biên)
+B: Phát hiện lỗi off-by-one
+C: Kiểm tra hành vi ngoài biên
+D: Giảm số test case cần thiết
+
+answer: A,B,C
+
+===QUESTION===
+id: CH4.2-D1-Q044
+topic: Decision table don't care symbol
+context: Condition significance assessment
+type: multiple
+question: Khi nào sử dụng ký hiệu "don't care" (-) trong decision table?
+A: Khi giá trị điều kiện không ảnh hưởng đến set action
+B: Khi điều kiện không được định nghĩa
+C: Khi cần giảm số decision rule
+D: Khi muốn bỏ qua kiểm tra điều kiện
+
+answer: A,C
+
+===QUESTION===
+id: CH4.2-D1-Q045
+topic: State transition path testing
+context: Complex path coverage strategy
+type: multiple
+question: Trong state transition testing, những yếu tố nào xác định mức độ coverage?
+A: Transiton path: đường chuyển trạng thái từ initial state đến end state
+B: Linear transition path: đường không có loop
+C: Số lượng trạng thái trung gian
+D: Loop không thể kiểm tra đầy đủ nên coverage max là level 4
+
+answer: A,B,D
+
+===QUESTION===
+id: CH4.2-D1-Q046
+topic: Metamorphic testing limitations
+context: When MR cannot be applied
+type: multiple
+question: Những tình huống nào làm cho metamorphic testing khó hoặc không thể áp dụng?
+A: Khi không tìm được metamorphic relation thích hợp
+B: Khi chương trình đã testable và có oracle
+C: Khi output phụ thuộc vào yếu tố ngẫu nhiên
+D: Khi chương trình quá đơn giản
+
+answer: A,C
+
+===QUESTION===
+id: CH4.2-D1-Q047
+topic: Pairwise testing completeness
+context: Coverage verification in parameter combination
+type: multiple
+question: Bằng cách nào kiểm tra xem pairwise test suite có bao phủ tất cả cặp?
+A: So sánh mỗi test case với danh sách cặp được yêu cầu
+B: Sử dụng công cụ pairwise để sinh test suite
+C: Kiểm tra thủ công tất cả 2-way combination
+D: Công cụ tự động phát hiện cặp bị thiếu
+
+answer: A,B,C,D
+
+===QUESTION===
+id: CH4.2-D1-Q048
+topic: Test technique formality level
+context: Degree of documentation in test design
+type: single
+question: Yếu tố NÀO ảnh hưởng MẠNHất đến mức độ hình thức khi áp dụng kỹ thuật test?
+A: Ngữ cảnh kiểm thử và mức trưởng thành quy trình
+B: Độ phức tạp logic kinh doanh
+C: Năng lực kỹ thuật của team
+D: Thời gian sẵn có
+
+answer: A
+
+===QUESTION===
+id: CH4.2-D1-Q049
+topic: Black-box technique scope
+context: Applicability across testing aspects
+type: single
+question: Black-box testing techniques có thể áp dụng cho loại kiểm thử NÀO chứ không phải?
+A: Kiểm thử chức năng
+B: Kiểm thử phi chức năng (performance, security)
+C: Chỉ kiểm thử chức năng mà không có phi chức năng
+D: Kiểm thử tích hợp
+
+answer: C
+
+===QUESTION===
+id: CH4.2-D1-Q050
+topic: Comprehensive test design strategy
+context: Integration of multiple techniques
+type: single
+question: Trong thiết kế bộ test case, yếu tố KHÔNG CÓ trong danh sách tiêu chí là gì?
+A: Phân tích test basis (yêu cầu chính thức)
+B: Kết hợp nhiều kỹ thuật phù hợp với ngữ cảnh
+C: Loại font chữ trong tài liệu test case
+D: Tài nguyên và hạn chế thời gian/ngân sách
+
+answer: C
+

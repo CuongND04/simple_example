@@ -214,6 +214,49 @@ body {
   color: var(--danger);
 }
 
+.result-meta {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.result-options {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.result-option {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.result-option.correct {
+  border-color: #a9ddb5;
+  background: #eef9f1;
+}
+
+.result-option.wrong-selected {
+  border-color: #efb7b1;
+  background: #fff2f1;
+}
+
+.option-key {
+  font-weight: 700;
+}
+
+.result-explanation {
+  margin-top: 8px;
+  padding: 10px;
+  border-left: 3px solid #93b2d5;
+  background: #f6f9ff;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .app {
     width: min(720px, 94vw);

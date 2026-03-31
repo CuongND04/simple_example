@@ -1,0 +1,589 @@
+===QUESTION===
+id: CH2-D1-Q001
+topic: QA vs Testing
+context: phân định phạm vi hoạt động
+type: fill
+question:
+Trong dự án có quản lý chuẩn phát triển, quản lý cấu hình, quản lý phát hành và đào tạo kiểm thử viên; hoạt động bao trùm này được gọi là ______.
+answer: Quality Assurance
+
+===QUESTION===
+id: CH2-D1-Q002
+topic: V-Model mapping
+context: liên kết pha phát triển và mức kiểm thử
+type: fill
+question:
+Trong V-Model, cặp kiểm thử đối ứng trực tiếp với Requirement Analysis là ______ Test.
+answer: Acceptance
+
+===QUESTION===
+id: CH2-D1-Q003
+topic: software lifecycle model
+context: đặc trưng bàn giao cuối chu kỳ
+type: fill
+question:
+Mô hình phát triển có tính tuyến tính, plan-driven, heavy-weight và thường bàn giao kiểu big bang là ______.
+answer: SDLC
+
+===QUESTION===
+id: CH2-D1-Q004
+topic: defect reporting metrics
+context: phân loại thông tin lỗi
+type: fill
+question:
+Trong báo cáo lỗi, thuộc tính phản ánh mức độ ảnh hưởng kỹ thuật của lỗi lên hệ thống là ______.
+answer: Severity
+
+===QUESTION===
+id: CH2-D1-Q005
+topic: test management
+context: điều kiện dừng kiểm thử
+type: fill
+question:
+Bộ tiêu chí dùng để quyết định dừng kiểm thử trong Test Control được gọi là ______.
+answer: Exit criteria
+
+===QUESTION===
+id: CH2-D1-Q006
+topic: defect origin distribution
+context: phân bố lỗi theo pha
+type: fill
+question:
+Theo phân bố nguồn gốc lỗi trong chương, pha chiếm khoảng 35% lỗi là pha ______.
+answer: Design
+
+===QUESTION===
+id: CH2-D1-Q007
+topic: cost of defect removal
+context: chi phí theo pha muộn
+type: fill
+question:
+Trong bảng chi phí tương đối, pha có chi phí loại lỗi cao nhất (110) là ______.
+answer: Operation
+
+===QUESTION===
+id: CH2-D1-Q008
+topic: review techniques
+context: hoạt động kiểm soát chất lượng
+type: fill
+question:
+Hình thức review nơi tác giả trình bày mã/tài liệu cho nhóm theo hướng dẫn từng bước được gọi là ______.
+answer: walkthrough
+
+===QUESTION===
+id: CH2-D1-Q009
+topic: RUP phases
+context: mức hoàn thiện use case
+type: fill
+question:
+Pha mà use case model được phát triển đến khoảng 80% là ______.
+answer: Elaboration
+
+===QUESTION===
+id: CH2-D1-Q010
+topic: maintenance types
+context: thay đổi do môi trường vận hành
+type: fill
+question:
+Bảo trì nhằm điều chỉnh phần mềm để tương thích môi trường mới được gọi là bảo trì ______.
+answer: Adaptive
+
+===QUESTION===
+id: CH2-D1-Q011
+topic: risk-driven lifecycle
+context: lựa chọn mô hình phát triển
+type: fill
+question:
+Mô hình phát triển lấy phân tích rủi ro làm trung tâm ở mỗi vòng lặp là mô hình ______.
+answer: Spiral
+
+===QUESTION===
+id: CH2-D1-Q012
+topic: quality metrics
+context: chỉ số chất lượng trong kế hoạch SQA
+type: fill
+question:
+Chỉ số đo số lỗi trên đơn vị kích thước sản phẩm (ví dụ KLOC) là ______.
+answer: Defect density
+
+===QUESTION===
+id: CH2-D1-Q013
+topic: test execution status
+context: ghi nhận trạng thái test case
+type: fill
+question:
+Một test case chưa được chạy trong vòng kiểm thử hiện tại phải được ghi trạng thái ______.
+answer: NOT EXECUTED
+
+===QUESTION===
+id: CH2-D1-Q014
+topic: testing principles
+context: truy vết yêu cầu
+type: fill
+question:
+Khả năng liên kết test case về yêu cầu khách hàng được gọi là ______.
+answer: Traceability
+
+===QUESTION===
+id: CH2-D1-Q015
+topic: test techniques
+context: kiểm soát tác động sau sửa lỗi
+type: fill
+question:
+Sau khi vá lỗi, bộ kiểm thử cũ được chạy lại để phát hiện tác dụng phụ; kỹ thuật này là ______.
+answer: Regression testing
+
+===QUESTION===
+id: CH2-D1-Q016
+topic: V-Model mapping
+context: đối xứng thiết kế và kiểm thử
+type: single
+question:
+Trong V-Model, hoạt động nào đối ứng trực tiếp với Module Design?
+A: Acceptance Test Design
+B: System Test Design
+C: Integration Test Design
+D: Unit Test Design
+answer: D
+
+===QUESTION===
+id: CH2-D1-Q017
+topic: testing axioms
+context: phân bổ nguồn lực theo rủi ro
+type: single
+question:
+Một module vừa phát hiện nhiều lỗi nghiêm trọng trong sprint hiện tại. Theo tiên đề kiểm thử, hành động nào hợp lý nhất cho vòng test kế tiếp?
+A: Tăng mật độ test quanh module đó
+B: Giảm test module đó để tránh thiên lệch
+C: Chuyển toàn bộ nguồn lực sang module chưa test
+D: Dừng test vì đã tìm thấy đủ lỗi
+answer: A
+
+===QUESTION===
+id: CH2-D1-Q018
+topic: lifecycle model selection
+context: dự án lớn rủi ro cao
+type: single
+question:
+Dự án quốc gia có yêu cầu kiểm soát rủi ro định kỳ theo từng vòng, ngân sách lớn và thời gian dài. Mô hình nào phù hợp nhất theo chương?
+A: Prototyping
+B: Spiral
+C: Agile rút gọn
+D: Big-bang coding
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q019
+topic: test control
+context: điều kiện dừng kiểm thử
+type: single
+question:
+Tại thời điểm dự kiến đóng test, coverage mới đạt 58% trong khi exit criteria yêu cầu 80%. Quyết định đúng là gì?
+A: Đóng test vì đã hết lịch
+B: Đóng test nếu severity trung bình thấp
+C: Tiếp tục test hoặc đàm phán lại exit criteria
+D: Chuyển sang UAT ngay
+answer: C
+
+===QUESTION===
+id: CH2-D1-Q020
+topic: testing levels
+context: xác nhận phù hợp nhu cầu sử dụng
+type: single
+question:
+Mức kiểm thử nào chủ yếu trả lời câu hỏi “hệ thống có đáp ứng nhu cầu sử dụng thực tế của người dùng hay không”?
+A: Unit Testing
+B: Integration Testing
+C: System Testing
+D: Acceptance Testing
+answer: D
+
+===QUESTION===
+id: CH2-D1-Q021
+topic: defect filtering strategy
+context: tối ưu lọc lỗi sớm
+type: single
+question:
+Kế hoạch SQA toàn diện bổ sung Design Inspection và Code Inspection chủ yếu để đạt mục tiêu nào?
+A: Đẩy phần lớn lỗi sang operation để đo thực tế
+B: Tăng loại bỏ lỗi ở pha sớm, giảm chi phí muộn
+C: Giảm nhu cầu thiết kế test case
+D: Loại bỏ hoàn toàn nhu cầu integration test
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q022
+topic: defect prevention
+context: lỗi phát sinh từ yêu cầu
+type: single
+question:
+Nhiều lỗi hệ thống truy nguyên về requirement mơ hồ dù code đã review kỹ. Biện pháp ưu tiên theo chương là gì?
+A: Tăng số lượng unit test ngẫu nhiên
+B: Tăng cường requirements specs review
+C: Bỏ design review để rút ngắn lịch
+D: Chỉ tăng test automation UI
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q023
+topic: test planning
+context: nội dung bắt buộc của test plan
+type: single
+question:
+Thiếu thành phần nào dưới đây trong test plan dễ làm đội test khởi chạy khi môi trường chưa sẵn sàng?
+A: Entry criteria
+B: Severity scale
+C: Coding guideline
+D: Release note template
+answer: A
+
+===QUESTION===
+id: CH2-D1-Q024
+topic: metrics and defect management
+context: đo tốc độ đưa lỗi vào sản phẩm
+type: single
+question:
+Chỉ số nào phản ánh mức lỗi được đưa vào sản phẩm theo thời gian/pha phát triển?
+A: Defect injection rate
+B: Defect removal effectiveness
+C: Test coverage ratio
+D: Mean resolution age
+answer: A
+
+===QUESTION===
+id: CH2-D1-Q025
+topic: QA vs Testing
+context: phân biệt phạm vi hoạt động
+type: single
+question:
+Hoạt động nào thuộc QA nhưng không phải bản chất cốt lõi của Testing level (unit/integration/system)?
+A: Version control
+B: Boundary value analysis
+C: Pairwise input design
+D: Negative test execution
+answer: A
+
+===QUESTION===
+id: CH2-D1-Q026
+topic: testing levels
+context: lỗi ghép nối module
+type: single
+question:
+Hai dịch vụ trao đổi JSON lệch schema nhưng từng dịch vụ chạy đơn lẻ đều PASS. Lỗi này nên được phát hiện chủ yếu ở mức nào?
+A: Unit
+B: Integration
+C: Acceptance
+D: Static analysis
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q027
+topic: prototyping model
+context: thiếu tham gia khách hàng
+type: single
+question:
+Trong mô hình prototyping, nếu khách hàng phản hồi chậm và không tham gia vòng lặp, rủi ro lớn nhất là gì?
+A: Không viết được unit test
+B: Prototype tối ưu quá mức
+C: Sản phẩm lệch nhu cầu và khó chấp nhận
+D: Không thể thực hiện conversion
+answer: C
+
+===QUESTION===
+id: CH2-D1-Q028
+topic: installation and conversion
+context: giảm gián đoạn nghiệp vụ
+type: single
+question:
+Tổ chức không chấp nhận dừng hệ thống cũ ngay lập tức khi chuyển đổi. Chiến lược triển khai phù hợp nhất là gì?
+A: Chuyển đổi dứt điểm một lần
+B: Chạy song song
+C: Bỏ qua kiểm thử chấp nhận
+D: Chỉ phát hành tài liệu
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q029
+topic: configuration management
+context: lỗi phát hành sai phiên bản
+type: single
+question:
+Bản build đưa lên môi trường test không khớp commit đã phê duyệt. Nhóm hoạt động QA nào đang yếu nhất?
+A: Change/Configuration management
+B: Acceptance testing
+C: Domain modeling
+D: Cost-benefit analysis
+answer: A
+
+===QUESTION===
+id: CH2-D1-Q030
+topic: audit strategy
+context: kiểm soát chuyển pha
+type: single
+question:
+Loại audit phù hợp nhất để đánh giá mức tuân thủ trước khi chính thức kết thúc một pha phát triển là gì?
+A: Delivery audit
+B: Phase-end audit
+C: Investigative audit
+D: Ad-hoc walkthrough
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q031
+topic: test design and specification
+context: đánh giá khả năng kiểm thử yêu cầu
+type: single
+question:
+Yêu cầu nghiệp vụ “giao diện thân thiện” gây tranh cãi vì không đo được. Bước nào nên làm sớm nhất trong quy trình test để xử lý?
+A: Test execution ngay với smoke test
+B: Review test basis và đánh giá testability
+C: Chuyển thẳng sang UAT
+D: Tăng số lượng exploratory test không kế hoạch
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q032
+topic: testing axioms
+context: giới hạn của kiểm thử
+type: single
+question:
+Phát biểu nào đúng nhất theo tiên đề kiểm thử?
+A: Nếu chạy đủ test case thì có thể chứng minh hệ thống không còn lỗi
+B: Kiểm thử chỉ cần tập trung pha cuối vì bug đã ổn định
+C: Kiểm thử không thể chứng minh hoàn toàn không còn bug
+D: Kiểm thử vét cạn khả thi nếu có automation đầy đủ
+answer: C
+
+===QUESTION===
+id: CH2-D1-Q033
+topic: comprehensive SQA plan
+context: so sánh kế hoạch tiêu chuẩn và toàn diện
+type: single
+question:
+Trong bảng so sánh của chương, vì sao kế hoạch toàn diện vẫn có thể giảm lỗi thoát ra dù hiệu quả Unit test không tăng?
+A: Vì bỏ hoàn toàn integration test
+B: Vì thêm bộ lọc mạnh ở pha thiết kế và coding
+C: Vì không đo defect origin distribution
+D: Vì chuyển toàn bộ lỗi sang documentation review
+answer: B
+
+===QUESTION===
+id: CH2-D1-Q034
+topic: lifecycle models
+context: nhận diện đặc trưng mô hình
+type: multiple
+question:
+Chọn các mô hình được mô tả vừa heavy-weight vừa plan-driven trong chương.
+A: SDLC
+B: Prototyping thuần
+C: Spiral
+D: Agile nhịp ngắn
+answer: A,C
+
+===QUESTION===
+id: CH2-D1-Q035
+topic: verification scope
+context: kiểm thử và review theo artefact
+type: multiple
+question:
+Những đối tượng nào được nêu rõ cần review/kiểm thử xuyên suốt vòng đời?
+A: Requirements
+B: Design
+C: Implemented system
+D: Documentation
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q036
+topic: test planning
+context: thành phần của test plan
+type: multiple
+question:
+Chọn các thành phần thuộc test plan theo nội dung chương.
+A: Entry criteria
+B: Lịch trình và phân công kiểm thử
+C: Danh sách bug đã đóng của dự án cũ
+D: Exit criteria
+answer: A,B,D
+
+===QUESTION===
+id: CH2-D1-Q037
+topic: defect taxonomy
+context: nhóm lỗi phổ biến
+type: multiple
+question:
+Nhóm lỗi nào được liệt kê trong chương?
+A: Lỗi điều kiện biên
+B: Lỗi xử lý ngoại lệ
+C: Lỗi quản lý phiên bản
+D: Lỗi diễn giải dữ liệu
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q038
+topic: QA process components
+context: phạm vi QA toàn dự án
+type: multiple
+question:
+Theo chương, hoạt động nào thuộc phạm vi QA?
+A: Version control
+B: Change/Configuration management
+C: Release management
+D: Đào tạo
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q039
+topic: SQA plan standards
+context: tiêu chuẩn cần công bố trong kế hoạch
+type: multiple
+question:
+Các chuẩn nào nên được nêu rõ trong SQA Plan?
+A: Coding standards
+B: Database design standards
+C: GUI design standards
+D: Test case design standards
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q040
+topic: QC activities
+context: hoạt động kiểm soát chất lượng
+type: multiple
+question:
+Chọn các hoạt động QC được đề xuất đưa vào kế hoạch.
+A: Code walkthrough
+B: Peer review
+C: Formal review
+D: Unit testing
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q041
+topic: spiral cycle
+context: cấu phần một vòng xoắn
+type: multiple
+question:
+Một vòng xoắn trong Spiral thường bao gồm các thành phần nào?
+A: Planning theo yêu cầu/nhận xét khách hàng
+B: Risk analysis và risk resolution
+C: Engineering activities
+D: Customer evaluation
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q042
+topic: defect removal effectiveness
+context: vì sao hiệu quả loại bỏ thấp hơn phát hiện
+type: multiple
+question:
+Những nguyên nhân nào giải thích việc tỷ lệ loại bỏ lỗi thường thấp hơn tỷ lệ phát hiện lỗi?
+A: Sửa lỗi không đầy đủ hoặc không hiệu quả
+B: Một số lỗi bị bỏ sót hoàn toàn
+C: Lỗi tồn dư từ pha trước cộng dồn sang pha sau
+D: Mọi lỗi phát hiện đều tự động được loại bỏ hoàn toàn
+answer: A,B,C
+
+===QUESTION===
+id: CH2-D1-Q043
+topic: economics of quality
+context: chi phí lỗi tăng theo pha
+type: multiple
+question:
+Yếu tố nào làm chi phí lỗi ở pha muộn tăng rất mạnh?
+A: Lỗi thoát ra đến khách hàng và vận hành
+B: Thiếu lọc lỗi sớm ở review/test đầu vòng đời
+C: Sửa lỗi muộn thường kéo theo chỉnh sửa liên đới
+D: Unit test luôn đắt hơn operation fix
+answer: A,B,C
+
+===QUESTION===
+id: CH2-D1-Q044
+topic: system vs acceptance testing
+context: phân biệt mục tiêu và chủ thể
+type: multiple
+question:
+Phát biểu nào đúng theo chương về System test và Acceptance test?
+A: System test thường do phía phát triển thực hiện trước bàn giao
+B: Acceptance test có thể do khách hàng thực hiện hoặc phối hợp
+C: Acceptance test chủ yếu xác nhận phù hợp nhu cầu sử dụng thực tế
+D: System test chỉ kiểm tra tài liệu, không kiểm tra hệ thống chạy
+answer: A,B,C
+
+===QUESTION===
+id: CH2-D1-Q045
+topic: transition operations
+context: công việc giai đoạn chuyển giao
+type: multiple
+question:
+Những hoạt động nào thuộc Transition phase theo nội dung chương?
+A: Cài đặt và phát hành
+B: Đào tạo và hỗ trợ kỹ thuật
+C: Tích hợp với hệ thống legacy
+D: Bảo trì sau chuyển giao
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q046
+topic: causal analysis triggers
+context: sự kiện kích hoạt phân tích nguyên nhân
+type: multiple
+question:
+Những sự kiện nào được nêu là trigger cho causal analysis trong SQA Plan?
+A: Failure
+B: Defect
+C: Success
+D: Deadline
+answer: A,B,C
+
+===QUESTION===
+id: CH2-D1-Q047
+topic: defect origin distribution
+context: xác thực số liệu phân bố lỗi
+type: multiple
+question:
+Chọn các cặp pha-tỷ lệ phù hợp với phân bố nguồn gốc lỗi trong chương.
+A: Requirement specs - 15%
+B: Design - 35%
+C: Coding/Integration - 40%
+D: Documentation - 10%
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q048
+topic: defect filtering model assumptions
+context: giả định định lượng của mô hình
+type: multiple
+question:
+Các giả định nào thuộc mô hình hiệu quả loại bỏ lỗi và chi phí?
+A: Tiến trình tuyến tính kiểu waterfall
+B: Mỗi pha đều có thể đưa thêm lỗi mới
+C: Lỗi đầu vào pha = lỗi tồn dư + lỗi mới của pha
+D: Chi phí hoạt động SQA tính theo số lỗi loại bỏ nhân chi phí tương đối
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q049
+topic: elaboration outputs
+context: sản phẩm công việc cuối pha
+type: multiple
+question:
+Những nội dung nào được nhấn mạnh ở Elaboration phase?
+A: Use case model đạt khoảng 80%
+B: Cập nhật kế hoạch đánh giá rủi ro
+C: Hoàn thiện tài liệu kiến trúc
+D: Thiết lập glossary dùng chung
+answer: A,B,C,D
+
+===QUESTION===
+id: CH2-D1-Q050
+topic: integration test focus
+context: tình huống đọc hệ thống ghép nối
+type: multiple
+question:
+Tình huống nào nên ưu tiên Integration Testing hơn Unit Testing?
+A: Hai module truyền cùng trường dữ liệu nhưng khác kiểu dữ liệu
+B: Hàm cục bộ tính sai giá trị với một đầu vào đơn lẻ
+C: Service A xử lý timeout khiến luồng giữa A-B-C bị đứt
+D: Cấu trúc transaction giữa ứng dụng và database lệch cam kết
+answer: A,C,D
