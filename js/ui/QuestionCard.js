@@ -118,6 +118,7 @@ export class QuestionCard {
                     type="text" 
                     class="fill-input" 
                     value="${this.escapeAttribute(userAnswer)}"
+                    autocomplete="off"
                     disabled
                 >
             </div>
@@ -237,6 +238,7 @@ export class QuestionCard {
             type="text" 
             class="fill-input" 
             placeholder="Enter answer here..." 
+            autocomplete="off"
             ${disabled}
             data-question-id="${answerId.replace("answer-", "")}"
         >`;

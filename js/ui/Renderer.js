@@ -54,9 +54,15 @@ export class Renderer {
               .map(
                 (score) => `
                     <div class="score-item">
-                        <span class="score-exam">${score.exam}</span>
-                        <span class="score-value">${score.score}/${score.total}</span>
-                        <span class="score-percent">${score.percentage}%</span>
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                          <span class="score-exam">${score.exam}</span>
+                          <span style="font-size: 0.8rem; color: #6b7280;">${new Date(score.timestamp).toLocaleString()}</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                          <span class="score-value" style="font-weight: 600; font-size: 0.9rem;">${score.score}/${score.total}</span>
+                          <span class="score-percent" style="color: #6b7280; font-size: 0.85rem;">(${score.percentage}%)</span>
+                          ${score.results ? `<button class="btn btn-primary btn-small view-history-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; margin-left: 0.5rem;" data-index="${score.timestamp}">View</button>` : ''}
+                        </div>
                     </div>
                 `,
               )

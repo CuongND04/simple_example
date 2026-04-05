@@ -52,6 +52,17 @@ class ExamApp {
       );
     }
 
+    // Score history view details button
+    const scoreHistory = getElementSafely(CONFIG.UI.scoreHistory);
+    if (scoreHistory) {
+      scoreHistory.addEventListener("click", (e) => {
+        if (e.target.classList.contains("view-history-btn")) {
+          const timestamp = e.target.dataset.index;
+          this.viewHistoryDetails(timestamp);
+        }
+      });
+    }
+
     // Back button
     const backBtn = getElementSafely(CONFIG.UI.backBtn);
     if (backBtn) {
@@ -175,6 +186,11 @@ class ExamApp {
 
     // Render results
     this.renderer.renderResults(results, this.appState.currentExam);
+    
+    // Ensure retake button is visible for new exams
+    const retakeBtn = getElementSafely(CONFIG.UI.retakeBtn);
+    if (retakeBtn) retakeBtn.style.display = '';
+
     showPage(CONFIG.UI.resultsPage);
 
     console.log("✅ Exam submitted:", results);
@@ -205,6 +221,23 @@ class ExamApp {
     alert(
       "Weak questions mode coming soon!\n\nThis will focus on questions frequently answered incorrectly.",
     );
+  }
+
+  /**
+   * View details of a historical score
+   */
+  viewHistoryDetails(timestamp) {
+    const history = this.storage.getScoresHistory();
+    const score = history.find(s => s.timestamp === timestamp);
+    if (score && score.results) {
+      this.renderer.renderResults(score.results, score.exam);
+      
+      // Hide retake button since we don't have the context to retake from history view right now
+      const retakeBtn = getElementSafely(CONFIG.UI.retakeBtn);
+      if (retakeBtn) retakeBtn.style.display = 'none';
+
+      showPage(CONFIG.UI.resultsPage);
+    }
   }
 
   /**

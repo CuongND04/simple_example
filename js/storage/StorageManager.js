@@ -12,10 +12,12 @@ export class StorageManager {
   }
 
   /**
-   * Record exam score
+   * Record exam score and detailed results
    */
-  recordScore(examName, score, total, timeTaken) {
+  recordScore(examName, results, timeTaken) {
     const history = this.getScoresHistory();
+    const score = results.correct;
+    const total = results.total;
     const percentage = Math.round((score / total) * 100);
 
     const record = {
@@ -25,6 +27,7 @@ export class StorageManager {
       percentage,
       timestamp: new Date().toISOString(),
       timeTaken,
+      results: results,
     };
 
     history.push(record);

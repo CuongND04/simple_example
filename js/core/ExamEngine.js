@@ -143,8 +143,7 @@ export class ExamEngine {
     const examName = this.appState.currentExam || "Practice Exam";
     this.storage.recordScore(
       examName,
-      results.correct,
-      results.total,
+      results,
       timeTaken,
     );
 
